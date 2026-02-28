@@ -1,142 +1,77 @@
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Send, Mail, MapPin } from "lucide-react";
-import { useCreateMessage } from "@/hooks/use-messages";
-import { api, type MessageInput } from "@shared/routes";
-import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { MessageSquare, Shield, Clock, CheckCircle2 } from "lucide-react";
+
+const reasons = [
+  {
+    icon: Shield,
+    title: "Production-Ready Delivery",
+    description: "Every project is engineered for manufacturing — not just a working prototype on the bench.",
+  },
+  {
+    icon: Clock,
+    title: "End-to-End Ownership",
+    description: "From architecture and firmware to PCB layout and factory bring-up. One engineer, full accountability.",
+  },
+  {
+    icon: CheckCircle2,
+    title: "Clear Communication",
+    description: "Regular progress updates, documented deliverables, and no surprises. Your timeline is respected.",
+  },
+];
 
 export function Contact() {
-  const mutation = useCreateMessage();
-  
-  const form = useForm<MessageInput>({
-    resolver: zodResolver(api.messages.create.input),
-    defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
-  });
-
-  const onSubmit = (data: MessageInput) => {
-    mutation.mutate(data, {
-      onSuccess: () => {
-        form.reset();
-      }
-    });
-  };
-
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
-      {/* Decorative gradient */}
+    <section id="hire" className="py-24 relative overflow-hidden">
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          
-          <div>
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-              Establish <span className="text-primary">Connection</span>
-            </h2>
-            <p className="text-muted-foreground text-lg mb-10 max-w-md">
-              Available for contract work, consulting, and full-time opportunities. Send a message to initiate a secure handshake.
-            </p>
-            
-            <div className="space-y-6">
-              <div className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors">
-                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary">
-                  <Mail className="w-5 h-5" />
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+            Ready to <span className="text-primary">Start a Project</span>?
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+            Looking for a senior embedded engineer who delivers production-grade results? Send me a message through Upwork to discuss your project requirements.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          {reasons.map((reason, idx) => {
+            const Icon = reason.icon;
+            return (
+              <div
+                key={idx}
+                data-testid={`card-reason-${idx}`}
+                className="bg-card border border-border/50 rounded-xl p-6 text-center"
+              >
+                <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-4">
+                  <Icon className="w-6 h-6 text-primary" />
                 </div>
-                <div>
-                  <p className="text-sm font-mono uppercase tracking-wider text-primary/70">Email</p>
-                  <p className="font-medium">contact@syseng.dev</p>
-                </div>
+                <h3 className="text-lg font-display font-semibold mb-2">{reason.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{reason.description}</p>
               </div>
-              
-              <div className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors">
-                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-sm font-mono uppercase tracking-wider text-primary/70">Location</p>
-                  <p className="font-medium">Remote / Global</p>
-                </div>
-              </div>
+            );
+          })}
+        </div>
+
+        <div className="bg-card border border-border/50 rounded-xl p-8 md:p-12 text-center max-w-2xl mx-auto">
+          <div className="w-16 h-16 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6">
+            <MessageSquare className="w-8 h-8 text-primary" />
+          </div>
+          <h3 className="text-2xl font-display font-bold mb-3">
+            Let's Discuss Your Project
+          </h3>
+          <p className="text-muted-foreground mb-8 max-w-md mx-auto">
+            Use the "Hire Me" or "Send Message" button on my Upwork profile to get started. I typically respond within 24 hours.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex items-center gap-2 text-sm font-mono text-muted-foreground bg-muted/30 rounded-lg px-4 py-2 border border-border/30">
+              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              Available for new projects
+            </div>
+            <div className="flex items-center gap-2 text-sm font-mono text-muted-foreground bg-muted/30 rounded-lg px-4 py-2 border border-border/30">
+              <Clock className="w-4 h-4 text-primary/70" />
+              Response within 24h
             </div>
           </div>
-
-          <div className="bg-card p-8 rounded-2xl border border-border/50 shadow-xl">
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Identifier</FormLabel>
-                      <FormControl>
-                        <Input 
-                          placeholder="John Doe" 
-                          className="bg-background border-border/50 focus-visible:ring-primary/30 h-12" 
-                          {...field} 
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Return Address</FormLabel>
-                      <FormControl>
-                        <Input 
-                          type="email"
-                          placeholder="john@example.com" 
-                          className="bg-background border-border/50 focus-visible:ring-primary/30 h-12" 
-                          {...field} 
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Payload</FormLabel>
-                      <FormControl>
-                        <Textarea 
-                          placeholder="Project details or inquiry..." 
-                          className="bg-background border-border/50 focus-visible:ring-primary/30 min-h-[150px] resize-none" 
-                          {...field} 
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <Button 
-                  type="submit" 
-                  className="w-full h-12 font-mono text-sm tracking-wide group bg-primary hover:bg-primary/90 text-primary-foreground"
-                  disabled={mutation.isPending}
-                >
-                  {mutation.isPending ? "TRANSMITTING..." : "TRANSMIT DATA"}
-                  {!mutation.isPending && <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />}
-                </Button>
-              </form>
-            </Form>
-          </div>
-
         </div>
       </div>
     </section>

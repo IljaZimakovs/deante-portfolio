@@ -22,7 +22,7 @@ export function Navbar() {
   ];
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "bg-background/80 backdrop-blur-md border-b border-border/50 py-3" : "bg-transparent py-5"
       }`}
@@ -35,12 +35,11 @@ export function Navbar() {
           </span>
         </a>
 
-        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           <div className="flex items-center gap-6">
             {navLinks.map((link) => (
-              <a 
-                key={link.name} 
+              <a
+                key={link.name}
                 href={link.href}
                 className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors font-mono"
               >
@@ -48,17 +47,16 @@ export function Navbar() {
               </a>
             ))}
           </div>
-          <Button 
-            variant="outline" 
-            className="font-mono text-xs border-primary/50 text-primary hover:bg-primary/10 hover:text-primary hover:border-primary"
+          <Button
+            variant="outline"
+            className="font-mono text-xs border-primary/50 text-primary"
             asChild
           >
-            <a href="#contact">INIT_CONTACT()</a>
+            <a href="#hire">HIRE_ME()</a>
           </Button>
         </nav>
 
-        {/* Mobile Toggle */}
-        <button 
+        <button
           className="md:hidden text-foreground hover:text-primary transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
@@ -66,12 +64,11 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border/50 p-6 flex flex-col gap-4 shadow-xl">
           {navLinks.map((link) => (
-            <a 
-              key={link.name} 
+            <a
+              key={link.name}
               href={link.href}
               className="text-lg font-medium text-foreground hover:text-primary transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
@@ -79,12 +76,12 @@ export function Navbar() {
               {link.name}
             </a>
           ))}
-          <Button 
-            className="mt-4 w-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border border-primary/50 font-mono"
+          <Button
+            className="mt-4 w-full bg-primary/10 text-primary border border-primary/50 font-mono"
             asChild
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            <a href="#contact">INIT_CONTACT()</a>
+            <a href="#hire">HIRE_ME()</a>
           </Button>
         </div>
       )}
