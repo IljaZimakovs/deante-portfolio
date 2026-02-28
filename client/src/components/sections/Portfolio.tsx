@@ -1,9 +1,22 @@
-import { useState } from "react";
-import { Cpu, Wifi, CircuitBoard, Server, Battery, Radio, ArrowRight, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useRef } from "react";
+import { Cpu, Wifi, CircuitBoard, Server, Battery, Radio, ArrowRight, X, ChevronLeft, ChevronRight, Play, Volume2, VolumeX } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-const projects = [
+interface Project {
+  title: string;
+  category: string;
+  description: string;
+  longDescription: string;
+  tags: string[];
+  icon: typeof Server;
+  highlight: string;
+  image: string;
+  video?: string;
+  deliverables: string[];
+}
+
+const projects: Project[] = [
   {
     title: "Industrial IoT Gateway",
     category: "Embedded Linux / IoT",
@@ -54,6 +67,7 @@ const projects = [
     icon: Cpu,
     highlight: "60% faster test cycle",
     image: "/images/project-test-station.png",
+    video: "/images/project-test-station.mp4",
     deliverables: ["Test Fixture Design", "Flash Programming Scripts", "Test Orchestrator Software", "Validation Report"],
   },
   {
@@ -85,12 +99,22 @@ const projects = [
 ];
 
 function ProjectModal({ project, onClose, onPrev, onNext }: {
-  project: typeof projects[0];
+  project: Project;
   onClose: () => void;
   onPrev: () => void;
   onNext: () => void;
 }) {
   const Icon = project.icon;
+  const modalVideoRef = useRef<HTMLVideoElement>(null);
+  const [modalMuted, setModalMuted] = useState(true);
+
+  const toggleModalMute = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (modalVideoRef.current) {
+      modalVideoRef.current.muted = !modalVideoRef.current.muted;
+      setModalMuted(!modalMuted);
+    }
+  };
 
   return (
     <div
@@ -104,12 +128,26 @@ function ProjectModal({ project, onClose, onPrev, onNext }: {
         className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-xl bg-card border border-border/50 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative h-56 md:h-72 overflow-hidden rounded-t-xl">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover"
-          />
+        <div className="relative h-56 md:h-80 overflow-hidden rounded-t-xl">
+          {project.video ? (
+            <video
+              ref={modalVideoRef}
+              src={project.video}
+              poster={project.image}
+              className="w-full h-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+              data-testid="video-modal-player"
+            />
+          ) : (
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover"
+            />
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
 
           <Button
@@ -121,6 +159,18 @@ function ProjectModal({ project, onClose, onPrev, onNext }: {
           >
             <X className="w-5 h-5" />
           </Button>
+
+          {project.video && (
+            <Button
+              size="icon"
+              variant="ghost"
+              className="absolute top-4 right-16 bg-background/50 backdrop-blur-sm text-foreground"
+              onClick={toggleModalMute}
+              data-testid="button-toggle-mute"
+            >
+              {modalMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+            </Button>
+          )}
 
           <Button
             size="icon"
@@ -237,15 +287,34 @@ export function Portfolio() {
                 onClick={() => setSelectedIndex(idx)}
               >
                 <div className="relative h-44 overflow-hidden rounded-t-xl">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
+                  {project.video ? (
+                    <video
+                      src={project.video}
+                      poster={project.image}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      data-testid={`video-card-${idx}`}
+                    />
+                  ) : (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
 
-                  <div className="absolute top-3 right-3">
+                  <div className="absolute top-3 right-3 flex items-center gap-2">
+                    {project.video && (
+                      <span className="flex items-center gap-1 text-[10px] font-mono text-foreground bg-background/80 backdrop-blur-sm border border-border/50 rounded-md px-2 py-1">
+                        <Play className="w-3 h-3 fill-current" />
+                        VIDEO
+                      </span>
+                    )}
                     <span className="text-[10px] font-mono text-primary bg-background/80 backdrop-blur-sm border border-primary/30 rounded-md px-2 py-1">
                       {project.highlight}
                     </span>
