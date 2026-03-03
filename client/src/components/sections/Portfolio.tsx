@@ -21,6 +21,11 @@ import cm4_5gImg2 from "@assets/image_1772515544449.png";
 import cm4_5gImg3 from "@assets/image_1772515547834.png";
 import cm4_5gImg4 from "@assets/image_1772515551954.png";
 import cm4_5gImg5 from "@assets/image_1772515556146.png";
+import nrf5340Img1 from "@assets/image_1772515758669.png";
+import nrf5340Img2 from "@assets/image_1772515763033.png";
+import nrf5340Img3 from "@assets/image_1772515767252.png";
+import nrf5340Img4 from "@assets/image_1772515771234.png";
+import nrf5340Img5 from "@assets/image_1772515774949.png";
 
 interface MediaItem {
   type: "image" | "video";
@@ -193,6 +198,27 @@ const projects: Project[] = [
       { type: "image", src: "/images/project-can-diagnostic.png" },
     ],
     deliverables: ["Device Firmware", "Desktop App", "PCB + Enclosure Files", "Protocol Documentation"],
+  },
+  {
+    slug: "nrf5340-lora-gnss-iot-board",
+    title: "nRF5340 LoRa GNSS IoT Board",
+    category: "IoT / Wireless Sensing",
+    filterSlugs: ["iot-connected-devices", "pcb-hardware", "embedded-firmware"],
+    description:
+      "Multi-communication IoT board with Nordic nRF5340 SoC, Semtech SX1302 LoRa, Quectel L96 GNSS, 256Mbit SPI flash, and multiple sensors — designed for asset tracking and environmental monitoring.",
+    longDescription:
+      "Designed a multi-communication IoT board based on Nordic nRF5340 dual-core SoC with BLE support. The system integrates a Semtech SX1302 LoRa module for long-range connectivity and a Quectel L96 GNSS module for precise positioning. It features 256Mbit external NOR flash via SPI and multiple sensors including DHT20, LSM6DSOX 6-axis IMU, and OPT3001 light sensor. The board supports JTAG, I2C, UART, and GPIO interfaces, enabling scalable applications in asset tracking and environmental monitoring.",
+    tags: ["nRF5340", "SX1302 LoRa", "Quectel L96 GNSS", "BLE", "SPI Flash", "DHT20", "LSM6DSOX", "OPT3001", "High-Speed PCB"],
+    icon: Antenna,
+    highlight: "BLE + LoRa + GNSS",
+    media: [
+      { type: "image", src: nrf5340Img1 },
+      { type: "image", src: nrf5340Img2 },
+      { type: "image", src: nrf5340Img3 },
+      { type: "image", src: nrf5340Img4 },
+      { type: "image", src: nrf5340Img5 },
+    ],
+    deliverables: ["Altium PCB + Schematic", "Block Diagram", "BOM & Gerber Files", "Sensor Integration Guide"],
   },
   {
     slug: "cm4-5g-wifi6-embedded-board",
