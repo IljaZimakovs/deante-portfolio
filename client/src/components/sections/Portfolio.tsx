@@ -812,6 +812,59 @@ export { projects };
 
 const INITIAL_COUNT = 6;
 
+function CardVideo({ item, fallbackSrc }: { item: MediaItem; fallbackSrc?: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [hovering, setHovering] = useState(false);
+  const posterSrc = item.poster || fallbackSrc;
+
+  const handleMouseEnter = useCallback(() => {
+    setHovering(true);
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play().catch(() => {});
+    }
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setHovering(false);
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  }, []);
+
+  return (
+    <div
+      className="relative w-full h-full"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {posterSrc && (
+        <img
+          src={posterSrc}
+          alt=""
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-200 ${hovering ? "opacity-0" : "opacity-100"}`}
+        />
+      )}
+      <video
+        ref={videoRef}
+        className="w-full h-full object-cover"
+        muted
+        playsInline
+        loop
+        preload="metadata"
+      >
+        <source src={item.src} type="video/mp4" />
+      </video>
+      <div className={`absolute inset-0 flex items-center justify-center z-10 pointer-events-none transition-opacity duration-200 ${hovering ? "opacity-0" : "opacity-100"}`}>
+        <div className="rounded-full bg-primary/90 flex items-center justify-center backdrop-blur-sm border border-primary/50 w-10 h-10">
+          <Play className="text-primary-foreground ml-0.5 w-4 h-4" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function MediaSlider({
   media,
   className,
@@ -944,31 +997,7 @@ function MediaSlider({
                 )}
               </>
             ) : (
-              <div className="relative w-full h-full">
-                {(item.poster || media.find(m => m.type === "image")?.src) ? (
-                  <img
-                    src={item.poster || media.find(m => m.type === "image")?.src || ""}
-                    alt=""
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <video
-                    className="w-full h-full object-cover"
-                    muted
-                    playsInline
-                    autoPlay
-                    loop
-                    preload="auto"
-                  >
-                    <source src={item.src} type="video/mp4" />
-                  </video>
-                )}
-                <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-                  <div className="rounded-full bg-primary/90 flex items-center justify-center backdrop-blur-sm border border-primary/50 w-10 h-10">
-                    <Play className="text-primary-foreground ml-0.5 w-4 h-4" />
-                  </div>
-                </div>
-              </div>
+              <CardVideo item={item} fallbackSrc={media.find(m => m.type === "image")?.src} />
             )
           ) : (
             <img
