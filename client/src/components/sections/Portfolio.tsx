@@ -944,6 +944,22 @@ function ProjectModal({
     >
       <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
 
+      <button
+        className="hidden md:flex fixed left-3 lg:left-6 top-1/2 -translate-y-1/2 z-[60] w-11 h-11 items-center justify-center rounded-full bg-card/90 border border-border/60 text-muted-foreground hover:text-primary hover:border-primary/60 hover:bg-card backdrop-blur-sm transition-all shadow-lg"
+        onClick={(e) => { e.stopPropagation(); onPrev(); }}
+        data-testid="button-prev-project"
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
+
+      <button
+        className="hidden md:flex fixed right-3 lg:right-6 top-1/2 -translate-y-1/2 z-[60] w-11 h-11 items-center justify-center rounded-full bg-card/90 border border-border/60 text-muted-foreground hover:text-primary hover:border-primary/60 hover:bg-card backdrop-blur-sm transition-all shadow-lg"
+        onClick={(e) => { e.stopPropagation(); onNext(); }}
+        data-testid="button-next-project"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
+
       <div
         className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-xl bg-card border border-border/50 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
@@ -981,35 +997,32 @@ function ProjectModal({
         </div>
 
         <div className="p-6 md:p-8 space-y-6">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <p className="text-xs font-mono text-primary/70 mb-1 tracking-wider uppercase">
-                {project.category}
-              </p>
-              <h3 className="text-2xl md:text-3xl font-display font-bold">
-                {project.title}
-              </h3>
-            </div>
-            <div className="flex items-center gap-1 shrink-0 mt-1">
-              <Button
-                size="icon"
-                variant="outline"
-                className="w-8 h-8 border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50"
-                onClick={onPrev}
-                data-testid="button-prev-project"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </Button>
-              <Button
-                size="icon"
-                variant="outline"
-                className="w-8 h-8 border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50"
-                onClick={onNext}
-                data-testid="button-next-project"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </Button>
-            </div>
+          <div>
+            <p className="text-xs font-mono text-primary/70 mb-1 tracking-wider uppercase">
+              {project.category}
+            </p>
+            <h3 className="text-2xl md:text-3xl font-display font-bold">
+              {project.title}
+            </h3>
+          </div>
+
+          <div className="flex md:hidden items-center justify-between mt-2">
+            <Button
+              size="sm"
+              variant="outline"
+              className="border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 gap-1"
+              onClick={onPrev}
+            >
+              <ChevronLeft className="w-4 h-4" /> Prev
+            </Button>
+            <Button
+              size="sm"
+              variant="outline"
+              className="border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 gap-1"
+              onClick={onNext}
+            >
+              Next <ChevronRight className="w-4 h-4" />
+            </Button>
           </div>
 
           <p className="text-muted-foreground leading-relaxed">
