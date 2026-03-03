@@ -45,6 +45,11 @@ import tuneImg2 from "@assets/image_1772516561953.png";
 import tuneImg3 from "@assets/image_1772516565558.png";
 import tuneImg4 from "@assets/image_1772516569652.png";
 import tuneImg5 from "@assets/image_1772516573546.png";
+import modKbImg1 from "@assets/image_1772516757241.png";
+import modKbImg2 from "@assets/image_1772516760657.png";
+import modKbImg3 from "@assets/image_1772516763910.png";
+import modKbImg4 from "@assets/image_1772516767056.png";
+import modKbImg5 from "@assets/image_1772516770470.png";
 
 interface MediaItem {
   type: "image" | "video";
@@ -217,6 +222,27 @@ const projects: Project[] = [
       { type: "image", src: "/images/project-can-diagnostic.png" },
     ],
     deliverables: ["Device Firmware", "Desktop App", "PCB + Enclosure Files", "Protocol Documentation"],
+  },
+  {
+    slug: "modular-creator-rgb-keyboard",
+    title: "Modular Creator RGB Keyboard",
+    category: "Consumer Electronics",
+    filterSlugs: ["pcb-hardware", "embedded-firmware"],
+    description:
+      "Modular smart RGB keyboard with configurable independent modules, each functioning as a standalone keyboard. VIA firmware support for dynamic key remapping, inter-module communication, and mass-production-ready design.",
+    longDescription:
+      "Designed a modular smart RGB keyboard composed of configurable independent modules, each functioning as a standalone keyboard. The system supports dynamic layout customization through VIA firmware, enabling users to remap keys and adjust functionality based on workflow needs. Engineered with advanced PCB architecture, reliable inter-module communication, and optimized power management, the design ensures seamless expandability, premium RGB integration, and mass-production readiness for a highly customizable user experience.",
+    tags: ["Autodesk Eagle", "VIA Firmware", "RGB LED Drivers", "Bluetooth", "Wi-Fi", "Power Management", "Mass Production"],
+    icon: CircuitBoard,
+    highlight: "Modular expandable",
+    media: [
+      { type: "image", src: modKbImg1 },
+      { type: "image", src: modKbImg2 },
+      { type: "image", src: modKbImg3 },
+      { type: "image", src: modKbImg4 },
+      { type: "image", src: modKbImg5 },
+    ],
+    deliverables: ["Eagle PCB + Schematic", "VIA Firmware Config", "BOM & Gerber Files", "Module Interface Spec"],
   },
   {
     slug: "tuneshine-album-art-display",
