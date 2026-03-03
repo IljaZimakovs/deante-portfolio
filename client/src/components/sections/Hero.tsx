@@ -9,12 +9,7 @@ export function Hero() {
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex flex-col items-start">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-mono text-sm mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
-          <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          Available for Hire on Upwork
-        </div>
-
-        <p className="text-lg sm:text-xl font-display font-semibold text-primary/80 mb-2 animate-in fade-in slide-in-from-bottom-5 duration-700 delay-100 tracking-wide" data-testid="text-engineer-name">
+        <p className="text-lg sm:text-xl font-display font-semibold text-primary/80 mb-2 animate-in fade-in slide-in-from-bottom-4 duration-700 tracking-wide" data-testid="text-engineer-name">
           Deante Cason
         </p>
         <h1 className="text-5xl sm:text-6xl lg:text-8xl font-display font-extrabold text-foreground leading-[1.1] mb-6 max-w-4xl animate-in fade-in slide-in-from-bottom-6 duration-700 delay-150">

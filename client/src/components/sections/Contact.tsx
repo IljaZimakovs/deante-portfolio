@@ -29,7 +29,7 @@ export function Contact() {
             Ready to <span className="text-primary">Start a Project</span>?
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Looking for a senior embedded engineer who delivers production-grade results? Send me a message through Upwork to discuss your project requirements.
+            Looking for a senior embedded engineer who delivers production-grade results? Let's discuss your project requirements.
           </p>
         </div>
 
@@ -60,12 +60,12 @@ export function Contact() {
             Let's Discuss Your Project
           </h3>
           <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-            Use the "Hire Me" or "Send Message" button on my Upwork profile to get started. I typically respond within 24 hours.
+            Reach out to start a conversation about your next embedded systems project. I typically respond within 24 hours.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <div className="flex items-center gap-2 text-sm font-mono text-muted-foreground bg-muted/30 rounded-lg px-4 py-2 border border-border/30">
               <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              Available for new projects
+              Open to new projects
             </div>
             <div className="flex items-center gap-2 text-sm font-mono text-muted-foreground bg-muted/30 rounded-lg px-4 py-2 border border-border/30">
               <Clock className="w-4 h-4 text-primary/70" />
