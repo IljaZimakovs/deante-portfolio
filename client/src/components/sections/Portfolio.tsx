@@ -608,7 +608,12 @@ function MediaSlider({ media, className, isModal }: { media: MediaItem[]; classN
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
 
-  const current = media[currentIndex];
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [media]);
+
+  const safeIndex = currentIndex < media.length ? currentIndex : 0;
+  const current = media[safeIndex];
   const hasMultiple = media.length > 1;
 
   const goTo = useCallback((index: number, e?: React.MouseEvent) => {
@@ -622,13 +627,13 @@ function MediaSlider({ media, className, isModal }: { media: MediaItem[]; classN
 
   const goPrev = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
-    goTo(currentIndex === 0 ? media.length - 1 : currentIndex - 1);
-  }, [currentIndex, media.length, goTo]);
+    goTo(safeIndex === 0 ? media.length - 1 : safeIndex - 1);
+  }, [safeIndex, media.length, goTo]);
 
   const goNext = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
-    goTo(currentIndex === media.length - 1 ? 0 : currentIndex + 1);
-  }, [currentIndex, media.length, goTo]);
+    goTo(safeIndex === media.length - 1 ? 0 : safeIndex + 1);
+  }, [safeIndex, media.length, goTo]);
 
   const togglePlay = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
@@ -729,7 +734,7 @@ function MediaSlider({ media, className, isModal }: { media: MediaItem[]; classN
               <button
                 key={i}
                 className={`rounded-full transition-all ${
-                  i === currentIndex
+                  i === safeIndex
                     ? "w-5 h-1.5 bg-primary"
                     : "w-1.5 h-1.5 bg-foreground/40 hover:bg-foreground/70"
                 }`}
@@ -742,7 +747,7 @@ function MediaSlider({ media, className, isModal }: { media: MediaItem[]; classN
           <div className="absolute top-2 left-2 z-20">
             <span className="flex items-center gap-1 text-[10px] font-mono text-foreground/80 bg-background/60 backdrop-blur-sm border border-border/40 rounded-md px-1.5 py-0.5">
               <ImageIcon className="w-3 h-3" />
-              {currentIndex + 1}/{media.length}
+              {safeIndex + 1}/{media.length}
             </span>
           </div>
         </>
