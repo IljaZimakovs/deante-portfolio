@@ -9,6 +9,7 @@ interface MediaItem {
   type: "image" | "video";
   src: string;
   poster?: string;
+  fit?: "cover" | "contain";
 }
 
 interface FilterCategory {
@@ -190,7 +191,7 @@ const projects: Project[] = [
     icon: Cpu,
     highlight: "Cloud AI sorting",
     media: [
-      { type: "image", src: garbageSorterImg },
+      { type: "image", src: garbageSorterImg, fit: "contain" },
     ],
     deliverables: ["ESP32 Firmware", "AWS Lambda Functions", "3D Mechanical Design", "System Integration Guide"],
   },
@@ -317,7 +318,7 @@ function MediaSlider({ media, className, isModal }: { media: MediaItem[]; classN
         <img
           src={current.src}
           alt=""
-          className="w-full h-full object-cover"
+          className={`w-full h-full ${current.fit === "contain" ? "object-contain bg-black/40" : "object-cover"}`}
           loading="lazy"
         />
       )}
