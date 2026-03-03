@@ -189,7 +189,7 @@ const projects: Project[] = [
       "hardware-debugging",
     ],
     description:
-      "Highly integrated CM4-based board with 5G RM520N module, Wi-Fi 6 AX200, Micro SD, USB hub, and PoE support — designed for IoT, smart infrastructure, and edge computing with high-bandwidth connectivity.",
+      "Highly integrated CM4-based board with 5G RM520N module, Wi-Fi 6 AX200, Micro SD, USB hub, and PoE support - designed for IoT, smart infrastructure, and edge computing with high-bandwidth connectivity.",
     longDescription:
       "Developed a highly integrated custom circuit board based on Raspberry Pi CM4 for advanced embedded and edge applications. The design integrates a 5G RM520N module and Wi-Fi 6 AX200 card for high-speed connectivity, Micro SD storage expansion, and multiple USB interfaces controlled by a USB4056 hub. Optimized PCB layout ensures signal integrity and efficient power management. The board supports IoT, smart infrastructure, and edge computing deployments requiring reliable, high-bandwidth communication.",
     tags: [
@@ -224,7 +224,7 @@ const projects: Project[] = [
     category: "IoT / Wireless Sensing",
     filterSlugs: ["iot-connected-devices", "pcb-hardware", "embedded-firmware"],
     description:
-      "Single-channel LoRaWAN gateway based on ESP32 with SX1276/78 LoRa, Ethernet, isolated RS485, WiFi, BLE, NOR flash, SD card, and RTC — supporting 96–264VAC input and optional battery backup for industrial IoT.",
+      "Single-channel LoRaWAN gateway based on ESP32 with SX1276/78 LoRa, Ethernet, isolated RS485, WiFi, BLE, NOR flash, SD card, and RTC - supporting 96–264VAC input and optional battery backup for industrial IoT.",
     longDescription:
       "Developed a single-channel LoRaWAN gateway based on ESP32 dual-core MCU for versatile IoT deployments. The system integrates SX1276/78 LoRa modules (433/925MHz), Ethernet, RS485 (isolated 1Mbps), WiFi, and BLE connectivity. It features onboard W25Q64 NOR flash, SD card storage, DS3231M high-accuracy RTC with backup battery, and USB debug interface. Designed with expandable I2C, LTE, and IO modules, wide 96–264VAC or DC input support, and optional battery backup, enabling reliable industrial and smart infrastructure applications.",
     tags: [
@@ -375,7 +375,7 @@ const projects: Project[] = [
     category: "IoT / Wireless Sensing",
     filterSlugs: ["iot-connected-devices", "pcb-hardware", "embedded-firmware"],
     description:
-      "Multi-communication IoT board with Nordic nRF5340 SoC, Semtech SX1302 LoRa, Quectel L96 GNSS, 256Mbit SPI flash, and multiple sensors — designed for asset tracking and environmental monitoring.",
+      "Multi-communication IoT board with Nordic nRF5340 SoC, Semtech SX1302 LoRa, Quectel L96 GNSS, 256Mbit SPI flash, and multiple sensors - designed for asset tracking and environmental monitoring.",
     longDescription:
       "Designed a multi-communication IoT board based on Nordic nRF5340 dual-core SoC with BLE support. The system integrates a Semtech SX1302 LoRa module for long-range connectivity and a Quectel L96 GNSS module for precise positioning. It features 256Mbit external NOR flash via SPI and multiple sensors including DHT20, LSM6DSOX 6-axis IMU, and OPT3001 light sensor. The board supports JTAG, I2C, UART, and GPIO interfaces, enabling scalable applications in asset tracking and environmental monitoring.",
     tags: [
@@ -482,7 +482,7 @@ const projects: Project[] = [
     category: "Embedded Linux / Hardware",
     filterSlugs: ["pcb-hardware", "embedded-linux-bsp", "hardware-debugging"],
     description:
-      "Custom base PCB for Computelab UCM-iMX8M-Mini SoM with CSI camera, I2S audio codec, Class-D amplifier, Ha-Low Wi-Fi, waterproof USB-C, and 1S Li-Po BMS — optimized for low power and mass production.",
+      "Custom base PCB for Computelab UCM-iMX8M-Mini SoM with CSI camera, I2S audio codec, Class-D amplifier, Ha-Low Wi-Fi, waterproof USB-C, and 1S Li-Po BMS - optimized for low power and mass production.",
     longDescription:
       "Designed a custom base PCB for the Computelab UCM-iMX8M-Mini SoM, optimized for low power and compact embedded applications. The board integrates a 2-lane CSI camera interface, I2S audio codec (WM8904), Class-D amplifier with 1W speaker, Ha-Low Wi-Fi module, waterproof USB Type-C, UART debug port, and a 20-pin GPIO header. It includes a 1S Li-Po BMS power design for portable use, focusing on hardware architecture, EMI considerations, and mass production readiness.",
     tags: [
@@ -517,7 +517,7 @@ const projects: Project[] = [
     category: "Consumer Electronics",
     filterSlugs: ["pcb-hardware", "embedded-firmware"],
     description:
-      'Premium RGB mechanical keyboard with ANSI/ISO layouts, multi-device Bluetooth, hot-swappable switches, 1.9" display, rotary encoders, and integrated battery charging — designed for mass production in Autodesk Eagle.',
+      'Premium RGB mechanical keyboard with ANSI/ISO layouts, multi-device Bluetooth, hot-swappable switches, 1.9" display, rotary encoders, and integrated battery charging - designed for mass production in Autodesk Eagle.',
     longDescription:
       "Engineered a premium RGB mechanical keyboard supporting ANSI and ISO layouts with multi-device Bluetooth connectivity. Features include hot-swappable switches, a 1.9-inch display, rotary encoders, advanced power management, and integrated battery charging. Schematics and PCB were designed in Autodesk Eagle following high-speed and mass-production standards, ensuring signal integrity, reliability, and cost-effective manufacturing for large-scale deployment.",
     tags: [
@@ -1392,7 +1392,7 @@ export function Portfolio({
               </h2>
               <p className="text-muted-foreground max-w-2xl text-lg">
                 A selection of production-grade embedded systems delivered
-                end-to-end — from architecture through manufacturing.
+                end-to-end - from architecture through manufacturing.
               </p>
             </div>
             <p className="text-sm font-mono text-muted-foreground">
