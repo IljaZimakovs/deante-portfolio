@@ -20,6 +20,7 @@ import {
   MonitorSmartphone,
   ImageIcon,
   Zap,
+  Activity,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -99,6 +100,9 @@ const psuImg3 = "/images/image_1772543847124.png";
 const motorVideo = "/images/project-motor-controller.mp4";
 const motorImg1 = "/images/image_1772544748572.png";
 const rpiHatVideo = "/images/project-rpi-motor-hat.mp4";
+const mosfetImg1 = "/images/image_1772545256057.png";
+const mosfetImg2 = "/images/image_1772545261768.png";
+const mosfetImg3 = "/images/image_1772545266834.png";
 
 interface MediaItem {
   type: "image" | "video";
@@ -152,6 +156,25 @@ const projects: Project[] = [
       { type: "image", src: clarecoImg2 },
     ],
     deliverables: ["Flutter App Source", "Cloud API Integration", "Speech Processing Pipeline", "Multilingual NLP Module"],
+  },
+  {
+    slug: "mosfet-amplifier-design-analysis",
+    title: "MOSFET Amplifier Design & Analysis",
+    category: "PCB & Hardware",
+    filterSlugs: ["pcb-hardware"],
+    description:
+      "MOSFET-based amplifier with biasing network, coupling capacitors, and load configuration. AC frequency response, transient, and gain simulations validate stability and bandwidth.",
+    longDescription:
+      "Designed and analyzed a MOSFET-based amplifier according to specified device parameters and performance targets. Developed the complete schematic including biasing network, coupling capacitors, and load configuration. Performed AC frequency response, transient, and gain simulations to validate stability, bandwidth, and signal amplification characteristics. Evaluated cutoff frequency, voltage gain, and operating point to ensure optimal linear performance. The project demonstrates strong expertise in analog circuit design, simulation, and performance optimization.",
+    tags: ["Analog Design", "MOSFET", "AC Analysis", "Transient Analysis", "LTspice", "Signal Integrity", "Frequency Response"],
+    icon: Activity,
+    highlight: "Simulation-validated",
+    media: [
+      { type: "image", src: mosfetImg1 },
+      { type: "image", src: mosfetImg2 },
+      { type: "image", src: mosfetImg3 },
+    ],
+    deliverables: ["Circuit Schematic", "Simulation Results", "Frequency Response Analysis", "Design Report"],
   },
   {
     slug: "raspberry-pi-motor-control-hat",
