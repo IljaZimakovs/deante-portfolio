@@ -11,6 +11,11 @@ import cm5IoImg1 from "@assets/image_1772514654396.png";
 import cm5IoImg2 from "@assets/image_1772514659035.png";
 import cm5IoImg3 from "@assets/image_1772514663029.png";
 import cm5IoImg4 from "@assets/image_1772514687391.png";
+import imx8Img1 from "@assets/image_1772515235120.png";
+import imx8Img2 from "@assets/image_1772515239394.png";
+import imx8Img3 from "@assets/image_1772515243964.png";
+import imx8Img4 from "@assets/image_1772515247648.png";
+import imx8Img5 from "@assets/image_1772515254381.png";
 
 interface MediaItem {
   type: "image" | "video";
@@ -183,6 +188,27 @@ const projects: Project[] = [
       { type: "image", src: "/images/project-can-diagnostic.png" },
     ],
     deliverables: ["Device Firmware", "Desktop App", "PCB + Enclosure Files", "Protocol Documentation"],
+  },
+  {
+    slug: "imx8-som-custom-base-board",
+    title: "iMX8 SoM Custom Base Board",
+    category: "Embedded Linux / Hardware",
+    filterSlugs: ["pcb-hardware", "embedded-linux-bsp"],
+    description:
+      "Custom base PCB for Computelab UCM-iMX8M-Mini SoM with CSI camera, I2S audio codec, Class-D amplifier, Ha-Low Wi-Fi, waterproof USB-C, and 1S Li-Po BMS — optimized for low power and mass production.",
+    longDescription:
+      "Designed a custom base PCB for the Computelab UCM-iMX8M-Mini SoM, optimized for low power and compact embedded applications. The board integrates a 2-lane CSI camera interface, I2S audio codec (WM8904), Class-D amplifier with 1W speaker, Ha-Low Wi-Fi module, waterproof USB Type-C, UART debug port, and a 20-pin GPIO header. It includes a 1S Li-Po BMS power design for portable use, focusing on hardware architecture, EMI considerations, and mass production readiness.",
+    tags: ["NXP iMX8M Mini", "Altium", "High-Speed PCB", "I2S", "USB Type-C", "Li-Po BMS", "Ha-Low Wi-Fi", "Mass Production"],
+    icon: CircuitBoard,
+    highlight: "Compact low-power SoM",
+    media: [
+      { type: "image", src: imx8Img1 },
+      { type: "image", src: imx8Img2 },
+      { type: "image", src: imx8Img3 },
+      { type: "image", src: imx8Img4 },
+      { type: "image", src: imx8Img5 },
+    ],
+    deliverables: ["Altium PCB + Schematic", "BOM & Gerber Files", "Power Design Docs", "EMI Compliance Report"],
   },
   {
     slug: "cm5-io-board-usb-otg",
