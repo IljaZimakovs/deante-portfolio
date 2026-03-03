@@ -96,6 +96,8 @@ const psuVideo = "/images/project-power-supply.mp4";
 const psuImg1 = "/images/image_1772543835349.png";
 const psuImg2 = "/images/image_1772543842115.png";
 const psuImg3 = "/images/image_1772543847124.png";
+const motorVideo = "/images/project-motor-controller.mp4";
+const motorImg1 = "/images/image_1772544748572.png";
 
 interface MediaItem {
   type: "image" | "video";
@@ -149,6 +151,24 @@ const projects: Project[] = [
       { type: "image", src: clarecoImg2 },
     ],
     deliverables: ["Flutter App Source", "Cloud API Integration", "Speech Processing Pipeline", "Multilingual NLP Module"],
+  },
+  {
+    slug: "smart-12v-dc-motor-controller",
+    title: "Smart 12V DC Motor Controller",
+    category: "PCB & Hardware",
+    filterSlugs: ["pcb-hardware", "embedded-firmware"],
+    description:
+      "12V DC motor control PCB with integrated rotation counting using STM8S003. HALL sensor for real-time speed measurement and MOSFET-based driver for efficient motor operation.",
+    longDescription:
+      "Designed a reliable 12V DC motor control PCB with integrated rotation counting using an STM8S003 microcontroller. The system utilizes a HALL sensor for precise real-time speed and rotation measurement, while a MOSFET-based driver ensures efficient and smooth motor operation. The PCB layout was optimized for noise immunity, thermal management, and long-term durability. The solution supports customizable control logic, making it suitable for automation, robotics, and industrial motor control applications.",
+    tags: ["STM8S003", "Embedded C", "HALL Sensor", "MOSFET Driver", "PWM", "Power Electronics", "PCB Design"],
+    icon: Battery,
+    highlight: "HALL sensor feedback",
+    media: [
+      { type: "video", src: motorVideo, poster: motorImg1 },
+      { type: "image", src: motorImg1 },
+    ],
+    deliverables: ["PCB Layout + Schematic", "STM8 Firmware", "BOM & Gerber Files", "Motor Control Documentation"],
   },
   {
     slug: "miniature-regulated-power-supply",
