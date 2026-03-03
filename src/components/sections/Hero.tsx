@@ -18,7 +18,7 @@ export function Hero() {
         </h1>
 
         <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mb-10 font-sans animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
-          Building stable, scalable, and manufacturable embedded systems — not prototypes that break in the field. Firmware, Embedded Linux, IoT, and PCB Engineering.
+          Building stable, scalable, and manufacturable embedded systems - not prototypes that break in the field. Firmware, Embedded Linux, IoT, and PCB Engineering.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center gap-4 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-500">
