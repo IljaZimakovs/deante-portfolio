@@ -10,6 +10,20 @@ interface MediaItem {
   poster?: string;
 }
 
+interface FilterCategory {
+  name: string;
+  slug: string;
+}
+
+export const filterCategories: FilterCategory[] = [
+  { name: "All Projects", slug: "all" },
+  { name: "Embedded Firmware Development", slug: "embedded-firmware" },
+  { name: "Embedded Linux & BSP", slug: "embedded-linux-bsp" },
+  { name: "IoT & Connected Devices", slug: "iot-connected-devices" },
+  { name: "PCB & Hardware Engineering", slug: "pcb-hardware" },
+  { name: "Hardware Bring-Up & Debugging", slug: "hardware-debugging" },
+];
+
 interface Project {
   slug: string;
   title: string;
@@ -21,6 +35,7 @@ interface Project {
   highlight: string;
   media: MediaItem[];
   deliverables: string[];
+  filterSlugs: string[];
 }
 
 const projects: Project[] = [
@@ -28,6 +43,7 @@ const projects: Project[] = [
     slug: "industrial-iot-gateway",
     title: "Industrial IoT Gateway",
     category: "Embedded Linux / IoT",
+    filterSlugs: ["embedded-linux-bsp", "iot-connected-devices"],
     description:
       "Designed and developed a Yocto-based Linux gateway for industrial sensor aggregation. Features OTA firmware updates, MQTT-based telemetry, and secure TLS provisioning for 200+ field devices.",
     longDescription:
@@ -44,6 +60,7 @@ const projects: Project[] = [
     slug: "ble-wearable-fitness-tracker",
     title: "BLE Wearable Fitness Tracker",
     category: "Consumer Electronics",
+    filterSlugs: ["embedded-firmware", "iot-connected-devices"],
     description:
       "End-to-end firmware for an ARM Cortex-M4 wearable. Implemented BLE stack on Zephyr RTOS, low-power sensor fusion pipeline, and companion mobile app data sync with OTA update support.",
     longDescription:
@@ -60,6 +77,7 @@ const projects: Project[] = [
     slug: "smart-energy-bms-controller",
     title: "Smart Energy BMS Controller",
     category: "Power & Energy Systems",
+    filterSlugs: ["embedded-firmware", "pcb-hardware"],
     description:
       "Battery management system for a 48V LiFePO4 pack. Custom PCB with cell balancing, SoC estimation, CAN bus communication, and safety cutoff logic — designed for solar storage applications.",
     longDescription:
@@ -76,6 +94,7 @@ const projects: Project[] = [
     slug: "factory-test-flash-station",
     title: "Factory Test & Flash Station",
     category: "Manufacturing & Production",
+    filterSlugs: ["hardware-debugging"],
     description:
       "Automated production test fixture with JTAG/SWD flash programming, boundary scan, and functional validation. Reduced manufacturing test time by 60% and eliminated manual flashing errors.",
     longDescription:
@@ -93,6 +112,7 @@ const projects: Project[] = [
     slug: "wifi-connected-thermostat",
     title: "Wi-Fi Connected Thermostat",
     category: "Smart Home / IoT",
+    filterSlugs: ["embedded-firmware", "iot-connected-devices"],
     description:
       "Production-ready smart thermostat running FreeRTOS on ESP32. Cloud-connected via MQTT with REST API integration, secure boot chain, and scheduled OTA update windows.",
     longDescription:
@@ -109,6 +129,7 @@ const projects: Project[] = [
     slug: "motor-control-pcb-robotics",
     title: "Motor Control PCB for Robotics",
     category: "Industrial Automation",
+    filterSlugs: ["embedded-firmware", "pcb-hardware"],
     description:
       "High-performance BLDC motor controller board with FOC algorithm implementation. 4-layer PCB with current sensing, encoder feedback, and CAN-based command interface.",
     longDescription:
@@ -125,6 +146,7 @@ const projects: Project[] = [
     slug: "lora-environmental-sensor-network",
     title: "LoRa Environmental Sensor Network",
     category: "IoT / Wireless Sensing",
+    filterSlugs: ["iot-connected-devices", "embedded-firmware"],
     description:
       "Solar-powered LoRa sensor nodes for long-range environmental monitoring. Custom low-power firmware with mesh networking, deployed across 5km agricultural sites.",
     longDescription:
@@ -141,6 +163,7 @@ const projects: Project[] = [
     slug: "automotive-can-bus-diagnostic-tool",
     title: "Automotive CAN Bus Diagnostic Tool",
     category: "Automotive / Diagnostics",
+    filterSlugs: ["hardware-debugging", "embedded-firmware"],
     description:
       "Handheld CAN bus analyzer with OLED display, OBD-II interface, and real-time packet decoding. Supports standard and extended CAN frames with DBC file parsing.",
     longDescription:
@@ -157,6 +180,7 @@ const projects: Project[] = [
     slug: "custom-embedded-linux-sbc",
     title: "Custom Embedded Linux SBC",
     category: "Embedded Linux / Hardware",
+    filterSlugs: ["embedded-linux-bsp", "pcb-hardware"],
     description:
       "Custom single-board computer built around an i.MX6 SoC with Yocto Linux BSP. Designed for edge computing applications with industrial-grade reliability and extended temperature range.",
     longDescription:
@@ -445,8 +469,9 @@ function ProjectModal({ project, onClose, onPrev, onNext }: {
   );
 }
 
-export function Portfolio({ initialSlug }: { initialSlug?: string } = {}) {
+export function Portfolio({ initialSlug, initialCategory }: { initialSlug?: string; initialCategory?: string } = {}) {
   const [, setLocation] = useLocation();
+  const [activeCategory, setActiveCategory] = useState(initialCategory || "all");
   const [selectedIndex, setSelectedIndex] = useState<number | null>(() => {
     if (initialSlug) {
       const idx = projects.findIndex((p) => p.slug === initialSlug);
@@ -454,7 +479,6 @@ export function Portfolio({ initialSlug }: { initialSlug?: string } = {}) {
     }
     return null;
   });
-  const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
 
   useEffect(() => {
     if (initialSlug) {
@@ -465,43 +489,70 @@ export function Portfolio({ initialSlug }: { initialSlug?: string } = {}) {
     }
   }, [initialSlug]);
 
-  const visibleProjects = projects.slice(0, visibleCount);
-  const hasMore = visibleCount < projects.length;
-  const remaining = projects.length - visibleCount;
+  useEffect(() => {
+    if (initialCategory) {
+      setActiveCategory(initialCategory);
+    }
+  }, [initialCategory]);
 
-  const openProject = (index: number) => {
-    setSelectedIndex(index);
-    setLocation(`/project/${projects[index].slug}`);
+  const filteredProjects = activeCategory === "all"
+    ? projects
+    : projects.filter((p) => p.filterSlugs.includes(activeCategory));
+
+  const categoryBaseUrl = activeCategory === "all" ? "/" : `/category/${activeCategory}`;
+
+  const handleCategoryChange = (slug: string) => {
+    setActiveCategory(slug);
+    if (slug === "all") {
+      setLocation("/");
+    } else {
+      setLocation(`/category/${slug}`);
+    }
+  };
+
+  const openProject = (projectIndex: number) => {
+    const project = filteredProjects[projectIndex];
+    const globalIndex = projects.indexOf(project);
+    setSelectedIndex(globalIndex);
+    setLocation(`/project/${project.slug}`);
   };
 
   const closeProject = () => {
     setSelectedIndex(null);
-    setLocation("/");
+    setLocation(categoryBaseUrl);
   };
 
   const handlePrev = () => {
     if (selectedIndex !== null) {
-      const newIndex = selectedIndex === 0 ? projects.length - 1 : selectedIndex - 1;
-      setSelectedIndex(newIndex);
-      setLocation(`/project/${projects[newIndex].slug}`);
+      const currentInFiltered = filteredProjects.findIndex((p) => p === projects[selectedIndex]);
+      const newFilteredIndex = currentInFiltered <= 0 ? filteredProjects.length - 1 : currentInFiltered - 1;
+      const newProject = filteredProjects[newFilteredIndex];
+      const newGlobalIndex = projects.indexOf(newProject);
+      setSelectedIndex(newGlobalIndex);
+      setLocation(`/project/${newProject.slug}`);
     }
   };
 
   const handleNext = () => {
     if (selectedIndex !== null) {
-      const newIndex = selectedIndex === projects.length - 1 ? 0 : selectedIndex + 1;
-      setSelectedIndex(newIndex);
-      setLocation(`/project/${projects[newIndex].slug}`);
+      const currentInFiltered = filteredProjects.findIndex((p) => p === projects[selectedIndex]);
+      const newFilteredIndex = currentInFiltered >= filteredProjects.length - 1 ? 0 : currentInFiltered + 1;
+      const newProject = filteredProjects[newFilteredIndex];
+      const newGlobalIndex = projects.indexOf(newProject);
+      setSelectedIndex(newGlobalIndex);
+      setLocation(`/project/${newProject.slug}`);
     }
   };
+
+  const activeCategoryName = filterCategories.find((c) => c.slug === activeCategory)?.name || "All Projects";
 
   return (
     <section id="portfolio" className="py-24 relative">
       <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="mb-16">
-          <div className="flex items-end justify-between gap-4 flex-wrap">
+        <div className="mb-12">
+          <div className="flex items-end justify-between gap-4 flex-wrap mb-8">
             <div>
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
                 Featured <span className="text-primary">Projects</span>
@@ -511,13 +562,30 @@ export function Portfolio({ initialSlug }: { initialSlug?: string } = {}) {
               </p>
             </div>
             <p className="text-sm font-mono text-muted-foreground">
-              {visibleCount} of {projects.length} projects
+              {filteredProjects.length} project{filteredProjects.length !== 1 ? "s" : ""}
             </p>
+          </div>
+
+          <div className="flex flex-wrap gap-2" data-testid="category-filters">
+            {filterCategories.map((cat) => (
+              <button
+                key={cat.slug}
+                data-testid={`filter-${cat.slug}`}
+                onClick={() => handleCategoryChange(cat.slug)}
+                className={`px-4 py-2 rounded-lg text-sm font-mono transition-all border ${
+                  activeCategory === cat.slug
+                    ? "bg-primary/15 text-primary border-primary/40"
+                    : "bg-card/60 text-muted-foreground border-border/40 hover:border-primary/30 hover:text-foreground"
+                }`}
+              >
+                {cat.name}
+              </button>
+            ))}
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {visibleProjects.map((project, idx) => {
+          {filteredProjects.map((project, idx) => {
             const Icon = project.icon;
             return (
               <div
@@ -589,17 +657,9 @@ export function Portfolio({ initialSlug }: { initialSlug?: string } = {}) {
           })}
         </div>
 
-        {hasMore && (
-          <div className="flex justify-center mt-12">
-            <Button
-              variant="outline"
-              className="font-mono text-sm border-primary/40 text-primary gap-2"
-              onClick={() => setVisibleCount(projects.length)}
-              data-testid="button-load-more"
-            >
-              <ChevronDown className="w-4 h-4" />
-              Load More Projects ({remaining} more)
-            </Button>
+        {filteredProjects.length === 0 && (
+          <div className="text-center py-16">
+            <p className="text-muted-foreground font-mono text-sm">No projects found in this category.</p>
           </div>
         )}
       </div>

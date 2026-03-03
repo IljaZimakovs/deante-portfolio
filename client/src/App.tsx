@@ -13,6 +13,9 @@ function Router() {
       <Route path="/project/:slug">
         {(params) => <Home projectSlug={params.slug} />}
       </Route>
+      <Route path="/category/:slug">
+        {(params) => <Home categorySlug={params.slug} />}
+      </Route>
       <Route component={NotFound} />
     </Switch>
   );
