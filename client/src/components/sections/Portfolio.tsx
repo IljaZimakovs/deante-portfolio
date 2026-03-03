@@ -56,6 +56,11 @@ import gsmImg3 from "@assets/image_1772517204181.png";
 import gsmImg4 from "@assets/image_1772517208053.png";
 import doorLockImg1 from "@assets/image_1772517469413.png";
 import envImagingImg1 from "@assets/image_1772517587413.png";
+import laneImg1 from "@assets/image_1772517778740.png";
+import laneImg2 from "@assets/image_1772517783099.png";
+import laneImg3 from "@assets/image_1772517788291.png";
+import laneImg4 from "@assets/image_1772517794283.png";
+import laneImg5 from "@assets/image_1772517801026.png";
 
 interface MediaItem {
   type: "image" | "video";
@@ -228,6 +233,27 @@ const projects: Project[] = [
       { type: "image", src: "/images/project-can-diagnostic.png" },
     ],
     deliverables: ["Device Firmware", "Desktop App", "PCB + Enclosure Files", "Protocol Documentation"],
+  },
+  {
+    slug: "ai-ml-lane-following-simulink",
+    title: "AI/ML Lane Following in Simulink",
+    category: "Autonomous Systems",
+    filterSlugs: ["embedded-firmware", "embedded-linux-bsp"],
+    description:
+      "Production-grade AI/ML lane-following system in MATLAB/Simulink for a 1:10 scale autonomous vehicle. Fine-tuned YOLOv8n for real-time lane segmentation with ML-enhanced MPC controller. Achieved 22 FPS on Jetson Nano with 92% accuracy.",
+    longDescription:
+      "Developed a production-grade AI/ML lane-following system in MATLAB/Simulink for a 1:10 scale autonomous vehicle. Integrated a fine-tuned YOLOv8n model (trained on BDD100K and KITTI) for real-time lane segmentation and curvature estimation. Implemented an ML-enhanced MPC controller for smooth steering and reduced oscillations. Built a 2-DOF bicycle model in Simscape for realistic closed-loop simulation. Achieved 22 FPS on Jetson Nano with 92% lane-keeping accuracy under varied conditions.",
+    tags: ["MATLAB", "Simulink", "YOLOv8n", "ONNX", "MPC", "Jetson Nano", "Deep Learning", "Python"],
+    icon: Cpu,
+    highlight: "92% lane accuracy",
+    media: [
+      { type: "image", src: laneImg1 },
+      { type: "image", src: laneImg2 },
+      { type: "image", src: laneImg3 },
+      { type: "image", src: laneImg4 },
+      { type: "image", src: laneImg5 },
+    ],
+    deliverables: ["Simulink Model", "YOLOv8n ONNX Model", "MPC Controller Config", "Simulation Results & Report"],
   },
   {
     slug: "iot-environmental-imaging-system",
