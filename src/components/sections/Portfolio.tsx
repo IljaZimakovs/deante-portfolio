@@ -100,11 +100,9 @@ const psuImg3 = "/images/image_1772543847124.png";
 const motorVideo = "/images/project-motor-controller.mp4";
 const motorImg1 = "/images/image_1772544748572.png";
 const rpiHatVideo = "/images/project-rpi-motor-hat.mp4";
-const sbcImg1 = "/images/image_1772515540147.png";
-const sbcImg2 = "/images/image_1772515544449.png";
-const sbcImg3 = "/images/image_1772515547834.png";
-const sbcImg4 = "/images/image_1772515551954.png";
-const sbcImg5 = "/images/image_1772515556146.png";
+const sbcImg1 = "/images/1.jpg";
+const sbcImg2 = "/images/2.jpg";
+const sbcImg3 = "/images/3.jpg";
 const mosfetImg1 = "/images/image_1772545256057.png";
 const mosfetImg2 = "/images/image_1772545261768.png";
 const mosfetImg3 = "/images/image_1772545266834.png";
@@ -323,8 +321,6 @@ const projects: Project[] = [
       { type: "image", src: sbcImg1 },
       { type: "image", src: sbcImg2 },
       { type: "image", src: sbcImg3 },
-      { type: "image", src: sbcImg4 },
-      { type: "image", src: sbcImg5 },
     ],
     deliverables: [
       "Yocto BSP Image",
