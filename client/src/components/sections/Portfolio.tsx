@@ -55,6 +55,7 @@ import gsmImg2 from "@assets/image_1772517200677.png";
 import gsmImg3 from "@assets/image_1772517204181.png";
 import gsmImg4 from "@assets/image_1772517208053.png";
 import doorLockImg1 from "@assets/image_1772517469413.png";
+import envImagingImg1 from "@assets/image_1772517587413.png";
 
 interface MediaItem {
   type: "image" | "video";
@@ -227,6 +228,23 @@ const projects: Project[] = [
       { type: "image", src: "/images/project-can-diagnostic.png" },
     ],
     deliverables: ["Device Firmware", "Desktop App", "PCB + Enclosure Files", "Protocol Documentation"],
+  },
+  {
+    slug: "iot-environmental-imaging-system",
+    title: "IoT Environmental Imaging System",
+    category: "IoT & Smart Systems",
+    filterSlugs: ["iot-connected-devices", "embedded-firmware", "pcb-hardware"],
+    description:
+      "Self-contained IoT device using ESP32-CAM and BME680 for remote environmental monitoring and imaging. Scheduled image capture, sensor data logging to SD card, and secure cloud transmission via MQTT over TLS.",
+    longDescription:
+      "Developed a self-contained IoT device for remote environmental monitoring and imaging. The system uses ESP32-CAM to capture images at scheduled intervals and a BME680 sensor to measure temperature, humidity, pressure, and air quality. Data and images are stored locally on an SD card and securely transmitted to a cloud server using MQTT over TLS. Designed with reliable power management and secure connectivity, the device enables centralized monitoring of environmental conditions and visual inspection of remote sites.",
+    tags: ["ESP32-CAM", "BME680", "MQTT over TLS", "Wi-Fi", "SD Card", "Embedded C", "PCB Design", "IoT Cloud"],
+    icon: Wifi,
+    highlight: "Remote site imaging",
+    media: [
+      { type: "image", src: envImagingImg1 },
+    ],
+    deliverables: ["ESP32 Firmware", "PCB Layout + Schematic", "Enclosure CAD Files", "Cloud Integration Docs"],
   },
   {
     slug: "android-digital-door-lock",
