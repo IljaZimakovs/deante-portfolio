@@ -891,61 +891,72 @@ function MediaSlider({
           className={`${i === safeIndex ? "block" : "hidden"}`}
         >
           {item.type === "video" ? (
-            <>
-              <video
-                ref={i === safeIndex ? videoRef : undefined}
-                poster={item.poster}
-                className="w-full h-full object-cover"
-                loop
-                muted
-                playsInline
-                preload="auto"
-                data-testid="video-media-player"
-              >
-                <source src={item.src} type="video/mp4" />
-              </video>
-              {i === safeIndex && !isPlaying && (
-                <div
-                  className="absolute inset-0 flex items-center justify-center cursor-pointer z-10"
-                  onClick={togglePlay}
-                  data-testid="button-play-video"
+            isModal ? (
+              <>
+                <video
+                  ref={i === safeIndex ? videoRef : undefined}
+                  poster={item.poster}
+                  className="w-full h-full object-cover"
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  data-testid="video-media-player"
                 >
+                  <source src={item.src} type="video/mp4" />
+                </video>
+                {i === safeIndex && !isPlaying && (
                   <div
-                    className={`rounded-full bg-primary/90 flex items-center justify-center backdrop-blur-sm border border-primary/50 transition-transform hover:scale-110 ${isModal ? "w-16 h-16" : "w-12 h-12"}`}
+                    className="absolute inset-0 flex items-center justify-center cursor-pointer z-10"
+                    onClick={togglePlay}
+                    data-testid="button-play-video"
                   >
-                    <Play
-                      className={`text-primary-foreground ml-0.5 ${isModal ? "w-7 h-7" : "w-5 h-5"}`}
-                    />
+                    <div className="rounded-full bg-primary/90 flex items-center justify-center backdrop-blur-sm border border-primary/50 transition-transform hover:scale-110 w-16 h-16">
+                      <Play className="text-primary-foreground ml-0.5 w-7 h-7" />
+                    </div>
+                  </div>
+                )}
+                {i === safeIndex && isPlaying && (
+                  <div className="absolute top-4 right-4 flex items-center gap-1 z-20">
+                    <Button
+                      size="icon"
+                      variant="ghost"
+                      className="bg-background/50 backdrop-blur-sm text-foreground"
+                      onClick={toggleMute}
+                      data-testid="button-toggle-mute"
+                    >
+                      {isMuted ? (
+                        <VolumeX className="w-5 h-5" />
+                      ) : (
+                        <Volume2 className="w-5 h-5" />
+                      )}
+                    </Button>
+                    <Button
+                      size="icon"
+                      variant="ghost"
+                      className="bg-background/50 backdrop-blur-sm text-foreground"
+                      onClick={togglePlay}
+                      data-testid="button-toggle-play"
+                    >
+                      <Pause className="w-5 h-5" />
+                    </Button>
+                  </div>
+                )}
+              </>
+            ) : (
+              <div className="relative w-full h-full">
+                <img
+                  src={item.poster || media.find(m => m.type === "image")?.src || ""}
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+                  <div className="rounded-full bg-primary/90 flex items-center justify-center backdrop-blur-sm border border-primary/50 w-10 h-10">
+                    <Play className="text-primary-foreground ml-0.5 w-4 h-4" />
                   </div>
                 </div>
-              )}
-              {i === safeIndex && isPlaying && isModal && (
-                <div className="absolute top-4 right-4 flex items-center gap-1 z-20">
-                  <Button
-                    size="icon"
-                    variant="ghost"
-                    className="bg-background/50 backdrop-blur-sm text-foreground"
-                    onClick={toggleMute}
-                    data-testid="button-toggle-mute"
-                  >
-                    {isMuted ? (
-                      <VolumeX className="w-5 h-5" />
-                    ) : (
-                      <Volume2 className="w-5 h-5" />
-                    )}
-                  </Button>
-                  <Button
-                    size="icon"
-                    variant="ghost"
-                    className="bg-background/50 backdrop-blur-sm text-foreground"
-                    onClick={togglePlay}
-                    data-testid="button-toggle-play"
-                  >
-                    <Pause className="w-5 h-5" />
-                  </Button>
-                </div>
-              )}
-            </>
+              </div>
+            )
           ) : (
             <img
               src={item.src}
@@ -1302,7 +1313,7 @@ export function Portfolio({
             const Icon = project.icon;
             return (
               <div
-                key={idx}
+                key={project.slug}
                 data-testid={`card-project-${idx}`}
                 className="group cursor-pointer rounded-xl border border-border/50 bg-card hover:border-primary/40 transition-all duration-300 relative"
                 onClick={() => openProject(idx)}
