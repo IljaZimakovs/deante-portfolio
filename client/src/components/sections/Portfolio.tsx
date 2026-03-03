@@ -16,6 +16,11 @@ import imx8Img2 from "@assets/image_1772515239394.png";
 import imx8Img3 from "@assets/image_1772515243964.png";
 import imx8Img4 from "@assets/image_1772515247648.png";
 import imx8Img5 from "@assets/image_1772515254381.png";
+import cm4_5gImg1 from "@assets/image_1772515540147.png";
+import cm4_5gImg2 from "@assets/image_1772515544449.png";
+import cm4_5gImg3 from "@assets/image_1772515547834.png";
+import cm4_5gImg4 from "@assets/image_1772515551954.png";
+import cm4_5gImg5 from "@assets/image_1772515556146.png";
 
 interface MediaItem {
   type: "image" | "video";
@@ -188,6 +193,27 @@ const projects: Project[] = [
       { type: "image", src: "/images/project-can-diagnostic.png" },
     ],
     deliverables: ["Device Firmware", "Desktop App", "PCB + Enclosure Files", "Protocol Documentation"],
+  },
+  {
+    slug: "cm4-5g-wifi6-embedded-board",
+    title: "CM4 5G & WiFi 6 Embedded Board",
+    category: "Embedded Linux / Hardware",
+    filterSlugs: ["pcb-hardware", "embedded-linux-bsp", "iot-connected-devices"],
+    description:
+      "Highly integrated CM4-based board with 5G RM520N module, Wi-Fi 6 AX200, Micro SD, USB hub, and PoE support — designed for IoT, smart infrastructure, and edge computing with high-bandwidth connectivity.",
+    longDescription:
+      "Developed a highly integrated custom circuit board based on Raspberry Pi CM4 for advanced embedded and edge applications. The design integrates a 5G RM520N module and Wi-Fi 6 AX200 card for high-speed connectivity, Micro SD storage expansion, and multiple USB interfaces controlled by a USB4056 hub. Optimized PCB layout ensures signal integrity and efficient power management. The board supports IoT, smart infrastructure, and edge computing deployments requiring reliable, high-bandwidth communication.",
+    tags: ["Raspberry Pi CM4", "RM520N 5G", "Intel AX200 Wi-Fi 6", "USB4056 Hub", "High-Speed PCB", "Altium", "USB", "Micro SD"],
+    icon: Server,
+    highlight: "5G + Wi-Fi 6",
+    media: [
+      { type: "image", src: cm4_5gImg1 },
+      { type: "image", src: cm4_5gImg2 },
+      { type: "image", src: cm4_5gImg3 },
+      { type: "image", src: cm4_5gImg4 },
+      { type: "image", src: cm4_5gImg5 },
+    ],
+    deliverables: ["Altium PCB + Schematic", "Block Diagram", "BOM & Gerber Files", "Signal Integrity Report"],
   },
   {
     slug: "imx8-som-custom-base-board",
