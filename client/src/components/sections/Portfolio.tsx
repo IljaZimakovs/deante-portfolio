@@ -31,6 +31,10 @@ import jetsonImg2 from "@assets/image_1772515899432.png";
 import jetsonImg3 from "@assets/image_1772515903228.png";
 import jetsonImg4 from "@assets/image_1772515906659.png";
 import jetsonImg5 from "@assets/image_1772515910441.png";
+import lorawanGwImg1 from "@assets/image_1772516000947.png";
+import lorawanGwImg2 from "@assets/image_1772516005151.png";
+import lorawanGwImg3 from "@assets/image_1772516009642.png";
+import lorawanGwImg4 from "@assets/image_1772516014589.png";
 
 interface MediaItem {
   type: "image" | "video";
@@ -203,6 +207,26 @@ const projects: Project[] = [
       { type: "image", src: "/images/project-can-diagnostic.png" },
     ],
     deliverables: ["Device Firmware", "Desktop App", "PCB + Enclosure Files", "Protocol Documentation"],
+  },
+  {
+    slug: "esp32-lorawan-gateway-v1",
+    title: "ESP32 LoRaWAN Gateway V1",
+    category: "IoT / Wireless Sensing",
+    filterSlugs: ["iot-connected-devices", "pcb-hardware", "embedded-firmware"],
+    description:
+      "Single-channel LoRaWAN gateway based on ESP32 with SX1276/78 LoRa, Ethernet, isolated RS485, WiFi, BLE, NOR flash, SD card, and RTC — supporting 96–264VAC input and optional battery backup for industrial IoT.",
+    longDescription:
+      "Developed a single-channel LoRaWAN gateway based on ESP32 dual-core MCU for versatile IoT deployments. The system integrates SX1276/78 LoRa modules (433/925MHz), Ethernet, RS485 (isolated 1Mbps), WiFi, and BLE connectivity. It features onboard W25Q64 NOR flash, SD card storage, DS3231M high-accuracy RTC with backup battery, and USB debug interface. Designed with expandable I2C, LTE, and IO modules, wide 96–264VAC or DC input support, and optional battery backup, enabling reliable industrial and smart infrastructure applications.",
+    tags: ["ESP32", "SX1276/SX1278", "LoRaWAN", "W25Q64 NOR Flash", "DS3231M RTC", "Ethernet", "RS485", "WiFi", "BLE", "4G-LTE"],
+    icon: Antenna,
+    highlight: "Multi-protocol gateway",
+    media: [
+      { type: "image", src: lorawanGwImg1 },
+      { type: "image", src: lorawanGwImg2 },
+      { type: "image", src: lorawanGwImg3 },
+      { type: "image", src: lorawanGwImg4 },
+    ],
+    deliverables: ["ESP32 Firmware", "PCB Design Files", "Network Architecture Docs", "Production Test Guide"],
   },
   {
     slug: "jetson-tx2-nx-expansion-board",
