@@ -805,70 +805,76 @@ function MediaSlider({
 
   return (
     <div className={`relative overflow-hidden ${className || ""}`}>
-      {current.type === "video" ? (
-        <>
-          <video
-            ref={videoRef}
-            poster={current.poster}
-            className="w-full h-full object-cover"
-            loop
-            muted
-            playsInline
-            preload="auto"
-            data-testid="video-media-player"
-          >
-            <source src={current.src} type="video/mp4" />
-          </video>
-          {!isPlaying && (
-            <div
-              className="absolute inset-0 flex items-center justify-center cursor-pointer z-10"
-              onClick={togglePlay}
-              data-testid="button-play-video"
-            >
-              <div
-                className={`rounded-full bg-primary/90 flex items-center justify-center backdrop-blur-sm border border-primary/50 transition-transform hover:scale-110 ${isModal ? "w-16 h-16" : "w-12 h-12"}`}
+      {media.map((item, i) => (
+        <div
+          key={i}
+          className={`${i === safeIndex ? "block" : "hidden"}`}
+        >
+          {item.type === "video" ? (
+            <>
+              <video
+                ref={i === safeIndex ? videoRef : undefined}
+                poster={item.poster}
+                className="w-full h-full object-cover"
+                loop
+                muted
+                playsInline
+                preload="auto"
+                data-testid="video-media-player"
               >
-                <Play
-                  className={`text-primary-foreground ml-0.5 ${isModal ? "w-7 h-7" : "w-5 h-5"}`}
-                />
-              </div>
-            </div>
+                <source src={item.src} type="video/mp4" />
+              </video>
+              {i === safeIndex && !isPlaying && (
+                <div
+                  className="absolute inset-0 flex items-center justify-center cursor-pointer z-10"
+                  onClick={togglePlay}
+                  data-testid="button-play-video"
+                >
+                  <div
+                    className={`rounded-full bg-primary/90 flex items-center justify-center backdrop-blur-sm border border-primary/50 transition-transform hover:scale-110 ${isModal ? "w-16 h-16" : "w-12 h-12"}`}
+                  >
+                    <Play
+                      className={`text-primary-foreground ml-0.5 ${isModal ? "w-7 h-7" : "w-5 h-5"}`}
+                    />
+                  </div>
+                </div>
+              )}
+              {i === safeIndex && isPlaying && isModal && (
+                <div className="absolute top-4 right-4 flex items-center gap-1 z-20">
+                  <Button
+                    size="icon"
+                    variant="ghost"
+                    className="bg-background/50 backdrop-blur-sm text-foreground"
+                    onClick={toggleMute}
+                    data-testid="button-toggle-mute"
+                  >
+                    {isMuted ? (
+                      <VolumeX className="w-5 h-5" />
+                    ) : (
+                      <Volume2 className="w-5 h-5" />
+                    )}
+                  </Button>
+                  <Button
+                    size="icon"
+                    variant="ghost"
+                    className="bg-background/50 backdrop-blur-sm text-foreground"
+                    onClick={togglePlay}
+                    data-testid="button-toggle-play"
+                  >
+                    <Pause className="w-5 h-5" />
+                  </Button>
+                </div>
+              )}
+            </>
+          ) : (
+            <img
+              src={item.src}
+              alt=""
+              className={`w-full ${isModal ? "object-contain" : "h-full object-cover"}`}
+            />
           )}
-          {isPlaying && isModal && (
-            <div className="absolute top-4 right-4 flex items-center gap-1 z-20">
-              <Button
-                size="icon"
-                variant="ghost"
-                className="bg-background/50 backdrop-blur-sm text-foreground"
-                onClick={toggleMute}
-                data-testid="button-toggle-mute"
-              >
-                {isMuted ? (
-                  <VolumeX className="w-5 h-5" />
-                ) : (
-                  <Volume2 className="w-5 h-5" />
-                )}
-              </Button>
-              <Button
-                size="icon"
-                variant="ghost"
-                className="bg-background/50 backdrop-blur-sm text-foreground"
-                onClick={togglePlay}
-                data-testid="button-toggle-play"
-              >
-                <Pause className="w-5 h-5" />
-              </Button>
-            </div>
-          )}
-        </>
-      ) : (
-        <img
-          src={current.src}
-          alt=""
-          className={`w-full ${isModal ? "object-contain" : "h-full object-cover"}`}
-          loading="lazy"
-        />
-      )}
+        </div>
+      ))}
 
       {hasMultiple && (
         <>
@@ -945,19 +951,19 @@ function ProjectModal({
       <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
 
       <button
-        className="hidden md:flex fixed left-3 lg:left-6 top-1/2 -translate-y-1/2 z-[60] w-11 h-11 items-center justify-center rounded-full bg-card/90 border border-border/60 text-muted-foreground hover:text-primary hover:border-primary/60 hover:bg-card backdrop-blur-sm transition-all shadow-lg"
+        className="hidden md:flex fixed left-2 lg:left-5 top-1/2 -translate-y-1/2 z-[60] w-12 h-12 items-center justify-center rounded-full bg-primary/15 border-2 border-primary/50 text-primary hover:bg-primary/30 hover:border-primary hover:scale-110 backdrop-blur-md transition-all duration-150 shadow-[0_0_15px_rgba(var(--primary-rgb,0,255,255),0.2)]"
         onClick={(e) => { e.stopPropagation(); onPrev(); }}
         data-testid="button-prev-project"
       >
-        <ChevronLeft className="w-5 h-5" />
+        <ChevronLeft className="w-6 h-6" />
       </button>
 
       <button
-        className="hidden md:flex fixed right-3 lg:right-6 top-1/2 -translate-y-1/2 z-[60] w-11 h-11 items-center justify-center rounded-full bg-card/90 border border-border/60 text-muted-foreground hover:text-primary hover:border-primary/60 hover:bg-card backdrop-blur-sm transition-all shadow-lg"
+        className="hidden md:flex fixed right-2 lg:right-5 top-1/2 -translate-y-1/2 z-[60] w-12 h-12 items-center justify-center rounded-full bg-primary/15 border-2 border-primary/50 text-primary hover:bg-primary/30 hover:border-primary hover:scale-110 backdrop-blur-md transition-all duration-150 shadow-[0_0_15px_rgba(var(--primary-rgb,0,255,255),0.2)]"
         onClick={(e) => { e.stopPropagation(); onNext(); }}
         data-testid="button-next-project"
       >
-        <ChevronRight className="w-5 h-5" />
+        <ChevronRight className="w-6 h-6" />
       </button>
 
       <div
@@ -1010,18 +1016,18 @@ function ProjectModal({
             <Button
               size="sm"
               variant="outline"
-              className="border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 gap-1"
+              className="border-primary/50 text-primary hover:bg-primary/15 hover:border-primary gap-1"
               onClick={onPrev}
             >
-              <ChevronLeft className="w-4 h-4" /> Prev
+              <ChevronLeft className="w-4 h-4" /> Prev Project
             </Button>
             <Button
               size="sm"
               variant="outline"
-              className="border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 gap-1"
+              className="border-primary/50 text-primary hover:bg-primary/15 hover:border-primary gap-1"
               onClick={onNext}
             >
-              Next <ChevronRight className="w-4 h-4" />
+              Next Project <ChevronRight className="w-4 h-4" />
             </Button>
           </div>
 
