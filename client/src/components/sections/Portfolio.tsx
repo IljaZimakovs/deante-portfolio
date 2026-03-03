@@ -88,6 +88,8 @@ const predMaintImg1 = "/images/image_1772518205107.png";
 const predMaintImg2 = "/images/image_1772518221506.png";
 const predMaintImg3 = "/images/image_1772518228852.png";
 const predMaintImg4 = "/images/image_1772518235099.png";
+const clarecoImg1 = "/images/image_1772543017538.png";
+const clarecoImg2 = "/images/image_1772543024387.png";
 
 interface MediaItem {
   type: "image" | "video";
@@ -124,6 +126,24 @@ interface Project {
 }
 
 const projects: Project[] = [
+  {
+    slug: "clareco-ai-medical-copilot",
+    title: "Clareco AI Medical Co-Pilot",
+    category: "AI / Mobile App",
+    filterSlugs: ["iot-connected-devices", "embedded-firmware"],
+    description:
+      "AI-powered Flutter mobile app that records doctor–patient conversations and converts them into structured email summaries. Supports 80+ languages with AI speech recognition and multilingual NLP processing.",
+    longDescription:
+      "Developed an AI-powered mobile application that records doctor–patient conversations and converts them into clear, structured email summaries. Built with Flutter, the app captures audio and delivers accurate transcriptions within minutes, supporting over 80 languages. Integrated AI-based speech recognition and multilingual processing to generate understandable medical summaries in Dutch or the patient's preferred language, improving comprehension, accessibility, and retention of critical healthcare information.",
+    tags: ["Flutter", "Dart", "Speech-to-Text AI", "NLP", "Multilingual Translation", "Cloud APIs", "Mobile App"],
+    icon: MonitorSmartphone,
+    highlight: "80+ languages",
+    media: [
+      { type: "image", src: clarecoImg1 },
+      { type: "image", src: clarecoImg2 },
+    ],
+    deliverables: ["Flutter App Source", "Cloud API Integration", "Speech Processing Pipeline", "Multilingual NLP Module"],
+  },
   {
     slug: "ai-predictive-maintenance-digital-twin",
     title: "AI Predictive Maintenance Digital Twin",
@@ -718,13 +738,7 @@ const projects: Project[] = [
     tags: ["i.MX6", "Yocto", "DDR3", "Secure Boot", "PCB Design", "Linux"],
     icon: Cpu,
     highlight: "Industrial -40 to 85C",
-    media: [
-      { type: "image", src: cm4_5gImg1 },
-      { type: "image", src: cm4_5gImg2 },
-      { type: "image", src: cm4_5gImg3 },
-      { type: "image", src: cm4_5gImg4 },
-      { type: "image", src: cm4_5gImg5 },
-    ],
+    media: [{ type: "image", src: "/images/project-custom-sbc.png" }],
     deliverables: [
       "Yocto BSP Image",
       "6-Layer PCB Files",
