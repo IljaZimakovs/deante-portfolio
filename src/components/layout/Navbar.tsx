@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Terminal, Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,13 +46,6 @@ export function Navbar() {
               </a>
             ))}
           </div>
-          <Button
-            variant="outline"
-            className="font-mono text-xs border-primary/50 text-primary"
-            asChild
-          >
-            <a href="#hire">HIRE_ME()</a>
-          </Button>
         </nav>
 
         <button
@@ -76,13 +68,6 @@ export function Navbar() {
               {link.name}
             </a>
           ))}
-          <Button
-            className="mt-4 w-full bg-primary/10 text-primary border border-primary/50 font-mono"
-            asChild
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            <a href="#hire">HIRE_ME()</a>
-          </Button>
         </div>
       )}
     </header>

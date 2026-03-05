@@ -16,99 +16,103 @@ import {
   Volume2,
   VolumeX,
   ChevronDown,
+  Search,
   Antenna,
   MonitorSmartphone,
   ImageIcon,
   Zap,
   Activity,
+  ThumbsUp,
+  Link2,
+  Check,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-const garbageSorterImg = "/images/image_1772512279505.jpg";
-const smartAcImg1 = "/images/image_1772513484469.jpg";
-const smartAcImg2 = "/images/image_1772513491486.jpg";
-const smartAcImg3 = "/images/image_1772513498323.jpg";
-const cm5IoImg1 = "/images/image_1772514654396.jpg";
-const cm5IoImg2 = "/images/image_1772514659035.jpg";
-const cm5IoImg3 = "/images/image_1772514663029.jpg";
-const cm5IoImg4 = "/images/image_1772514687391.jpg";
-const imx8Img1 = "/images/image_1772515235120.jpg";
-const imx8Img2 = "/images/image_1772515239394.jpg";
-const imx8Img3 = "/images/image_1772515243964.jpg";
-const imx8Img4 = "/images/image_1772515247648.jpg";
-const imx8Img5 = "/images/image_1772515254381.jpg";
-const cm4_5gImg1 = "/images/image_1772515540147.jpg";
-const cm4_5gImg2 = "/images/image_1772515544449.jpg";
-const cm4_5gImg3 = "/images/image_1772515547834.jpg";
-const cm4_5gImg4 = "/images/image_1772515551954.jpg";
-const cm4_5gImg5 = "/images/image_1772515556146.jpg";
-const nrf5340Img1 = "/images/image_1772515758669.jpg";
-const nrf5340Img2 = "/images/image_1772515763033.jpg";
-const nrf5340Img3 = "/images/image_1772515767252.jpg";
-const nrf5340Img4 = "/images/image_1772515771234.jpg";
-const nrf5340Img5 = "/images/image_1772515774949.jpg";
-const jetsonImg1 = "/images/image_1772515895194.jpg";
-const jetsonImg2 = "/images/image_1772515899432.jpg";
-const jetsonImg3 = "/images/image_1772515903228.jpg";
-const jetsonImg4 = "/images/image_1772515906659.jpg";
-const jetsonImg5 = "/images/image_1772515910441.jpg";
-const lorawanGwImg1 = "/images/image_1772516000947.jpg";
-const lorawanGwImg2 = "/images/image_1772516005151.jpg";
-const lorawanGwImg3 = "/images/image_1772516009642.jpg";
-const lorawanGwImg4 = "/images/image_1772516014589.jpg";
-const kbImg1 = "/images/image_1772516262337.jpg";
-const kbImg2 = "/images/image_1772516265969.jpg";
-const kbImg3 = "/images/image_1772516268993.jpg";
-const kbImg4 = "/images/image_1772516272177.jpg";
-const kbImg5 = "/images/image_1772516276487.jpg";
-const tuneImg1 = "/images/image_1772516558647.jpg";
-const tuneImg2 = "/images/image_1772516561953.jpg";
-const tuneImg3 = "/images/image_1772516565558.jpg";
-const tuneImg4 = "/images/image_1772516569652.jpg";
-const tuneImg5 = "/images/image_1772516573546.jpg";
-const modKbImg1 = "/images/image_1772516757241.jpg";
-const modKbImg2 = "/images/image_1772516760657.jpg";
-const modKbImg3 = "/images/image_1772516763910.jpg";
-const modKbImg4 = "/images/image_1772516767056.jpg";
-const modKbImg5 = "/images/image_1772516770470.jpg";
-const gsmImg1 = "/images/image_1772517196510.jpg";
-const gsmImg2 = "/images/image_1772517200677.jpg";
-const gsmImg3 = "/images/image_1772517204181.jpg";
-const gsmImg4 = "/images/image_1772517208053.jpg";
-const doorLockImg1 = "/images/image_1772517469413.jpg";
-const envImagingImg1 = "/images/image_1772517587413.jpg";
-const laneImg1 = "/images/image_1772517778740.jpg";
-const laneImg2 = "/images/image_1772517783099.jpg";
-const laneImg3 = "/images/image_1772517788291.jpg";
-const laneImg4 = "/images/image_1772517794283.jpg";
-const laneImg5 = "/images/image_1772517801026.jpg";
-const roboArmImg1 = "/images/image_1772517950140.jpg";
-const roboArmImg2 = "/images/image_1772517954562.jpg";
-const roboArmImg3 = "/images/image_1772517961091.jpg";
-const predMaintImg1 = "/images/image_1772518205107.jpg";
-const predMaintImg2 = "/images/image_1772518221506.jpg";
-const predMaintImg3 = "/images/image_1772518228852.jpg";
-const predMaintImg4 = "/images/image_1772518235099.jpg";
-const clarecoImg1 = "/images/image_1772543017538.jpg";
-const clarecoImg2 = "/images/image_1772543024387.jpg";
-const clarecoClinicImg1 = "/images/image_1772543264738.jpg";
+const garbageSorterImg = "/images/image_1772512279505.png";
+const smartAcImg1 = "/images/image_1772513484469.png";
+const smartAcImg2 = "/images/image_1772513491486.png";
+const smartAcImg3 = "/images/image_1772513498323.png";
+const cm5IoImg1 = "/images/image_1772514654396.png";
+const cm5IoImg2 = "/images/image_1772514659035.png";
+const cm5IoImg3 = "/images/image_1772514663029.png";
+const cm5IoImg4 = "/images/image_1772514687391.png";
+const imx8Img1 = "/images/image_1772515235120.png";
+const imx8Img2 = "/images/image_1772515239394.png";
+const imx8Img3 = "/images/image_1772515243964.png";
+const imx8Img4 = "/images/image_1772515247648.png";
+const imx8Img5 = "/images/image_1772515254381.png";
+const cm4_5gImg1 = "/images/image_1772515540147.png";
+const cm4_5gImg2 = "/images/image_1772515544449.png";
+const cm4_5gImg3 = "/images/image_1772515547834.png";
+const cm4_5gImg4 = "/images/image_1772515551954.png";
+const cm4_5gImg5 = "/images/image_1772515556146.png";
+const nrf5340Img1 = "/images/image_1772515758669.png";
+const nrf5340Img2 = "/images/image_1772515763033.png";
+const nrf5340Img3 = "/images/image_1772515767252.png";
+const nrf5340Img4 = "/images/image_1772515771234.png";
+const nrf5340Img5 = "/images/image_1772515774949.png";
+const jetsonImg1 = "/images/image_1772515895194.png";
+const jetsonImg2 = "/images/image_1772515899432.png";
+const jetsonImg3 = "/images/image_1772515903228.png";
+const jetsonImg4 = "/images/image_1772515906659.png";
+const jetsonImg5 = "/images/image_1772515910441.png";
+const lorawanGwImg1 = "/images/image_1772516000947.png";
+const lorawanGwImg2 = "/images/image_1772516005151.png";
+const lorawanGwImg3 = "/images/image_1772516009642.png";
+const lorawanGwImg4 = "/images/image_1772516014589.png";
+const kbImg1 = "/images/image_1772516262337.png";
+const kbImg2 = "/images/image_1772516265969.png";
+const kbImg3 = "/images/image_1772516268993.png";
+const kbImg4 = "/images/image_1772516272177.png";
+const kbImg5 = "/images/image_1772516276487.png";
+const tuneImg1 = "/images/image_1772516558647.png";
+const tuneImg2 = "/images/image_1772516561953.png";
+const tuneImg3 = "/images/image_1772516565558.png";
+const tuneImg4 = "/images/image_1772516569652.png";
+const tuneImg5 = "/images/image_1772516573546.png";
+const modKbImg1 = "/images/image_1772516757241.png";
+const modKbImg2 = "/images/image_1772516760657.png";
+const modKbImg3 = "/images/image_1772516763910.png";
+const modKbImg4 = "/images/image_1772516767056.png";
+const modKbImg5 = "/images/image_1772516770470.png";
+const gsmImg1 = "/images/image_1772517196510.png";
+const gsmImg2 = "/images/image_1772517200677.png";
+const gsmImg3 = "/images/image_1772517204181.png";
+const gsmImg4 = "/images/image_1772517208053.png";
+const doorLockImg1 = "/images/image_1772517469413.png";
+const envImagingImg1 = "/images/image_1772517587413.png";
+const laneImg1 = "/images/image_1772517778740.png";
+const laneImg2 = "/images/image_1772517783099.png";
+const laneImg3 = "/images/image_1772517788291.png";
+const laneImg4 = "/images/image_1772517794283.png";
+const laneImg5 = "/images/image_1772517801026.png";
+const roboArmImg1 = "/images/image_1772517950140.png";
+const roboArmImg2 = "/images/image_1772517954562.png";
+const roboArmImg3 = "/images/image_1772517961091.png";
+const predMaintImg1 = "/images/image_1772518205107.png";
+const predMaintImg2 = "/images/image_1772518221506.png";
+const predMaintImg3 = "/images/image_1772518228852.png";
+const predMaintImg4 = "/images/image_1772518235099.png";
+const clarecoImg1 = "/images/image_1772543017538.png";
+const clarecoImg2 = "/images/image_1772543024387.png";
+const clarecoClinicImg1 = "/images/image_1772543264738.png";
 const usbcPcbVideo = "/images/project-usbc-pcb-panel.mp4";
 const psuVideo = "/images/project-power-supply.mp4";
-const psuImg1 = "/images/image_1772543835349.jpg";
-const psuImg2 = "/images/image_1772543842115.jpg";
-const psuImg3 = "/images/image_1772543847124.jpg";
+const psuImg1 = "/images/image_1772543835349.png";
+const psuImg2 = "/images/image_1772543842115.png";
+const psuImg3 = "/images/image_1772543847124.png";
 const motorVideo = "/images/project-motor-controller.mp4";
-const motorImg1 = "/images/image_1772544748572.jpg";
+const motorImg1 = "/images/image_1772544748572.png";
 const rpiHatVideo = "/images/project-rpi-motor-hat.mp4";
 const sbcImg1 = "/images/1.jpg";
 const sbcImg2 = "/images/2.jpg";
 const sbcImg3 = "/images/3.jpg";
-const lmrConsoleImg1 = "/images/812-2_1772603385611.jpg";
-const cs74Img1 = "/images/CS-74_1772604563738.jpg";
-const vg500Img1 = "/images/image_1772604751479.jpg";
-const mosfetImg1 = "/images/image_1772545256057.jpg";
-const mosfetImg2 = "/images/image_1772545261768.jpg";
-const mosfetImg3 = "/images/image_1772545266834.jpg";
+const lmrConsoleImg1 = "/images/812-2_1772603385611.png";
+const cs74Img1 = "/images/CS-74_1772604563738.png";
+const vg500Img1 = "/images/image_1772604751479.png";
+const mosfetImg1 = "/images/image_1772545256057.png";
+const mosfetImg2 = "/images/image_1772545261768.png";
+const mosfetImg3 = "/images/image_1772545266834.png";
 
 interface MediaItem {
   type: "image" | "video";
@@ -1333,13 +1337,23 @@ function ProjectModal({
 export function Portfolio({
   initialSlug,
   initialCategory,
-}: { initialSlug?: string; initialCategory?: string } = {}) {
+  initialRecommendedIds,
+}: { initialSlug?: string; initialCategory?: string; initialRecommendedIds?: string } = {}) {
   const [, setLocation] = useLocation();
+
+  const parseRecommendedIds = (ids?: string): Set<number> => {
+    if (!ids) return new Set();
+    return new Set(ids.split("-").map(Number).filter((n) => !isNaN(n) && n >= 0 && n < projects.length));
+  };
+
+  const [recommended, setRecommended] = useState<Set<number>>(() => parseRecommendedIds(initialRecommendedIds));
   const [activeCategory, setActiveCategory] = useState(
-    initialCategory || "all",
+    initialRecommendedIds ? "recommended" : (initialCategory || "all"),
   );
   const [visibleCount, setVisibleCount] = useState(6);
+  const [searchQuery, setSearchQuery] = useState("");
   const closingRef = useRef(false);
+  const [copiedLink, setCopiedLink] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(() => {
     if (initialSlug) {
       const idx = projects.findIndex((p) => p.slug === initialSlug);
@@ -1347,6 +1361,16 @@ export function Portfolio({
     }
     return null;
   });
+
+  useEffect(() => {
+    if (initialRecommendedIds) {
+      setRecommended(parseRecommendedIds(initialRecommendedIds));
+      setActiveCategory("recommended");
+      setTimeout(() => {
+        document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }, [initialRecommendedIds]);
 
   useEffect(() => {
     if (initialSlug) {
@@ -1368,18 +1392,83 @@ export function Portfolio({
     }
   }, [initialCategory]);
 
-  const filteredProjects =
-    activeCategory === "all"
-      ? projects
-      : projects.filter((p) => p.filterSlugs.includes(activeCategory));
+  const toggleRecommended = (globalIndex: number, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setRecommended((prev) => {
+      const next = new Set(prev);
+      if (next.has(globalIndex)) {
+        next.delete(globalIndex);
+      } else {
+        next.add(globalIndex);
+      }
+      if (activeCategory === "recommended") {
+        if (next.size > 0) {
+          const ids = Array.from(next).sort((a, b) => a - b).join("-");
+          setLocation(`/recommended/${ids}`);
+        } else {
+          setActiveCategory("all");
+          setLocation("/");
+        }
+      }
+      return next;
+    });
+  };
+
+  const getRecommendedUrl = () => {
+    if (recommended.size === 0) return "";
+    const ids = Array.from(recommended).sort((a, b) => a - b).join("-");
+    const base = typeof window !== "undefined" ? window.location.origin : "";
+    return `${base}/recommended/${ids}`;
+  };
+
+  const copyRecommendedLink = () => {
+    const url = getRecommendedUrl();
+    if (url) {
+      navigator.clipboard.writeText(url).then(() => {
+        setCopiedLink(true);
+        setTimeout(() => setCopiedLink(false), 2000);
+      });
+    }
+  };
+
+  const categoryFiltered =
+    activeCategory === "recommended"
+      ? projects.filter((_, i) => recommended.has(i))
+      : activeCategory === "all"
+        ? projects
+        : projects.filter((p) => p.filterSlugs.includes(activeCategory));
+
+  const filteredProjects = searchQuery.trim()
+    ? categoryFiltered.filter((p) => {
+        const q = searchQuery.toLowerCase();
+        return (
+          p.title.toLowerCase().includes(q) ||
+          p.category.toLowerCase().includes(q) ||
+          p.description.toLowerCase().includes(q) ||
+          p.longDescription.toLowerCase().includes(q) ||
+          p.highlight.toLowerCase().includes(q) ||
+          p.tags.some((t) => t.toLowerCase().includes(q)) ||
+          p.deliverables.some((d) => d.toLowerCase().includes(q))
+        );
+      })
+    : categoryFiltered;
 
   const categoryBaseUrl =
-    activeCategory === "all" ? "/" : `/category/${activeCategory}`;
+    activeCategory === "recommended"
+      ? (recommended.size > 0 ? `/recommended/${Array.from(recommended).sort((a, b) => a - b).join("-")}` : "/")
+      : activeCategory === "all" ? "/" : `/category/${activeCategory}`;
 
   const handleCategoryChange = (slug: string) => {
     setActiveCategory(slug);
     setVisibleCount(6);
-    if (slug === "all") {
+    if (slug === "recommended") {
+      if (recommended.size > 0) {
+        const ids = Array.from(recommended).sort((a, b) => a - b).join("-");
+        setLocation(`/recommended/${ids}`);
+      } else {
+        setLocation("/");
+      }
+    } else if (slug === "all") {
       setLocation("/");
     } else {
       setLocation(`/category/${slug}`);
@@ -1433,8 +1522,10 @@ export function Portfolio({
   };
 
   const activeCategoryName =
-    filterCategories.find((c) => c.slug === activeCategory)?.name ||
-    "All Projects";
+    activeCategory === "recommended"
+      ? "Suggested"
+      : filterCategories.find((c) => c.slug === activeCategory)?.name ||
+        "All Projects";
 
   return (
     <section id="portfolio" className="py-24 relative">
@@ -1473,12 +1564,59 @@ export function Portfolio({
                 {cat.name}
               </button>
             ))}
+            {recommended.size > 0 && (
+              <>
+                <button
+                  data-testid="filter-recommended"
+                  onClick={() => handleCategoryChange("recommended")}
+                  className={`px-4 py-2 rounded-lg text-sm font-mono transition-all border flex items-center gap-1.5 ${
+                    activeCategory === "recommended"
+                      ? "bg-amber-500/15 text-amber-400 border-amber-500/40"
+                      : "bg-card/60 text-muted-foreground border-border/40 hover:border-amber-500/30 hover:text-foreground"
+                  }`}
+                >
+                  <ThumbsUp className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                  Suggested ({recommended.size})
+                </button>
+                <button
+                  data-testid="button-copy-recommended-link"
+                  onClick={copyRecommendedLink}
+                  className="px-3 py-2 rounded-lg text-sm font-mono transition-all border bg-card/60 border-border/40 hover:border-primary/30 hover:text-foreground text-muted-foreground flex items-center gap-1.5"
+                >
+                  {copiedLink ? <Check className="w-3.5 h-3.5 text-green-400" /> : <Link2 className="w-3.5 h-3.5" />}
+                  {copiedLink ? "Copied!" : "Copy Link"}
+                </button>
+              </>
+            )}
+          </div>
+
+          <div className="relative mt-4">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
+            <input
+              data-testid="input-search-projects"
+              type="text"
+              value={searchQuery}
+              onChange={(e) => { setSearchQuery(e.target.value); setVisibleCount(6); }}
+              placeholder="Search projects by title, skills, technology..."
+              className="w-full md:w-80 pl-10 pr-9 py-2 rounded-lg text-sm font-mono bg-card/60 border border-border/40 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/50 transition-colors"
+            />
+            {searchQuery && (
+              <button
+                data-testid="button-clear-search"
+                onClick={() => setSearchQuery("")}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            )}
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.slice(0, visibleCount).map((project, idx) => {
             const Icon = project.icon;
+            const globalIndex = projects.indexOf(project);
+            const isRecommended = recommended.has(globalIndex);
             return (
               <div
                 key={project.slug}
@@ -1540,9 +1678,22 @@ export function Portfolio({
                     )}
                   </div>
 
-                  <div className="flex items-center gap-1.5 text-xs font-mono text-primary/70 pt-1 group-hover:text-primary transition-colors">
-                    <span>View Details</span>
-                    <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+                  <div className="flex items-center justify-between pt-1">
+                    <div className="flex items-center gap-1.5 text-xs font-mono text-primary/70 group-hover:text-primary transition-colors">
+                      <span>View Details</span>
+                      <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+                    </div>
+                    <button
+                      data-testid={`button-recommend-${idx}`}
+                      onClick={(e) => toggleRecommended(globalIndex, e)}
+                      className={`w-8 h-8 rounded-lg flex items-center justify-center border transition-all ${
+                        isRecommended
+                          ? "bg-amber-500/15 border-amber-500/50 text-amber-400"
+                          : "bg-muted/30 border-border/50 text-muted-foreground hover:border-amber-500/40 hover:text-amber-400"
+                      }`}
+                    >
+                      <ThumbsUp className={`w-3.5 h-3.5 ${isRecommended ? "fill-amber-400" : ""}`} />
+                    </button>
                   </div>
                 </div>
 
@@ -1569,7 +1720,11 @@ export function Portfolio({
         {filteredProjects.length === 0 && (
           <div className="text-center py-16">
             <p className="text-muted-foreground font-mono text-sm">
-              No projects found in this category.
+              {searchQuery.trim()
+                ? `No projects match "${searchQuery}". Try a different search term.`
+                : activeCategory === "recommended"
+                  ? "No suggested projects yet. Click the thumbs-up icon on any project card to add it."
+                  : "No projects found in this category."}
             </p>
           </div>
         )}
