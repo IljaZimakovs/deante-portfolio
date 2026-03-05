@@ -153,7 +153,12 @@ const projects: Project[] = [
     slug: "jetson-tx2-nx-expansion-board",
     title: "Jetson TX2 NX Expansion Board",
     category: "AI & Edge Computing",
-    filterSlugs: ["pcb-hardware", "embedded-linux-bsp", "embedded-firmware", "hardware-debugging"],
+    filterSlugs: [
+      "pcb-hardware",
+      "embedded-linux-bsp",
+      "embedded-firmware",
+      "hardware-debugging",
+    ],
     description:
       "High-performance expansion board for NVIDIA Jetson TX2 NX with dual MIPI-CSI cameras, LVDS input, HDMI, Gigabit Ethernet, USB 3.0, CAN bus, and 60V/6S Li-ion power support for robotics and AI edge applications.",
     longDescription:
@@ -270,13 +275,25 @@ const projects: Project[] = [
       "Custom Raspberry Pi HAT for motor control and sensor integration. KiCad 9 design with motor drivers, regulated power supply, and GPIO/I2C/SPI interfaces in a stackable form factor.",
     longDescription:
       "Designed and developed a custom Raspberry Pi expansion board (HAT) for motor control and sensor integration in robotics and automation systems. Created in KiCad 9, the PCB integrates motor driver circuits, regulated power supply, and multiple GPIO, I2C, and SPI interfaces for analog and digital sensors. The compact stackable form factor ensures seamless integration with Raspberry Pi. Delivered complete design files, Gerbers, BOM, and 3D visualizations with Blender animations for technical presentation.",
-    tags: ["KiCad 9", "Raspberry Pi", "GPIO", "I2C", "SPI", "DC Motor Drivers", "Power Regulation", "Blender 3D"],
+    tags: [
+      "KiCad 9",
+      "Raspberry Pi",
+      "GPIO",
+      "I2C",
+      "SPI",
+      "DC Motor Drivers",
+      "Power Regulation",
+      "Blender 3D",
+    ],
     icon: CircuitBoard,
     highlight: "Stackable HAT design",
-    media: [
-      { type: "video", src: rpiHatVideo },
+    media: [{ type: "video", src: rpiHatVideo }],
+    deliverables: [
+      "KiCad PCB + Schematic",
+      "Gerber & BOM Files",
+      "3D Blender Visualization",
+      "Integration Guide",
     ],
-    deliverables: ["KiCad PCB + Schematic", "Gerber & BOM Files", "3D Blender Visualization", "Integration Guide"],
   },
   {
     slug: "ai-predictive-maintenance-digital-twin",
@@ -316,52 +333,99 @@ const projects: Project[] = [
     slug: "cs-812-multi-channel-lmr-console",
     title: "CS-812 Multi-Channel LMR Console",
     category: "Embedded Linux & BSP",
-    filterSlugs: ["embedded-linux-bsp", "embedded-firmware", "hardware-debugging"],
+    filterSlugs: [
+      "embedded-linux-bsp",
+      "embedded-firmware",
+      "hardware-debugging",
+    ],
     description:
-      "12-channel RoIP console for LMR communication with SIP, multicast, and unicast support. Features push-to-talk, 4\"×7\" color display, rotary encoders, and browser-based configuration.",
+      '12-channel RoIP console for LMR communication with SIP, multicast, and unicast support. Features push-to-talk, 4"×7" color display, rotary encoders, and browser-based configuration.',
     longDescription:
-      "Developed the CS-812, a 12-channel RoIP (Radio over IP) console designed for demanding LMR communication environments. The system supports SIP, multicast, and unicast communication with push-to-talk functionality via microphone, headset, or handset. It features a 4\" × 7\" color display with per-channel volume indicators, rotary encoder controls, and a 5W speaker. Built with a rugged steel enclosure and browser-based configuration interface, the console enables conferencing, private calls, and broadcast communication for mission-critical radio networks.",
-    tags: ["Embedded Linux", "SIP Stack", "VoIP Codecs", "Ethernet", "Multicast", "Rotary Encoders", "Audio Processing"],
+      'Developed the CS-812, a 12-channel RoIP (Radio over IP) console designed for demanding LMR communication environments. The system supports SIP, multicast, and unicast communication with push-to-talk functionality via microphone, headset, or handset. It features a 4" × 7" color display with per-channel volume indicators, rotary encoder controls, and a 5W speaker. Built with a rugged steel enclosure and browser-based configuration interface, the console enables conferencing, private calls, and broadcast communication for mission-critical radio networks.',
+    tags: [
+      "Embedded Linux",
+      "SIP Stack",
+      "VoIP Codecs",
+      "Ethernet",
+      "Multicast",
+      "Rotary Encoders",
+      "Audio Processing",
+    ],
     icon: Radio,
     highlight: "Mission-critical RoIP",
-    media: [
-      { type: "image", src: lmrConsoleImg1 },
+    media: [{ type: "image", src: lmrConsoleImg1 }],
+    deliverables: [
+      "Embedded Linux Firmware",
+      "SIP Stack Integration",
+      "Web Configuration Interface",
+      "Hardware Interface Drivers",
     ],
-    deliverables: ["Embedded Linux Firmware", "SIP Stack Integration", "Web Configuration Interface", "Hardware Interface Drivers"],
   },
   {
     slug: "cs-74fmd-industrial-sip-console",
     title: "CS-74FMD Industrial SIP Console",
     category: "Embedded Linux & BSP",
-    filterSlugs: ["embedded-linux-bsp", "embedded-firmware", "hardware-debugging"],
+    filterSlugs: [
+      "embedded-linux-bsp",
+      "embedded-firmware",
+      "hardware-debugging",
+    ],
     description:
       "Industrial desktop RoIP console with four simultaneous SIP channels. Supports push-to-talk broadcast, group calls, private line communication, and hands-free operation via PoE.",
     longDescription:
       "Developed the CS-74FMD industrial desktop RoIP console supporting four simultaneous SIP-based communication channels. The system enables push-to-talk broadcast, group calls, private line communication, and hands-free operation. It integrates a standards-based SIP stack, rotary volume controls, backlit display, and support for microphone, handset, or headset interfaces. Designed for industrial environments, the console operates via PoE with browser-based configuration and supports multiple audio codecs for efficient VoIP communication.",
-    tags: ["Embedded Linux", "SIP Stack", "RTP/RTCP", "G.711", "G.729", "PoE", "Ethernet", "Audio Processing"],
+    tags: [
+      "Embedded Linux",
+      "SIP Stack",
+      "RTP/RTCP",
+      "G.711",
+      "G.729",
+      "PoE",
+      "Ethernet",
+      "Audio Processing",
+    ],
     icon: Radio,
     highlight: "4-channel PoE SIP",
-    media: [
-      { type: "image", src: cs74Img1 },
+    media: [{ type: "image", src: cs74Img1 }],
+    deliverables: [
+      "Embedded Linux Firmware",
+      "SIP Stack Integration",
+      "Web Configuration Interface",
+      "PoE Power Design",
     ],
-    deliverables: ["Embedded Linux Firmware", "SIP Stack Integration", "Web Configuration Interface", "PoE Power Design"],
   },
   {
     slug: "vg-500-multicast-tunnel-gateway",
     title: "VG-500 Multicast Tunnel Gateway",
     category: "Embedded Linux & BSP",
-    filterSlugs: ["embedded-linux-bsp", "embedded-firmware", "iot-connected-devices"],
+    filterSlugs: [
+      "embedded-linux-bsp",
+      "embedded-firmware",
+      "iot-connected-devices",
+    ],
     description:
       "Compact secure gateway for transporting multicast VoIP traffic across WAN/Internet via unicast encapsulation. AES-256 encryption, VLAN bridging, 4-port Ethernet switch, and browser-based management.",
     longDescription:
       "Developed the VG-500, a compact secure gateway designed to transport multicast VoIP traffic across WAN or Internet networks using unicast encapsulation. The system supports server–client and hub-and-spoke architectures, enabling reliable distribution of multi-channel audio streams. Integrated AES-128/192/256 encryption, VLAN trunk bridging, and advanced packet filtering for secure network operation. The device includes a built-in 4-port Ethernet switch, serial configuration interface, and browser-based management with extensive diagnostics and logging.",
-    tags: ["Embedded Linux", "Multicast", "AES Encryption", "VLAN 802.1Q", "Ethernet Switching", "NAT Traversal", "VoIP Transport", "RS-232"],
+    tags: [
+      "Embedded Linux",
+      "Multicast",
+      "AES Encryption",
+      "VLAN 802.1Q",
+      "Ethernet Switching",
+      "NAT Traversal",
+      "VoIP Transport",
+      "RS-232",
+    ],
     icon: Server,
     highlight: "AES-256 encrypted tunnel",
-    media: [
-      { type: "image", src: vg500Img1 },
+    media: [{ type: "image", src: vg500Img1 }],
+    deliverables: [
+      "Embedded Linux Firmware",
+      "Network Stack Integration",
+      "Web Management Interface",
+      "Security Configuration Guide",
     ],
-    deliverables: ["Embedded Linux Firmware", "Network Stack Integration", "Web Management Interface", "Security Configuration Guide"],
   },
   {
     slug: "custom-embedded-linux-sbc",
@@ -507,14 +571,27 @@ const projects: Project[] = [
       "AI-powered Flutter mobile app that records doctor–patient conversations and converts them into structured email summaries. Supports 80+ languages with AI speech recognition and multilingual NLP processing.",
     longDescription:
       "Developed an AI-powered mobile application that records doctor–patient conversations and converts them into clear, structured email summaries. Built with Flutter, the app captures audio and delivers accurate transcriptions within minutes, supporting over 80 languages. Integrated AI-based speech recognition and multilingual processing to generate understandable medical summaries in Dutch or the patient's preferred language, improving comprehension, accessibility, and retention of critical healthcare information.",
-    tags: ["Flutter", "Dart", "Speech-to-Text AI", "NLP", "Multilingual Translation", "Cloud APIs", "Mobile App"],
+    tags: [
+      "Flutter",
+      "Dart",
+      "Speech-to-Text AI",
+      "NLP",
+      "Multilingual Translation",
+      "Cloud APIs",
+      "Mobile App",
+    ],
     icon: MonitorSmartphone,
     highlight: "80+ languages",
     media: [
       { type: "image", src: clarecoImg1 },
       { type: "image", src: clarecoImg2 },
     ],
-    deliverables: ["Flutter App Source", "Cloud API Integration", "Speech Processing Pipeline", "Multilingual NLP Module"],
+    deliverables: [
+      "Flutter App Source",
+      "Cloud API Integration",
+      "Speech Processing Pipeline",
+      "Multilingual NLP Module",
+    ],
   },
   {
     slug: "smart-12v-dc-motor-controller",
@@ -525,14 +602,27 @@ const projects: Project[] = [
       "12V DC motor control PCB with integrated rotation counting using STM8S003. HALL sensor for real-time speed measurement and MOSFET-based driver for efficient motor operation.",
     longDescription:
       "Designed a reliable 12V DC motor control PCB with integrated rotation counting using an STM8S003 microcontroller. The system utilizes a HALL sensor for precise real-time speed and rotation measurement, while a MOSFET-based driver ensures efficient and smooth motor operation. The PCB layout was optimized for noise immunity, thermal management, and long-term durability. The solution supports customizable control logic, making it suitable for automation, robotics, and industrial motor control applications.",
-    tags: ["STM8S003", "Embedded C", "HALL Sensor", "MOSFET Driver", "PWM", "Power Electronics", "PCB Design"],
+    tags: [
+      "STM8S003",
+      "Embedded C",
+      "HALL Sensor",
+      "MOSFET Driver",
+      "PWM",
+      "Power Electronics",
+      "PCB Design",
+    ],
     icon: Battery,
     highlight: "HALL sensor feedback",
     media: [
       { type: "video", src: motorVideo, poster: motorImg1 },
       { type: "image", src: motorImg1 },
     ],
-    deliverables: ["PCB Layout + Schematic", "STM8 Firmware", "BOM & Gerber Files", "Motor Control Documentation"],
+    deliverables: [
+      "PCB Layout + Schematic",
+      "STM8 Firmware",
+      "BOM & Gerber Files",
+      "Motor Control Documentation",
+    ],
   },
   {
     slug: "imx8-som-custom-base-board",
@@ -646,7 +736,15 @@ const projects: Project[] = [
       "MOSFET-based amplifier with biasing network, coupling capacitors, and load configuration. AC frequency response, transient, and gain simulations validate stability and bandwidth.",
     longDescription:
       "Designed and analyzed a MOSFET-based amplifier according to specified device parameters and performance targets. Developed the complete schematic including biasing network, coupling capacitors, and load configuration. Performed AC frequency response, transient, and gain simulations to validate stability, bandwidth, and signal amplification characteristics. Evaluated cutoff frequency, voltage gain, and operating point to ensure optimal linear performance. The project demonstrates strong expertise in analog circuit design, simulation, and performance optimization.",
-    tags: ["Analog Design", "MOSFET", "AC Analysis", "Transient Analysis", "LTspice", "Signal Integrity", "Frequency Response"],
+    tags: [
+      "Analog Design",
+      "MOSFET",
+      "AC Analysis",
+      "Transient Analysis",
+      "LTspice",
+      "Signal Integrity",
+      "Frequency Response",
+    ],
     icon: Activity,
     highlight: "Simulation-validated",
     media: [
@@ -654,7 +752,12 @@ const projects: Project[] = [
       { type: "image", src: mosfetImg2 },
       { type: "image", src: mosfetImg3 },
     ],
-    deliverables: ["Circuit Schematic", "Simulation Results", "Frequency Response Analysis", "Design Report"],
+    deliverables: [
+      "Circuit Schematic",
+      "Simulation Results",
+      "Frequency Response Analysis",
+      "Design Report",
+    ],
   },
   {
     slug: "miniature-regulated-power-supply",
@@ -665,7 +768,15 @@ const projects: Project[] = [
       "Compact regulated power supply PCB with adjustable output voltage and real-time monitoring. ADC/DAC feedback loop controlled by STM8 microcontroller with seven-segment display output.",
     longDescription:
       "Designed a compact regulated power supply PCB with adjustable output voltage and real-time monitoring. Integrated an ADC to measure input, output, and reference voltages for precise feedback control. Output regulation is achieved through a DAC-driven feedback loop, dynamically maintaining stability under varying loads. Controlled by an STM8 microcontroller, the system executes efficient voltage regulation algorithms. A three-digit seven-segment display provides clear operational feedback, demonstrating robust hardware architecture and precision PCB layout design.",
-    tags: ["STM8", "ADC", "DAC", "Embedded C", "Power Electronics", "Signal Integrity", "PCB Design"],
+    tags: [
+      "STM8",
+      "ADC",
+      "DAC",
+      "Embedded C",
+      "Power Electronics",
+      "Signal Integrity",
+      "PCB Design",
+    ],
     icon: Battery,
     highlight: "DAC feedback control",
     media: [
@@ -674,7 +785,12 @@ const projects: Project[] = [
       { type: "image", src: psuImg2 },
       { type: "image", src: psuImg3 },
     ],
-    deliverables: ["PCB Layout + Schematic", "STM8 Firmware", "BOM & Gerber Files", "Test & Validation Report"],
+    deliverables: [
+      "PCB Layout + Schematic",
+      "STM8 Firmware",
+      "BOM & Gerber Files",
+      "Test & Validation Report",
+    ],
   },
   {
     slug: "modular-creator-rgb-keyboard",
@@ -753,13 +869,24 @@ const projects: Project[] = [
       "Custom USB-C PCB with panelization for six male–female connector pairs, optimized for manufacturing. V-cut segmentation, fresering techniques, and specialized soldering windows for factory assembly.",
     longDescription:
       "Designed a custom USB-C PCB featuring panelization for six male–female connector pairs, optimized for efficient manufacturing and assembly. Implemented a distinctive V-cut segmentation strategy and advanced fresering techniques to improve structural stability and production throughput. Developed specialized soldering windows to ensure precise connector alignment and reliable factory soldering. The project covered full schematic and layout design in KiCad 8, along with detailed 3D visualization and animation in Blender 4.3 for technical presentation.",
-    tags: ["KiCad 8", "USB-C", "PCB Panelization", "V-Cut", "DFM Optimization", "Blender 4.3", "3D Visualization"],
+    tags: [
+      "KiCad 8",
+      "USB-C",
+      "PCB Panelization",
+      "V-Cut",
+      "DFM Optimization",
+      "Blender 4.3",
+      "3D Visualization",
+    ],
     icon: CircuitBoard,
     highlight: "DFM optimized",
-    media: [
-      { type: "video", src: usbcPcbVideo },
+    media: [{ type: "video", src: usbcPcbVideo }],
+    deliverables: [
+      "KiCad PCB + Schematic",
+      "Panelization Layout",
+      "Gerber & BOM Files",
+      "3D Blender Visualization",
     ],
-    deliverables: ["KiCad PCB + Schematic", "Panelization Layout", "Gerber & BOM Files", "3D Blender Visualization"],
   },
   {
     slug: "clareco-clinic-healthcare-platform",
@@ -770,13 +897,24 @@ const projects: Project[] = [
       "Digital healthcare platform enabling appointment scheduling, AI digital assistant conversations, and proactive patient–doctor communication. Built with Flutter for seamless mobile experience.",
     longDescription:
       "Developed Clareco Clinic, a digital healthcare platform designed to streamline doctor–patient interaction and appointment management. The mobile app enables patients to schedule and receive appointment notifications, communicate with a digital assistant, and discuss medical concerns directly from their smartphone. Doctors gain early access to patient inputs, medical insights, and assistant conversations, enabling proactive and personalized care. The platform enhances engagement, accessibility, and operational efficiency in modern healthcare environments.",
-    tags: ["Flutter", "Dart", "REST APIs", "Push Notifications", "Secure Messaging", "AI Digital Assistant", "Cloud Backend"],
+    tags: [
+      "Flutter",
+      "Dart",
+      "REST APIs",
+      "Push Notifications",
+      "Secure Messaging",
+      "AI Digital Assistant",
+      "Cloud Backend",
+    ],
     icon: MonitorSmartphone,
     highlight: "Digital health assistant",
-    media: [
-      { type: "image", src: clarecoClinicImg1 },
+    media: [{ type: "image", src: clarecoClinicImg1 }],
+    deliverables: [
+      "Flutter App Source",
+      "REST API Backend",
+      "Push Notification System",
+      "AI Assistant Integration",
     ],
-    deliverables: ["Flutter App Source", "REST API Backend", "Push Notification System", "AI Assistant Integration"],
   },
   {
     slug: "iot-environmental-imaging-system",
@@ -939,7 +1077,13 @@ export { projects };
 
 const INITIAL_COUNT = 6;
 
-function CardVideo({ item, fallbackSrc }: { item: MediaItem; fallbackSrc?: string }) {
+function CardVideo({
+  item,
+  fallbackSrc,
+}: {
+  item: MediaItem;
+  fallbackSrc?: string;
+}) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hovering, setHovering] = useState(false);
   const posterSrc = item.poster || fallbackSrc;
@@ -983,7 +1127,9 @@ function CardVideo({ item, fallbackSrc }: { item: MediaItem; fallbackSrc?: strin
       >
         <source src={item.src} type="video/mp4" />
       </video>
-      <div className={`absolute inset-0 flex items-center justify-center z-10 pointer-events-none transition-opacity duration-200 ${hovering ? "opacity-0" : "opacity-100"}`}>
+      <div
+        className={`absolute inset-0 flex items-center justify-center z-10 pointer-events-none transition-opacity duration-200 ${hovering ? "opacity-0" : "opacity-100"}`}
+      >
         <div className="rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm border border-white/30 w-10 h-10">
           <Play className="text-white ml-0.5 w-4 h-4" />
         </div>
@@ -1066,10 +1212,7 @@ function MediaSlider({
   return (
     <div className={`relative overflow-hidden ${className || ""}`}>
       {media.map((item, i) => (
-        <div
-          key={i}
-          className={`${i === safeIndex ? "block" : "hidden"}`}
-        >
+        <div key={i} className={`${i === safeIndex ? "block" : "hidden"}`}>
           {item.type === "video" ? (
             isModal ? (
               <>
@@ -1124,7 +1267,10 @@ function MediaSlider({
                 )}
               </>
             ) : (
-              <CardVideo item={item} fallbackSrc={media.find(m => m.type === "image")?.src} />
+              <CardVideo
+                item={item}
+                fallbackSrc={media.find((m) => m.type === "image")?.src}
+              />
             )
           ) : (
             <img
@@ -1212,7 +1358,10 @@ function ProjectModal({
 
       <button
         className="hidden md:flex fixed left-2 lg:left-5 top-1/2 -translate-y-1/2 z-[60] w-12 h-12 items-center justify-center rounded-full bg-primary/15 border-2 border-primary/50 text-primary hover:bg-primary/30 hover:border-primary hover:scale-110 backdrop-blur-md transition-all duration-150 shadow-[0_0_15px_rgba(var(--primary-rgb,0,255,255),0.2)]"
-        onClick={(e) => { e.stopPropagation(); onPrev(); }}
+        onClick={(e) => {
+          e.stopPropagation();
+          onPrev();
+        }}
         data-testid="button-prev-project"
       >
         <ChevronLeft className="w-6 h-6" />
@@ -1220,7 +1369,10 @@ function ProjectModal({
 
       <button
         className="hidden md:flex fixed right-2 lg:right-5 top-1/2 -translate-y-1/2 z-[60] w-12 h-12 items-center justify-center rounded-full bg-primary/15 border-2 border-primary/50 text-primary hover:bg-primary/30 hover:border-primary hover:scale-110 backdrop-blur-md transition-all duration-150 shadow-[0_0_15px_rgba(var(--primary-rgb,0,255,255),0.2)]"
-        onClick={(e) => { e.stopPropagation(); onNext(); }}
+        onClick={(e) => {
+          e.stopPropagation();
+          onNext();
+        }}
         data-testid="button-next-project"
       >
         <ChevronRight className="w-6 h-6" />
@@ -1338,17 +1490,28 @@ export function Portfolio({
   initialSlug,
   initialCategory,
   initialRecommendedIds,
-}: { initialSlug?: string; initialCategory?: string; initialRecommendedIds?: string } = {}) {
+}: {
+  initialSlug?: string;
+  initialCategory?: string;
+  initialRecommendedIds?: string;
+} = {}) {
   const [, setLocation] = useLocation();
 
   const parseRecommendedIds = (ids?: string): Set<number> => {
     if (!ids) return new Set();
-    return new Set(ids.split("-").map(Number).filter((n) => !isNaN(n) && n >= 0 && n < projects.length));
+    return new Set(
+      ids
+        .split("-")
+        .map(Number)
+        .filter((n) => !isNaN(n) && n >= 0 && n < projects.length),
+    );
   };
 
-  const [recommended, setRecommended] = useState<Set<number>>(() => parseRecommendedIds(initialRecommendedIds));
+  const [recommended, setRecommended] = useState<Set<number>>(() =>
+    parseRecommendedIds(initialRecommendedIds),
+  );
   const [activeCategory, setActiveCategory] = useState(
-    initialRecommendedIds ? "recommended" : (initialCategory || "all"),
+    initialRecommendedIds ? "recommended" : initialCategory || "all",
   );
   const [visibleCount, setVisibleCount] = useState(6);
   const [searchQuery, setSearchQuery] = useState("");
@@ -1363,11 +1526,13 @@ export function Portfolio({
   });
 
   useEffect(() => {
-    if (initialRecommendedIds) {
+    if (initialRecommendedIds && !closingRef.current) {
       setRecommended(parseRecommendedIds(initialRecommendedIds));
       setActiveCategory("recommended");
       setTimeout(() => {
-        document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" });
+        document
+          .getElementById("portfolio")
+          ?.scrollIntoView({ behavior: "smooth" });
       }, 100);
     }
   }, [initialRecommendedIds]);
@@ -1403,7 +1568,9 @@ export function Portfolio({
       }
       if (activeCategory === "recommended") {
         if (next.size > 0) {
-          const ids = Array.from(next).sort((a, b) => a - b).join("-");
+          const ids = Array.from(next)
+            .sort((a, b) => a - b)
+            .join("-");
           setLocation(`/recommended/${ids}`);
         } else {
           setActiveCategory("all");
@@ -1416,7 +1583,9 @@ export function Portfolio({
 
   const getRecommendedUrl = () => {
     if (recommended.size === 0) return "";
-    const ids = Array.from(recommended).sort((a, b) => a - b).join("-");
+    const ids = Array.from(recommended)
+      .sort((a, b) => a - b)
+      .join("-");
     const base = typeof window !== "undefined" ? window.location.origin : "";
     return `${base}/recommended/${ids}`;
   };
@@ -1455,15 +1624,23 @@ export function Portfolio({
 
   const categoryBaseUrl =
     activeCategory === "recommended"
-      ? (recommended.size > 0 ? `/recommended/${Array.from(recommended).sort((a, b) => a - b).join("-")}` : "/")
-      : activeCategory === "all" ? "/" : `/category/${activeCategory}`;
+      ? recommended.size > 0
+        ? `/recommended/${Array.from(recommended)
+            .sort((a, b) => a - b)
+            .join("-")}`
+        : "/"
+      : activeCategory === "all"
+        ? "/"
+        : `/category/${activeCategory}`;
 
   const handleCategoryChange = (slug: string) => {
     setActiveCategory(slug);
     setVisibleCount(6);
     if (slug === "recommended") {
       if (recommended.size > 0) {
-        const ids = Array.from(recommended).sort((a, b) => a - b).join("-");
+        const ids = Array.from(recommended)
+          .sort((a, b) => a - b)
+          .join("-");
         setLocation(`/recommended/${ids}`);
       } else {
         setLocation("/");
@@ -1486,7 +1663,9 @@ export function Portfolio({
     closingRef.current = true;
     setSelectedIndex(null);
     setLocation(categoryBaseUrl);
-    setTimeout(() => { closingRef.current = false; }, 50);
+    setTimeout(() => {
+      closingRef.current = false;
+    }, 200);
   };
 
   const handlePrev = () => {
@@ -1583,7 +1762,11 @@ export function Portfolio({
                   onClick={copyRecommendedLink}
                   className="px-3 py-2 rounded-lg text-sm font-mono transition-all border bg-card/60 border-border/40 hover:border-primary/30 hover:text-foreground text-muted-foreground flex items-center gap-1.5"
                 >
-                  {copiedLink ? <Check className="w-3.5 h-3.5 text-green-400" /> : <Link2 className="w-3.5 h-3.5" />}
+                  {copiedLink ? (
+                    <Check className="w-3.5 h-3.5 text-green-400" />
+                  ) : (
+                    <Link2 className="w-3.5 h-3.5" />
+                  )}
                   {copiedLink ? "Copied!" : "Copy Link"}
                 </button>
               </>
@@ -1596,7 +1779,10 @@ export function Portfolio({
               data-testid="input-search-projects"
               type="text"
               value={searchQuery}
-              onChange={(e) => { setSearchQuery(e.target.value); setVisibleCount(6); }}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                setVisibleCount(6);
+              }}
               placeholder="Search projects by title, skills, technology..."
               className="w-full md:w-80 pl-10 pr-9 py-2 rounded-lg text-sm font-mono bg-card/60 border border-border/40 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/50 transition-colors"
             />
@@ -1692,7 +1878,9 @@ export function Portfolio({
                           : "bg-muted/30 border-border/50 text-muted-foreground hover:border-amber-500/40 hover:text-amber-400"
                       }`}
                     >
-                      <ThumbsUp className={`w-3.5 h-3.5 ${isRecommended ? "fill-amber-400" : ""}`} />
+                      <ThumbsUp
+                        className={`w-3.5 h-3.5 ${isRecommended ? "fill-amber-400" : ""}`}
+                      />
                     </button>
                   </div>
                 </div>
