@@ -275,6 +275,75 @@ const projects: Project[] = [
     ],
   },
   {
+    slug: "miniature-regulated-power-supply",
+    title: "Miniature Regulated Power Supply",
+    category: "PCB & Hardware",
+    filterSlugs: ["pcb-hardware", "embedded-firmware"],
+    description:
+      "Compact regulated power supply PCB with adjustable output voltage and real-time monitoring. ADC/DAC feedback loop controlled by STM8 microcontroller with seven-segment display output.",
+    longDescription:
+      "Designed a compact regulated power supply PCB with adjustable output voltage and real-time monitoring. Integrated an ADC to measure input, output, and reference voltages for precise feedback control. Output regulation is achieved through a DAC-driven feedback loop, dynamically maintaining stability under varying loads. Controlled by an STM8 microcontroller, the system executes efficient voltage regulation algorithms. A three-digit seven-segment display provides clear operational feedback, demonstrating robust hardware architecture and precision PCB layout design.",
+    tags: [
+      "STM8",
+      "ADC",
+      "DAC",
+      "Embedded C",
+      "Power Electronics",
+      "Signal Integrity",
+      "PCB Design",
+    ],
+    icon: Battery,
+    highlight: "DAC feedback control",
+    media: [
+      { type: "video", src: psuVideo, poster: psuImg1 },
+      { type: "image", src: psuImg1 },
+      { type: "image", src: psuImg2 },
+      { type: "image", src: psuImg3 },
+    ],
+    deliverables: [
+      "PCB Layout + Schematic",
+      "STM8 Firmware",
+      "BOM & Gerber Files",
+      "Test & Validation Report",
+    ],
+  },
+  {
+    slug: "nrf5340-lora-gnss-iot-board",
+    title: "nRF5340 LoRa GNSS IoT Board",
+    category: "IoT / Wireless Sensing",
+    filterSlugs: ["iot-connected-devices", "pcb-hardware", "embedded-firmware"],
+    description:
+      "Multi-communication IoT board with Nordic nRF5340 SoC, Semtech SX1302 LoRa, Quectel L96 GNSS, 256Mbit SPI flash, and multiple sensors - designed for asset tracking and environmental monitoring.",
+    longDescription:
+      "Designed a multi-communication IoT board based on Nordic nRF5340 dual-core SoC with BLE support. The system integrates a Semtech SX1302 LoRa module for long-range connectivity and a Quectel L96 GNSS module for precise positioning. It features 256Mbit external NOR flash via SPI and multiple sensors including DHT20, LSM6DSOX 6-axis IMU, and OPT3001 light sensor. The board supports JTAG, I2C, UART, and GPIO interfaces, enabling scalable applications in asset tracking and environmental monitoring.",
+    tags: [
+      "nRF5340",
+      "SX1302 LoRa",
+      "Quectel L96 GNSS",
+      "BLE",
+      "SPI Flash",
+      "DHT20",
+      "LSM6DSOX",
+      "OPT3001",
+      "High-Speed PCB",
+    ],
+    icon: Antenna,
+    highlight: "BLE + LoRa + GNSS",
+    media: [
+      { type: "image", src: nrf5340Img1 },
+      { type: "image", src: nrf5340Img2 },
+      { type: "image", src: nrf5340Img3 },
+      { type: "image", src: nrf5340Img4 },
+      { type: "image", src: nrf5340Img5 },
+    ],
+    deliverables: [
+      "Altium PCB + Schematic",
+      "Block Diagram",
+      "BOM & Gerber Files",
+      "Sensor Integration Guide",
+    ],
+  },
+  {
     slug: "esp32-lorawan-gateway-v1",
     title: "ESP32 LoRaWAN Gateway V1",
     category: "IoT / Wireless Sensing",
@@ -310,36 +379,7 @@ const projects: Project[] = [
       "Production Test Guide",
     ],
   },
-  {
-    slug: "raspberry-pi-motor-control-hat",
-    title: "Raspberry Pi Motor Control HAT",
-    category: "PCB & Hardware",
-    filterSlugs: ["pcb-hardware", "embedded-firmware"],
-    description:
-      "Custom Raspberry Pi HAT for motor control and sensor integration. KiCad 9 design with motor drivers, regulated power supply, and GPIO/I2C/SPI interfaces in a stackable form factor.",
-    longDescription:
-      "Designed and developed a custom Raspberry Pi expansion board (HAT) for motor control and sensor integration in robotics and automation systems. Created in KiCad 9, the PCB integrates motor driver circuits, regulated power supply, and multiple GPIO, I2C, and SPI interfaces for analog and digital sensors. The compact stackable form factor ensures seamless integration with Raspberry Pi. Delivered complete design files, Gerbers, BOM, and 3D visualizations with Blender animations for technical presentation.",
-    tags: [
-      "KiCad 9",
-      "Raspberry Pi",
-      "GPIO",
-      "I2C",
-      "SPI",
-      "DC Motor Drivers",
-      "Power Regulation",
-      "Blender 3D",
-    ],
-    icon: CircuitBoard,
-    highlight: "Stackable HAT design",
-    media: [{ type: "video", src: rpiHatVideo }],
-    deliverables: [
-      "KiCad PCB + Schematic",
-      "Gerber & BOM Files",
-      "3D Blender Visualization",
-      "Integration Guide",
-    ],
-  },
-  {
+    {
     slug: "ai-predictive-maintenance-digital-twin",
     title: "AI Predictive Maintenance Digital Twin",
     category: "Embedded Linux & BSP",
@@ -439,6 +479,34 @@ const projects: Project[] = [
     ],
   },
   {
+    slug: "usb-c-pcb-panelization-design",
+    title: "USB-C PCB Panelization Design",
+    category: "PCB & Hardware",
+    filterSlugs: ["pcb-hardware"],
+    description:
+      "Custom USB-C PCB with panelization for six male–female connector pairs, optimized for manufacturing. V-cut segmentation, fresering techniques, and specialized soldering windows for factory assembly.",
+    longDescription:
+      "Designed a custom USB-C PCB featuring panelization for six male–female connector pairs, optimized for efficient manufacturing and assembly. Implemented a distinctive V-cut segmentation strategy and advanced fresering techniques to improve structural stability and production throughput. Developed specialized soldering windows to ensure precise connector alignment and reliable factory soldering. The project covered full schematic and layout design in KiCad 8, along with detailed 3D visualization and animation in Blender 4.3 for technical presentation.",
+    tags: [
+      "KiCad 8",
+      "USB-C",
+      "PCB Panelization",
+      "V-Cut",
+      "DFM Optimization",
+      "Blender 4.3",
+      "3D Visualization",
+    ],
+    icon: CircuitBoard,
+    highlight: "DFM optimized",
+    media: [{ type: "video", src: usbcPcbVideo }],
+    deliverables: [
+      "KiCad PCB + Schematic",
+      "Panelization Layout",
+      "Gerber & BOM Files",
+      "3D Blender Visualization",
+    ],
+  },
+  {
     slug: "vg-500-multicast-tunnel-gateway",
     title: "VG-500 Multicast Tunnel Gateway",
     category: "Embedded Linux & BSP",
@@ -535,43 +603,7 @@ const projects: Project[] = [
       "AWS IoT Integration Guide",
     ],
   },
-  {
-    slug: "nrf5340-lora-gnss-iot-board",
-    title: "nRF5340 LoRa GNSS IoT Board",
-    category: "IoT / Wireless Sensing",
-    filterSlugs: ["iot-connected-devices", "pcb-hardware", "embedded-firmware"],
-    description:
-      "Multi-communication IoT board with Nordic nRF5340 SoC, Semtech SX1302 LoRa, Quectel L96 GNSS, 256Mbit SPI flash, and multiple sensors - designed for asset tracking and environmental monitoring.",
-    longDescription:
-      "Designed a multi-communication IoT board based on Nordic nRF5340 dual-core SoC with BLE support. The system integrates a Semtech SX1302 LoRa module for long-range connectivity and a Quectel L96 GNSS module for precise positioning. It features 256Mbit external NOR flash via SPI and multiple sensors including DHT20, LSM6DSOX 6-axis IMU, and OPT3001 light sensor. The board supports JTAG, I2C, UART, and GPIO interfaces, enabling scalable applications in asset tracking and environmental monitoring.",
-    tags: [
-      "nRF5340",
-      "SX1302 LoRa",
-      "Quectel L96 GNSS",
-      "BLE",
-      "SPI Flash",
-      "DHT20",
-      "LSM6DSOX",
-      "OPT3001",
-      "High-Speed PCB",
-    ],
-    icon: Antenna,
-    highlight: "BLE + LoRa + GNSS",
-    media: [
-      { type: "image", src: nrf5340Img1 },
-      { type: "image", src: nrf5340Img2 },
-      { type: "image", src: nrf5340Img3 },
-      { type: "image", src: nrf5340Img4 },
-      { type: "image", src: nrf5340Img5 },
-    ],
-    deliverables: [
-      "Altium PCB + Schematic",
-      "Block Diagram",
-      "BOM & Gerber Files",
-      "Sensor Integration Guide",
-    ],
-  },
-  {
+    {
     slug: "ai-ml-lane-following-simulink",
     title: "AI/ML Lane Following in Simulink",
     category: "Autonomous Systems",
@@ -704,6 +736,35 @@ const projects: Project[] = [
     ],
   },
   {
+    slug: "raspberry-pi-motor-control-hat",
+    title: "Raspberry Pi Motor Control HAT",
+    category: "PCB & Hardware",
+    filterSlugs: ["pcb-hardware", "embedded-firmware"],
+    description:
+      "Custom Raspberry Pi HAT for motor control and sensor integration. KiCad 9 design with motor drivers, regulated power supply, and GPIO/I2C/SPI interfaces in a stackable form factor.",
+    longDescription:
+      "Designed and developed a custom Raspberry Pi expansion board (HAT) for motor control and sensor integration in robotics and automation systems. Created in KiCad 9, the PCB integrates motor driver circuits, regulated power supply, and multiple GPIO, I2C, and SPI interfaces for analog and digital sensors. The compact stackable form factor ensures seamless integration with Raspberry Pi. Delivered complete design files, Gerbers, BOM, and 3D visualizations with Blender animations for technical presentation.",
+    tags: [
+      "KiCad 9",
+      "Raspberry Pi",
+      "GPIO",
+      "I2C",
+      "SPI",
+      "DC Motor Drivers",
+      "Power Regulation",
+      "Blender 3D",
+    ],
+    icon: CircuitBoard,
+    highlight: "Stackable HAT design",
+    media: [{ type: "video", src: rpiHatVideo }],
+    deliverables: [
+      "KiCad PCB + Schematic",
+      "Gerber & BOM Files",
+      "3D Blender Visualization",
+      "Integration Guide",
+    ],
+  },
+  {
     slug: "nomad-rgb-mechanical-keyboard",
     title: "Nomad RGB Mechanical Keyboard",
     category: "Consumer Electronics",
@@ -803,40 +864,7 @@ const projects: Project[] = [
       "Design Report",
     ],
   },
-  {
-    slug: "miniature-regulated-power-supply",
-    title: "Miniature Regulated Power Supply",
-    category: "PCB & Hardware",
-    filterSlugs: ["pcb-hardware", "embedded-firmware"],
-    description:
-      "Compact regulated power supply PCB with adjustable output voltage and real-time monitoring. ADC/DAC feedback loop controlled by STM8 microcontroller with seven-segment display output.",
-    longDescription:
-      "Designed a compact regulated power supply PCB with adjustable output voltage and real-time monitoring. Integrated an ADC to measure input, output, and reference voltages for precise feedback control. Output regulation is achieved through a DAC-driven feedback loop, dynamically maintaining stability under varying loads. Controlled by an STM8 microcontroller, the system executes efficient voltage regulation algorithms. A three-digit seven-segment display provides clear operational feedback, demonstrating robust hardware architecture and precision PCB layout design.",
-    tags: [
-      "STM8",
-      "ADC",
-      "DAC",
-      "Embedded C",
-      "Power Electronics",
-      "Signal Integrity",
-      "PCB Design",
-    ],
-    icon: Battery,
-    highlight: "DAC feedback control",
-    media: [
-      { type: "video", src: psuVideo, poster: psuImg1 },
-      { type: "image", src: psuImg1 },
-      { type: "image", src: psuImg2 },
-      { type: "image", src: psuImg3 },
-    ],
-    deliverables: [
-      "PCB Layout + Schematic",
-      "STM8 Firmware",
-      "BOM & Gerber Files",
-      "Test & Validation Report",
-    ],
-  },
-  {
+    {
     slug: "modular-creator-rgb-keyboard",
     title: "Modular Creator RGB Keyboard",
     category: "Consumer Electronics",
@@ -904,35 +932,7 @@ const projects: Project[] = [
       "CE Compliance Docs",
     ],
   },
-  {
-    slug: "usb-c-pcb-panelization-design",
-    title: "USB-C PCB Panelization Design",
-    category: "PCB & Hardware",
-    filterSlugs: ["pcb-hardware"],
-    description:
-      "Custom USB-C PCB with panelization for six male–female connector pairs, optimized for manufacturing. V-cut segmentation, fresering techniques, and specialized soldering windows for factory assembly.",
-    longDescription:
-      "Designed a custom USB-C PCB featuring panelization for six male–female connector pairs, optimized for efficient manufacturing and assembly. Implemented a distinctive V-cut segmentation strategy and advanced fresering techniques to improve structural stability and production throughput. Developed specialized soldering windows to ensure precise connector alignment and reliable factory soldering. The project covered full schematic and layout design in KiCad 8, along with detailed 3D visualization and animation in Blender 4.3 for technical presentation.",
-    tags: [
-      "KiCad 8",
-      "USB-C",
-      "PCB Panelization",
-      "V-Cut",
-      "DFM Optimization",
-      "Blender 4.3",
-      "3D Visualization",
-    ],
-    icon: CircuitBoard,
-    highlight: "DFM optimized",
-    media: [{ type: "video", src: usbcPcbVideo }],
-    deliverables: [
-      "KiCad PCB + Schematic",
-      "Panelization Layout",
-      "Gerber & BOM Files",
-      "3D Blender Visualization",
-    ],
-  },
-  {
+    {
     slug: "clareco-clinic-healthcare-platform",
     title: "Clareco Clinic Healthcare Platform",
     category: "AI / Mobile App",
