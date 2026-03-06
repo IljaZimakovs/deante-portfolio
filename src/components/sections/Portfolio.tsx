@@ -118,6 +118,14 @@ const netduino_cam_1 = "/images/netduino_cam1.jpg";
 const netduino_cam_2 = "/images/netduino_cam3.jpg";
 const netduino_cam_3 = "/images/netduino_cam4.jpg";
 const netduino_cam_4 = "/images/netduino_cam2.jpg";
+const ne101_mqtt_lte_iot_camera_1 = "/images/ne101_mqtt_lte_iot_camera_1.jpg"
+const ne101_mqtt_lte_iot_camera_2 = "/images/ne101_mqtt_lte_iot_camera_2.jpg"
+const ne101_mqtt_lte_iot_camera_3 = "/images/ne101_mqtt_lte_iot_camera_3.jpg"
+const ne101_mqtt_lte_iot_camera_4 = "/images/ne101_mqtt_lte_iot_camera_4.jpg"
+const ne101_mqtt_lte_iot_camera_5 = "/images/ne101_mqtt_lte_iot_camera_5.jpg"
+const ne101_mqtt_lte_iot_camera_6 = "/images/ne101_mqtt_lte_iot_camera_6.jpg"
+const ne101_mqtt_lte_iot_camera_7 = "/images/ne101_mqtt_lte_iot_camera_7.jpg"
+const ne101_mqtt_lte_iot_camera_8 = "/images/ne101_mqtt_lte_iot_camera_8.jpg"
 
 interface MediaItem {
   type: "image" | "video";
@@ -308,6 +316,49 @@ const projects: Project[] = [
     ],
   },
   {
+    slug: "ne101-mqtt-lte-iot-camera",
+    title: "NE101 MQTT LTE IoT Camera",
+    category: "IoT & Connected Devices / Embedded Firmware",
+    filterSlugs: [
+      "embedded-firmware",
+      "iot-connected-devices"
+    ],
+    description:
+      "Battery-powered IoT camera using OV5640 and Cat.1 LTE module to capture images and transmit them via MQTT/MQTTS with JSON payloads for remote monitoring, automation systems, and cloud-based image analytics.",
+    longDescription:
+      "Developed a low-power IoT sensing camera using the OV5640 image sensor with optional Cat.1 LTE connectivity via the EG912U module. The device supports Wi-Fi AP configuration, MQTT/MQTTS image reporting, scheduled and event-based captures, and remote firmware management. Captured images are encoded in Base64 and transmitted as JSON payloads to cloud platforms. The system supports PIR triggers, scheduled captures, and battery monitoring, making it suitable for remote monitoring and edge IoT deployments.",
+    tags: [
+      "OV5640 Camera",
+      "EG912U LTE",
+      "MQTT",
+      "MQTTS",
+      "Embedded Systems",
+      "IoT Camera",
+      "Wi-Fi AP",
+      "JSON Telemetry",
+      "Battery Powered"
+    ],
+    icon: Wifi,
+    highlight: "MQTT Image Streaming",
+    media: [
+      { type: "image", src: ne101_mqtt_lte_iot_camera_1 },
+      { type: "image", src: ne101_mqtt_lte_iot_camera_2 },
+      { type: "image", src: ne101_mqtt_lte_iot_camera_3 },
+      { type: "image", src: ne101_mqtt_lte_iot_camera_4 },
+      { type: "image", src: ne101_mqtt_lte_iot_camera_5 },
+      { type: "image", src: ne101_mqtt_lte_iot_camera_6 },
+      { type: "image", src: ne101_mqtt_lte_iot_camera_7 },
+      { type: "image", src: ne101_mqtt_lte_iot_camera_8 }
+    ],
+    deliverables: [
+      "Embedded Camera Firmware",
+      "MQTT/MQTTS Data Integration",
+      "Device Configuration Web Interface",
+      "IoT Cloud Communication Setup",
+      "Hardware Integration Documentation"
+    ]
+  },
+  {
     slug: "nrf5340-lora-gnss-iot-board",
     title: "nRF5340 LoRa GNSS IoT Board",
     category: "IoT / Wireless Sensing",
@@ -379,7 +430,7 @@ const projects: Project[] = [
       "Production Test Guide",
     ],
   },
-    {
+  {
     slug: "ai-predictive-maintenance-digital-twin",
     title: "AI Predictive Maintenance Digital Twin",
     category: "Embedded Linux & BSP",
@@ -603,7 +654,7 @@ const projects: Project[] = [
       "AWS IoT Integration Guide",
     ],
   },
-    {
+  {
     slug: "ai-ml-lane-following-simulink",
     title: "AI/ML Lane Following in Simulink",
     category: "Autonomous Systems",
@@ -864,7 +915,7 @@ const projects: Project[] = [
       "Design Report",
     ],
   },
-    {
+  {
     slug: "modular-creator-rgb-keyboard",
     title: "Modular Creator RGB Keyboard",
     category: "Consumer Electronics",
@@ -932,7 +983,7 @@ const projects: Project[] = [
       "CE Compliance Docs",
     ],
   },
-    {
+  {
     slug: "clareco-clinic-healthcare-platform",
     title: "Clareco Clinic Healthcare Platform",
     category: "AI / Mobile App",
@@ -1348,8 +1399,8 @@ function MediaSlider({
               <button
                 key={i}
                 className={`rounded-full transition-all ${i === safeIndex
-                    ? "w-5 h-1.5 bg-primary"
-                    : "w-1.5 h-1.5 bg-foreground/40 hover:bg-foreground/70"
+                  ? "w-5 h-1.5 bg-primary"
+                  : "w-1.5 h-1.5 bg-foreground/40 hover:bg-foreground/70"
                   }`}
                 onClick={(e) => goTo(i, e)}
                 data-testid={`button-media-dot-${i}`}
@@ -1778,8 +1829,8 @@ export function Portfolio({
                 data-testid={`filter-${cat.slug}`}
                 onClick={() => handleCategoryChange(cat.slug)}
                 className={`px-4 py-2 rounded-lg text-sm font-mono transition-all border ${activeCategory === cat.slug
-                    ? "bg-primary/15 text-primary border-primary/40"
-                    : "bg-card/60 text-muted-foreground border-border/40 hover:border-primary/30 hover:text-foreground"
+                  ? "bg-primary/15 text-primary border-primary/40"
+                  : "bg-card/60 text-muted-foreground border-border/40 hover:border-primary/30 hover:text-foreground"
                   }`}
               >
                 {cat.name}
@@ -1791,8 +1842,8 @@ export function Portfolio({
                   data-testid="filter-recommended"
                   onClick={() => handleCategoryChange("recommended")}
                   className={`px-4 py-2 rounded-lg text-sm font-mono transition-all border flex items-center gap-1.5 ${activeCategory === "recommended"
-                      ? "bg-amber-500/15 text-amber-400 border-amber-500/40"
-                      : "bg-card/60 text-muted-foreground border-border/40 hover:border-amber-500/30 hover:text-foreground"
+                    ? "bg-amber-500/15 text-amber-400 border-amber-500/40"
+                    : "bg-card/60 text-muted-foreground border-border/40 hover:border-amber-500/30 hover:text-foreground"
                     }`}
                 >
                   <ThumbsUp className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
@@ -1914,8 +1965,8 @@ export function Portfolio({
                       data-testid={`button-recommend-${idx}`}
                       onClick={(e) => toggleRecommended(globalIndex, e)}
                       className={`w-8 h-8 rounded-lg flex items-center justify-center border transition-all ${isRecommended
-                          ? "bg-amber-500/15 border-amber-500/50 text-amber-400"
-                          : "bg-muted/30 border-border/50 text-muted-foreground hover:border-amber-500/40 hover:text-amber-400"
+                        ? "bg-amber-500/15 border-amber-500/50 text-amber-400"
+                        : "bg-muted/30 border-border/50 text-muted-foreground hover:border-amber-500/40 hover:text-amber-400"
                         }`}
                     >
                       <ThumbsUp
