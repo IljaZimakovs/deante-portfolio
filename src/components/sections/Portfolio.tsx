@@ -338,7 +338,7 @@ const projects: Project[] = [
       "JSON Telemetry",
       "Battery Powered"
     ],
-    icon: Wifi,
+    icon: Camera,
     highlight: "MQTT Image Streaming",
     media: [
       { type: "image", src: ne101_mqtt_lte_iot_camera_1 },
