@@ -25,6 +25,7 @@ import {
   ThumbsUp,
   Link2,
   Check,
+  Camera,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -113,6 +114,10 @@ const vg500Img1 = "/images/image_1772604751479.jpg";
 const mosfetImg1 = "/images/image_1772545256057.jpg";
 const mosfetImg2 = "/images/image_1772545261768.jpg";
 const mosfetImg3 = "/images/image_1772545266834.jpg";
+const netduino_cam_1 = "/images/netduino_cam1.jpg";
+const netduino_cam_2 = "/images/netduino_cam3.jpg";
+const netduino_cam_3 = "/images/netduino_cam4.jpg";
+const netduino_cam_4 = "/images/netduino_cam2.jpg";
 
 interface MediaItem {
   type: "image" | "video";
@@ -228,6 +233,45 @@ const projects: Project[] = [
       "Block Diagram",
       "BOM & Gerber Files",
       "Signal Integrity Report",
+    ],
+  },
+  {
+    slug: "netduino-smart-ai-camera",
+    title: "Netduino Smart AI Camera",
+    category: "IoT & Connected Devices / Embedded Firmware",
+    filterSlugs: [
+      "embedded-firmware",
+      "iot-connected-devices",
+    ],
+    description:
+      "Embedded smart camera built with Netduino and ArduCam OV2640 that captures images and sends them to a cloud server for AI-based object detection and automated alert notifications.",
+    longDescription:
+      "Developed a smart camera system integrating a Netduino microcontroller with an ArduCam OV2640 module to capture images and transmit them to a middleware server for AI-based object detection. Firmware ports Arduino camera libraries to the .NET Micro Framework using SPI and I2C communication. Captured frames are uploaded to a cloud processing service running YOLO detection models. The system enables event-based monitoring and can trigger notifications such as email or SMS alerts when specific objects are detected.",
+    tags: [
+      "Netduino",
+      "ArduCam OV2640",
+      "C#",
+      ".NET Micro Framework",
+      "SPI",
+      "I2C",
+      "Python Flask",
+      "YOLO",
+      "AWS EC2",
+    ],
+    icon: Camera,
+    highlight: "AI Vision Alerts",
+    media: [
+      { type: "image", src: netduino_cam_1 },
+      { type: "image", src: netduino_cam_2 },
+      { type: "image", src: netduino_cam_3 },
+      { type: "image", src: netduino_cam_4 },
+    ],
+    deliverables: [
+      "Embedded Firmware",
+      "Camera Interface Integration",
+      "Middleware Upload API",
+      "AI Detection Pipeline",
+      "System Documentation",
     ],
   },
   {
@@ -1092,7 +1136,7 @@ function CardVideo({
     setHovering(true);
     if (videoRef.current) {
       videoRef.current.currentTime = 0;
-      videoRef.current.play().catch(() => {});
+      videoRef.current.play().catch(() => { });
     }
   }, []);
 
@@ -1303,11 +1347,10 @@ function MediaSlider({
             {media.map((item, i) => (
               <button
                 key={i}
-                className={`rounded-full transition-all ${
-                  i === safeIndex
+                className={`rounded-full transition-all ${i === safeIndex
                     ? "w-5 h-1.5 bg-primary"
                     : "w-1.5 h-1.5 bg-foreground/40 hover:bg-foreground/70"
-                }`}
+                  }`}
                 onClick={(e) => goTo(i, e)}
                 data-testid={`button-media-dot-${i}`}
               />
@@ -1609,25 +1652,25 @@ export function Portfolio({
 
   const filteredProjects = searchQuery.trim()
     ? categoryFiltered.filter((p) => {
-        const q = searchQuery.toLowerCase();
-        return (
-          p.title.toLowerCase().includes(q) ||
-          p.category.toLowerCase().includes(q) ||
-          p.description.toLowerCase().includes(q) ||
-          p.longDescription.toLowerCase().includes(q) ||
-          p.highlight.toLowerCase().includes(q) ||
-          p.tags.some((t) => t.toLowerCase().includes(q)) ||
-          p.deliverables.some((d) => d.toLowerCase().includes(q))
-        );
-      })
+      const q = searchQuery.toLowerCase();
+      return (
+        p.title.toLowerCase().includes(q) ||
+        p.category.toLowerCase().includes(q) ||
+        p.description.toLowerCase().includes(q) ||
+        p.longDescription.toLowerCase().includes(q) ||
+        p.highlight.toLowerCase().includes(q) ||
+        p.tags.some((t) => t.toLowerCase().includes(q)) ||
+        p.deliverables.some((d) => d.toLowerCase().includes(q))
+      );
+    })
     : categoryFiltered;
 
   const categoryBaseUrl =
     activeCategory === "recommended"
       ? recommended.size > 0
         ? `/recommended/${Array.from(recommended)
-            .sort((a, b) => a - b)
-            .join("-")}`
+          .sort((a, b) => a - b)
+          .join("-")}`
         : "/"
       : activeCategory === "all"
         ? "/"
@@ -1704,7 +1747,7 @@ export function Portfolio({
     activeCategory === "recommended"
       ? "Suggested"
       : filterCategories.find((c) => c.slug === activeCategory)?.name ||
-        "All Projects";
+      "All Projects";
 
   return (
     <section id="portfolio" className="py-24 relative">
@@ -1734,11 +1777,10 @@ export function Portfolio({
                 key={cat.slug}
                 data-testid={`filter-${cat.slug}`}
                 onClick={() => handleCategoryChange(cat.slug)}
-                className={`px-4 py-2 rounded-lg text-sm font-mono transition-all border ${
-                  activeCategory === cat.slug
+                className={`px-4 py-2 rounded-lg text-sm font-mono transition-all border ${activeCategory === cat.slug
                     ? "bg-primary/15 text-primary border-primary/40"
                     : "bg-card/60 text-muted-foreground border-border/40 hover:border-primary/30 hover:text-foreground"
-                }`}
+                  }`}
               >
                 {cat.name}
               </button>
@@ -1748,11 +1790,10 @@ export function Portfolio({
                 <button
                   data-testid="filter-recommended"
                   onClick={() => handleCategoryChange("recommended")}
-                  className={`px-4 py-2 rounded-lg text-sm font-mono transition-all border flex items-center gap-1.5 ${
-                    activeCategory === "recommended"
+                  className={`px-4 py-2 rounded-lg text-sm font-mono transition-all border flex items-center gap-1.5 ${activeCategory === "recommended"
                       ? "bg-amber-500/15 text-amber-400 border-amber-500/40"
                       : "bg-card/60 text-muted-foreground border-border/40 hover:border-amber-500/30 hover:text-foreground"
-                  }`}
+                    }`}
                 >
                   <ThumbsUp className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                   Suggested ({recommended.size})
@@ -1872,11 +1913,10 @@ export function Portfolio({
                     <button
                       data-testid={`button-recommend-${idx}`}
                       onClick={(e) => toggleRecommended(globalIndex, e)}
-                      className={`w-8 h-8 rounded-lg flex items-center justify-center border transition-all ${
-                        isRecommended
+                      className={`w-8 h-8 rounded-lg flex items-center justify-center border transition-all ${isRecommended
                           ? "bg-amber-500/15 border-amber-500/50 text-amber-400"
                           : "bg-muted/30 border-border/50 text-muted-foreground hover:border-amber-500/40 hover:text-amber-400"
-                      }`}
+                        }`}
                     >
                       <ThumbsUp
                         className={`w-3.5 h-3.5 ${isRecommended ? "fill-amber-400" : ""}`}
