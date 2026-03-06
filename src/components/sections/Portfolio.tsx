@@ -126,6 +126,11 @@ const ne101_mqtt_lte_iot_camera_5 = "/images/ne101_mqtt_lte_iot_camera_5.jpg"
 const ne101_mqtt_lte_iot_camera_6 = "/images/ne101_mqtt_lte_iot_camera_6.jpg"
 const ne101_mqtt_lte_iot_camera_7 = "/images/ne101_mqtt_lte_iot_camera_7.jpg"
 const ne101_mqtt_lte_iot_camera_8 = "/images/ne101_mqtt_lte_iot_camera_8.jpg"
+const pi_camera_doorbell_notifications_1 = "/images/pi_camera_doorbell_notifications_1.jpg"
+const pi_camera_doorbell_notifications_2 = "/images/pi_camera_doorbell_notifications_2.jpg"
+const pi_camera_doorbell_notifications_3 = "/images/pi_camera_doorbell_notifications_3.jpg"
+const pi_camera_doorbell_notifications_4 = "/images/pi_camera_doorbell_notifications_4.jpg"
+const pi_camera_doorbell_notifications_5 = "/images/pi_camera_doorbell_notifications_5.jpg"
 
 interface MediaItem {
   type: "image" | "video";
@@ -356,6 +361,46 @@ const projects: Project[] = [
       "Device Configuration Web Interface",
       "IoT Cloud Communication Setup",
       "Hardware Integration Documentation"
+    ]
+  },
+  {
+    slug: "pi-camera-doorbell-notifications",
+    title: "RF Doorbell Camera Alert System",
+    category: "IoT & Connected Devices / Embedded Firmware",
+    filterSlugs: [
+      "embedded-firmware",
+      "iot-connected-devices"
+    ],
+    description:
+      "Built a low-cost smart doorbell using Raspberry Pi Zero W, Pi Camera, and 433MHz RF receiver to capture visitor images and send MQTT-based notifications through Home Assistant and Telegram.",
+    longDescription:
+      "Developed a DIY smart doorbell system using Raspberry Pi Zero W, a Pi Camera, and a 433MHz RF receiver to intercept wireless doorbell signals. When the button is pressed, the system captures an image, publishes it over MQTT, and forwards notifications through Home Assistant and Telegram. The solution combines RF event detection, camera control, MQTT messaging, and home automation integration to deliver an affordable connected doorbell with remote image alerts.",
+    tags: [
+      "Raspberry Pi Zero W",
+      "Pi Camera",
+      "433MHz RF Receiver",
+      "MQTT",
+      "Home Assistant",
+      "Telegram",
+      "Python",
+      "GPIO",
+      "Rpi-rf"
+    ],
+    icon: Camera,
+    highlight: "RF Doorbell Camera Alerts",
+    media: [
+      { type: "image", src: pi_camera_doorbell_notifications_1 },
+      { type: "image", src: pi_camera_doorbell_notifications_2 },
+      { type: "image", src: pi_camera_doorbell_notifications_3 },
+      { type: "image", src: pi_camera_doorbell_notifications_4 },
+      { type: "image", src: pi_camera_doorbell_notifications_5 }
+    ],
+    deliverables: [
+      "Python Doorbell Detection Script",
+      "Pi Camera Capture Integration",
+      "MQTT Notification Pipeline",
+      "Home Assistant Automation Setup",
+      "Telegram Alert Integration"
     ]
   },
   {
