@@ -752,7 +752,7 @@ const projects: Project[] = [
   },
   {
     slug: "kria-kv260-fir-filter-acceleration",
-    title: "KV260 FIR Filter Acceleration",
+    title: "High-Throughput FIR DSP Accelerator on KV260",
     category: "Embedded Firmware Development / Hardware Bring-Up & Debugging",
     filterSlugs: [
       "embedded-firmware",
@@ -891,7 +891,7 @@ const projects: Project[] = [
   },
   {
     slug: "kria-kv260-petalinux-bsp",
-    title: "KV260 Camera PetaLinux BSP Setup",
+    title: "Embedded Vision Linux Platform for Kria KV260",
     category: "Embedded Linux & BSP",
     filterSlugs: [
       "embedded-linux-bsp",
@@ -929,7 +929,7 @@ const projects: Project[] = [
   },
   {
     slug: "k26-som-multi-boot-custom-carrier",
-    title: "K26 SoM Multi-Boot Carrier Setup",
+    title: "Flexible Boot Architecture for Kria K26 Custom Carrier",
     category: "Embedded Linux & BSP / Hardware Bring-Up & Debugging",
     filterSlugs: [
       "embedded-linux-bsp",
@@ -1129,7 +1129,7 @@ const projects: Project[] = [
   },
   {
     slug: "zynq-mpsoc-vivado-ps-configuration",
-    title: "Zynq MPSoC Camera PS Vivado Setup",
+    title: "Foundational Vivado Platform for Zynq UltraScale+ Processing System",
     category: "Hardware Bring-Up & Debugging / Embedded Firmware Development",
     filterSlugs: [
       "hardware-debugging",
@@ -1202,7 +1202,7 @@ const projects: Project[] = [
   },
   {
     slug: "versal-vitis-hardware-in-the-loop",
-    title: "Versal Vitis Hardware-in-the-Loop",
+    title: "Ethernet-Driven FPGA Hardware Validation for Versal Subsystems",
     category: "Embedded Linux & BSP / Hardware Bring-Up & Debugging",
     filterSlugs: [
       "embedded-linux-bsp",
