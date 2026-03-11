@@ -118,35 +118,53 @@ const netduino_cam_1 = "/images/netduino_cam1.jpg";
 const netduino_cam_2 = "/images/netduino_cam3.jpg";
 const netduino_cam_3 = "/images/netduino_cam4.jpg";
 const netduino_cam_4 = "/images/netduino_cam2.jpg";
-const ne101_mqtt_lte_iot_camera_1 = "/images/ne101_mqtt_lte_iot_camera_1.jpg"
-const ne101_mqtt_lte_iot_camera_2 = "/images/ne101_mqtt_lte_iot_camera_2.jpg"
-const ne101_mqtt_lte_iot_camera_3 = "/images/ne101_mqtt_lte_iot_camera_3.jpg"
-const ne101_mqtt_lte_iot_camera_4 = "/images/ne101_mqtt_lte_iot_camera_4.jpg"
-const ne101_mqtt_lte_iot_camera_5 = "/images/ne101_mqtt_lte_iot_camera_5.jpg"
-const ne101_mqtt_lte_iot_camera_6 = "/images/ne101_mqtt_lte_iot_camera_6.jpg"
-const ne101_mqtt_lte_iot_camera_7 = "/images/ne101_mqtt_lte_iot_camera_7.jpg"
-const ne101_mqtt_lte_iot_camera_8 = "/images/ne101_mqtt_lte_iot_camera_8.jpg"
-const pi_camera_doorbell_notifications_1 = "/images/pi_camera_doorbell_notifications_1.jpg"
-const pi_camera_doorbell_notifications_2 = "/images/pi_camera_doorbell_notifications_2.jpg"
-const pi_camera_doorbell_notifications_3 = "/images/pi_camera_doorbell_notifications_3.jpg"
-const pi_camera_doorbell_notifications_4 = "/images/pi_camera_doorbell_notifications_4.jpg"
-const pi_camera_doorbell_notifications_5 = "/images/pi_camera_doorbell_notifications_5.jpg"
-const kria_kv260_petalinux_bsp_1 = "/images/kria_kv260_petalinux_bsp_1.jpg"
-const kria_kv260_petalinux_bsp_2 = "/images/kria_kv260_petalinux_bsp_2.jpg"
-const kria_kv260_petalinux_bsp_3 = "/images/kria_kv260_petalinux_bsp_3.jpg"
-const k26_som_multi_boot_custom_carrier_1 = "/images/k26_som_multi_boot_custom_carrier_1.jpg"
-const k26_som_multi_boot_custom_carrier_2 = "/images/k26_som_multi_boot_custom_carrier_2.jpg"
-const zynq_mpsoc_vivado_ps_configuration_1 = "/images/zynq_mpsoc_vivado_ps_configuration_1.jpg"
-const zynq_mpsoc_vivado_ps_configuration_2 = "/images/zynq_mpsoc_vivado_ps_configuration_2.jpg"
-const zynq_mpsoc_vivado_ps_configuration_3 = "/images/zynq_mpsoc_vivado_ps_configuration_3.jpg"
-const zynq_mpsoc_vivado_ps_configuration_4 = "/images/zynq_mpsoc_vivado_ps_configuration_4.jpg"
-const versal_vitis_hardware_in_the_loop_1 = "/images/versal_vitis_hardware_in_the_loop_1.jpg"
-const kria_kv260_fir_filter_acceleration_1 = "/images/kria_kv260_fir_filter_acceleration_1.jpg"
-const kria_kv260_fir_filter_acceleration_2 = "/images/kria_kv260_fir_filter_acceleration_2.jpg"
-const kria_kv260_fir_filter_acceleration_3 = "/images/kria_kv260_fir_filter_acceleration_3.jpg"
-const kria_kv260_fir_filter_acceleration_4 = "/images/kria_kv260_fir_filter_acceleration_4.jpg"
-const kria_kv260_fir_filter_acceleration_5 = "/images/kria_kv260_fir_filter_acceleration_5.jpg"
-const kria_kv260_fir_filter_acceleration_6 = "/images/kria_kv260_fir_filter_acceleration_6.jpg"
+const ne101_mqtt_lte_iot_camera_1 = "/images/ne101_mqtt_lte_iot_camera_1.jpg";
+const ne101_mqtt_lte_iot_camera_2 = "/images/ne101_mqtt_lte_iot_camera_2.jpg";
+const ne101_mqtt_lte_iot_camera_3 = "/images/ne101_mqtt_lte_iot_camera_3.jpg";
+const ne101_mqtt_lte_iot_camera_4 = "/images/ne101_mqtt_lte_iot_camera_4.jpg";
+const ne101_mqtt_lte_iot_camera_5 = "/images/ne101_mqtt_lte_iot_camera_5.jpg";
+const ne101_mqtt_lte_iot_camera_6 = "/images/ne101_mqtt_lte_iot_camera_6.jpg";
+const ne101_mqtt_lte_iot_camera_7 = "/images/ne101_mqtt_lte_iot_camera_7.jpg";
+const ne101_mqtt_lte_iot_camera_8 = "/images/ne101_mqtt_lte_iot_camera_8.jpg";
+const pi_camera_doorbell_notifications_1 =
+  "/images/pi_camera_doorbell_notifications_1.jpg";
+const pi_camera_doorbell_notifications_2 =
+  "/images/pi_camera_doorbell_notifications_2.jpg";
+const pi_camera_doorbell_notifications_3 =
+  "/images/pi_camera_doorbell_notifications_3.jpg";
+const pi_camera_doorbell_notifications_4 =
+  "/images/pi_camera_doorbell_notifications_4.jpg";
+const pi_camera_doorbell_notifications_5 =
+  "/images/pi_camera_doorbell_notifications_5.jpg";
+const kria_kv260_petalinux_bsp_1 = "/images/kria_kv260_petalinux_bsp_1.jpg";
+const kria_kv260_petalinux_bsp_2 = "/images/kria_kv260_petalinux_bsp_2.jpg";
+const kria_kv260_petalinux_bsp_3 = "/images/kria_kv260_petalinux_bsp_3.jpg";
+const k26_som_multi_boot_custom_carrier_1 =
+  "/images/k26_som_multi_boot_custom_carrier_1.jpg";
+const k26_som_multi_boot_custom_carrier_2 =
+  "/images/k26_som_multi_boot_custom_carrier_2.jpg";
+const zynq_mpsoc_vivado_ps_configuration_1 =
+  "/images/zynq_mpsoc_vivado_ps_configuration_1.jpg";
+const zynq_mpsoc_vivado_ps_configuration_2 =
+  "/images/zynq_mpsoc_vivado_ps_configuration_2.jpg";
+const zynq_mpsoc_vivado_ps_configuration_3 =
+  "/images/zynq_mpsoc_vivado_ps_configuration_3.jpg";
+const zynq_mpsoc_vivado_ps_configuration_4 =
+  "/images/zynq_mpsoc_vivado_ps_configuration_4.jpg";
+const versal_vitis_hardware_in_the_loop_1 =
+  "/images/versal_vitis_hardware_in_the_loop_1.jpg";
+const kria_kv260_fir_filter_acceleration_1 =
+  "/images/kria_kv260_fir_filter_acceleration_1.jpg";
+const kria_kv260_fir_filter_acceleration_2 =
+  "/images/kria_kv260_fir_filter_acceleration_2.jpg";
+const kria_kv260_fir_filter_acceleration_3 =
+  "/images/kria_kv260_fir_filter_acceleration_3.jpg";
+const kria_kv260_fir_filter_acceleration_4 =
+  "/images/kria_kv260_fir_filter_acceleration_4.jpg";
+const kria_kv260_fir_filter_acceleration_5 =
+  "/images/kria_kv260_fir_filter_acceleration_5.jpg";
+const kria_kv260_fir_filter_acceleration_6 =
+  "/images/kria_kv260_fir_filter_acceleration_6.jpg";
 
 interface MediaItem {
   type: "image" | "video";
@@ -184,7 +202,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    slug: "jetson-tx2-nx-expansion-board",
+    slug: "jtx2",
     title: "Jetson TX2 NX Expansion Board",
     category: "AI & Edge Computing",
     filterSlugs: [
@@ -225,7 +243,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "cm4-5g-wifi6-embedded-board",
+    slug: "c45g",
     title: "CM4 5G & WiFi 6 Embedded Board",
     category: "Embedded Linux / Hardware",
     filterSlugs: [
@@ -265,13 +283,10 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "netduino-smart-ai-camera",
+    slug: "ndai",
     title: "Edge Vision Camera with Cloud Object Detection",
     category: "IoT & Connected Devices / Embedded Firmware",
-    filterSlugs: [
-      "embedded-firmware",
-      "iot-connected-devices",
-    ],
+    filterSlugs: ["embedded-firmware", "iot-connected-devices"],
     description:
       "Embedded smart camera built with Netduino and ArduCam OV2640 that captures images and sends them to a cloud server for AI-based object detection and automated alert notifications.",
     longDescription:
@@ -304,7 +319,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "miniature-regulated-power-supply",
+    slug: "mpsu",
     title: "Miniature Regulated Power Supply",
     category: "PCB & Hardware",
     filterSlugs: ["pcb-hardware", "embedded-firmware"],
@@ -337,13 +352,10 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "ne101-mqtt-lte-iot-camera",
+    slug: "ne10",
     title: "NE101 MQTT LTE IoT Camera",
     category: "IoT & Connected Devices / Embedded Firmware",
-    filterSlugs: [
-      "embedded-firmware",
-      "iot-connected-devices"
-    ],
+    filterSlugs: ["embedded-firmware", "iot-connected-devices"],
     description:
       "Battery-powered IoT camera using OV5640 and Cat.1 LTE module to capture images and transmit them via MQTT/MQTTS with JSON payloads for remote monitoring, automation systems, and cloud-based image analytics.",
     longDescription:
@@ -357,7 +369,7 @@ const projects: Project[] = [
       "IoT Camera",
       "Wi-Fi AP",
       "JSON Telemetry",
-      "Battery Powered"
+      "Battery Powered",
     ],
     icon: Camera,
     highlight: "MQTT Image Streaming",
@@ -369,24 +381,21 @@ const projects: Project[] = [
       { type: "image", src: ne101_mqtt_lte_iot_camera_5 },
       { type: "image", src: ne101_mqtt_lte_iot_camera_6 },
       { type: "image", src: ne101_mqtt_lte_iot_camera_7 },
-      { type: "image", src: ne101_mqtt_lte_iot_camera_8 }
+      { type: "image", src: ne101_mqtt_lte_iot_camera_8 },
     ],
     deliverables: [
       "Embedded Camera Firmware",
       "MQTT/MQTTS Data Integration",
       "Device Configuration Web Interface",
       "IoT Cloud Communication Setup",
-      "Hardware Integration Documentation"
-    ]
+      "Hardware Integration Documentation",
+    ],
   },
   {
-    slug: "pi-camera-doorbell-notifications",
+    slug: "dbel",
     title: "RF Doorbell Camera Alert System",
     category: "IoT & Connected Devices / Embedded Firmware",
-    filterSlugs: [
-      "embedded-firmware",
-      "iot-connected-devices"
-    ],
+    filterSlugs: ["embedded-firmware", "iot-connected-devices"],
     description:
       "Built a low-cost smart doorbell using Raspberry Pi Zero W, Pi Camera, and 433MHz RF receiver to capture visitor images and send MQTT-based notifications through Home Assistant and Telegram.",
     longDescription:
@@ -400,7 +409,7 @@ const projects: Project[] = [
       "Telegram",
       "Python",
       "GPIO",
-      "Rpi-rf"
+      "Rpi-rf",
     ],
     icon: Camera,
     highlight: "RF Doorbell Camera Alerts",
@@ -409,18 +418,18 @@ const projects: Project[] = [
       { type: "image", src: pi_camera_doorbell_notifications_2 },
       { type: "image", src: pi_camera_doorbell_notifications_3 },
       { type: "image", src: pi_camera_doorbell_notifications_4 },
-      { type: "image", src: pi_camera_doorbell_notifications_5 }
+      { type: "image", src: pi_camera_doorbell_notifications_5 },
     ],
     deliverables: [
       "Python Doorbell Detection Script",
       "Pi Camera Capture Integration",
       "MQTT Notification Pipeline",
       "Home Assistant Automation Setup",
-      "Telegram Alert Integration"
-    ]
+      "Telegram Alert Integration",
+    ],
   },
   {
-    slug: "nrf5340-lora-gnss-iot-board",
+    slug: "nrf5",
     title: "nRF5340 LoRa GNSS IoT Board",
     category: "IoT / Wireless Sensing",
     filterSlugs: ["iot-connected-devices", "pcb-hardware", "embedded-firmware"],
@@ -456,7 +465,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "esp32-lorawan-gateway-v1",
+    slug: "lgw1",
     title: "ESP32 LoRaWAN Gateway V1",
     category: "IoT / Wireless Sensing",
     filterSlugs: ["iot-connected-devices", "pcb-hardware", "embedded-firmware"],
@@ -492,7 +501,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "ai-predictive-maintenance-digital-twin",
+    slug: "apmd",
     title: "AI Predictive Maintenance Digital Twin",
     category: "Embedded Linux & BSP",
     filterSlugs: ["embedded-linux-bsp", "embedded-firmware"],
@@ -526,7 +535,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "ai-smart-garbage-sorter",
+    slug: "ags1",
     title: "AI-Based Smart Garbage Sorter",
     category: "IoT / AI & Automation",
     filterSlugs: ["iot-connected-devices", "embedded-firmware"],
@@ -559,7 +568,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "gsm-smart-energy-meter",
+    slug: "gsm1",
     title: "GSM-Based Smart Energy Meter",
     category: "IoT & Smart Systems",
     filterSlugs: ["embedded-firmware", "iot-connected-devices", "pcb-hardware"],
@@ -592,7 +601,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "usb-c-pcb-panelization-design",
+    slug: "usbc",
     title: "USB-C PCB Panelization Design",
     category: "PCB & Hardware",
     filterSlugs: ["pcb-hardware"],
@@ -620,7 +629,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "iot-environmental-imaging-system",
+    slug: "ieis",
     title: "IoT Environmental Imaging System",
     category: "IoT & Smart Systems",
     filterSlugs: ["iot-connected-devices", "embedded-firmware", "pcb-hardware"],
@@ -649,7 +658,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "custom-embedded-linux-sbc",
+    slug: "csbc",
     title: "Custom Embedded Linux SBC",
     category: "Embedded Linux / Hardware",
     filterSlugs: ["embedded-linux-bsp", "pcb-hardware", "hardware-debugging"],
@@ -673,7 +682,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "iot-smart-ac-controller",
+    slug: "isac",
     title: "IoT-Based Smart AC Controller",
     category: "Smart Home / IoT",
     filterSlugs: ["iot-connected-devices", "embedded-firmware"],
@@ -713,7 +722,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "ai-ml-lane-following-simulink",
+    slug: "alfs",
     title: "AI/ML Lane Following in Simulink",
     category: "Autonomous Systems",
     filterSlugs: ["embedded-firmware", "embedded-linux-bsp"],
@@ -748,13 +757,11 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "kria-kv260-fir-filter-acceleration",
+    slug: "kfir",
     title: "High-Throughput FIR DSP Accelerator on KV260",
-    category: "Embedded Firmware Development / Hardware Bring-Up & Debugging",
-    filterSlugs: [
-      "embedded-firmware",
-      "hardware-debugging"
-    ],
+    category:
+      "Embedded Firmware Development / Hardware Bring-Up & Debugging",
+    filterSlugs: ["embedded-firmware", "hardware-debugging"],
     description:
       "Designed and accelerated a fully pipelined FIR filter on the AMD Kria KV260 using Vitis HLS and PYNQ, comparing floating-point and fixed-point implementations for high-throughput FPGA DSP processing.",
     longDescription:
@@ -769,7 +776,7 @@ const projects: Project[] = [
       "Fixed-Point Design",
       "Floating-Point Design",
       "Python",
-      "Hardware Acceleration"
+      "Hardware Acceleration",
     ],
     icon: Activity,
     highlight: "Pipelined DSP Acceleration",
@@ -779,18 +786,18 @@ const projects: Project[] = [
       { type: "image", src: kria_kv260_fir_filter_acceleration_3 },
       { type: "image", src: kria_kv260_fir_filter_acceleration_4 },
       { type: "image", src: kria_kv260_fir_filter_acceleration_5 },
-      { type: "image", src: kria_kv260_fir_filter_acceleration_6 }
+      { type: "image", src: kria_kv260_fir_filter_acceleration_6 },
     ],
     deliverables: [
       "Vitis HLS FIR Filter Design",
       "Vivado Hardware Platform",
       "PYNQ Integration Notebook",
       "Python Coefficient Generation Scripts",
-      "Performance Benchmark Report"
-    ]
+      "Performance Benchmark Report",
+    ],
   },
   {
-    slug: "clareco-ai-medical-copilot",
+    slug: "ccop",
     title: "Clareco AI Medical Co-Pilot",
     category: "AI / Mobile App",
     filterSlugs: ["iot-connected-devices", "embedded-firmware"],
@@ -821,7 +828,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "smart-12v-dc-motor-controller",
+    slug: "smdc",
     title: "Smart 12V DC Motor Controller",
     category: "PCB & Hardware",
     filterSlugs: ["pcb-hardware", "embedded-firmware"],
@@ -852,7 +859,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "imx8-som-custom-base-board",
+    slug: "imx8",
     title: "iMX8 SoM Custom Base Board",
     category: "Embedded Linux / Hardware",
     filterSlugs: ["pcb-hardware", "embedded-linux-bsp", "hardware-debugging"],
@@ -887,13 +894,10 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "kria-kv260-petalinux-bsp",
+    slug: "kv26",
     title: "Embedded Vision Linux Platform for Kria KV260",
     category: "Embedded Linux & BSP",
-    filterSlugs: [
-      "embedded-linux-bsp",
-      "iot-connected-devices"
-    ],
+    filterSlugs: ["embedded-linux-bsp", "iot-connected-devices"],
     description:
       "Configured and customized the PetaLinux 2021.1 BSP for the AMD Kria KV260 Vision AI kit, enabling Linux boot, camera support, and development workflows for embedded vision applications.",
     longDescription:
@@ -907,31 +911,28 @@ const projects: Project[] = [
       "Linux BSP",
       "Vision AI",
       "USB Camera",
-      "FPGA SoC"
+      "FPGA SoC",
     ],
     icon: MonitorSmartphone,
     highlight: "Embedded Vision BSP",
     media: [
       { type: "image", src: kria_kv260_petalinux_bsp_1 },
       { type: "image", src: kria_kv260_petalinux_bsp_2 },
-      { type: "image", src: kria_kv260_petalinux_bsp_3 }
+      { type: "image", src: kria_kv260_petalinux_bsp_3 },
     ],
     deliverables: [
       "Customized PetaLinux BSP",
       "Bootable SD Card Image",
       "Embedded Linux Configuration",
       "GStreamer Camera Test Pipeline",
-      "System Setup Documentation"
-    ]
+      "System Setup Documentation",
+    ],
   },
   {
-    slug: "k26-som-multi-boot-custom-carrier",
+    slug: "k26b",
     title: "Multi-Storage Boot Architecture for Embedded Linux Systems",
     category: "Embedded Linux & BSP / Hardware Bring-Up & Debugging",
-    filterSlugs: [
-      "embedded-linux-bsp",
-      "hardware-debugging"
-    ],
+    filterSlugs: ["embedded-linux-bsp", "hardware-debugging"],
     description:
       "Configured multi-boot support for AMD Kria K26 SoM on a custom carrier, enabling boot from eMMC, SD card, and USB storage using PetaLinux and U-Boot configuration.",
     longDescription:
@@ -945,24 +946,24 @@ const projects: Project[] = [
       "SD Card Boot",
       "USB Boot",
       "FPGA SoC",
-      "Linux BSP"
+      "Linux BSP",
     ],
     icon: Cpu,
     highlight: "Multi-Device Boot",
     media: [
       { type: "image", src: k26_som_multi_boot_custom_carrier_1 },
-      { type: "image", src: k26_som_multi_boot_custom_carrier_2 }
+      { type: "image", src: k26_som_multi_boot_custom_carrier_2 },
     ],
     deliverables: [
       "Multi-Boot PetaLinux Configuration",
       "BOOT.BIN Generation and QSPI Update",
       "U-Boot Bootargs Setup",
       "eMMC Filesystem Expansion Guide",
-      "Custom Carrier Boot Documentation"
-    ]
+      "Custom Carrier Boot Documentation",
+    ],
   },
   {
-    slug: "raspberry-pi-motor-control-hat",
+    slug: "rhat",
     title: "Raspberry Pi Motor Control HAT",
     category: "PCB & Hardware",
     filterSlugs: ["pcb-hardware", "embedded-firmware"],
@@ -991,7 +992,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "nomad-rgb-mechanical-keyboard",
+    slug: "nmkb",
     title: "Nomad RGB Mechanical Keyboard",
     category: "Consumer Electronics",
     filterSlugs: ["pcb-hardware", "embedded-firmware"],
@@ -1026,7 +1027,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "ai-robotic-arm-simulink",
+    slug: "aira",
     title: "AI Robotic Arm in Simulink",
     category: "Autonomous Systems",
     filterSlugs: ["embedded-firmware", "embedded-linux-bsp"],
@@ -1059,7 +1060,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "mosfet-amplifier-design-analysis",
+    slug: "mosf",
     title: "MOSFET Amplifier Design & Analysis",
     category: "PCB & Hardware",
     filterSlugs: ["pcb-hardware"],
@@ -1091,7 +1092,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "modular-creator-rgb-keyboard",
+    slug: "mckb",
     title: "Modular Creator RGB Keyboard",
     category: "Consumer Electronics",
     filterSlugs: ["pcb-hardware", "embedded-firmware"],
@@ -1125,13 +1126,11 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "zynq-mpsoc-vivado-ps-configuration",
-    title: "Foundational Vivado Platform for Zynq UltraScale+ Processing System",
+    slug: "zpsc",
+    title:
+      "Foundational Vivado Platform for Zynq UltraScale+ Processing System",
     category: "Hardware Bring-Up & Debugging / Embedded Firmware Development",
-    filterSlugs: [
-      "hardware-debugging",
-      "embedded-firmware"
-    ],
+    filterSlugs: ["hardware-debugging", "embedded-firmware"],
     description:
       "Created a base Vivado project to configure the Processing System of a Zynq UltraScale+ MPSoC on the MYD-CZU3EG board, enabling camera-ready Linux and software development workflows.",
     longDescription:
@@ -1145,7 +1144,7 @@ const projects: Project[] = [
       "DDR4 Configuration",
       "Hardware Platform",
       "XSA Export",
-      "Linux Development"
+      "Linux Development",
     ],
     icon: CircuitBoard,
     highlight: "Vivado PS Platform",
@@ -1153,18 +1152,18 @@ const projects: Project[] = [
       { type: "image", src: zynq_mpsoc_vivado_ps_configuration_1 },
       { type: "image", src: zynq_mpsoc_vivado_ps_configuration_2 },
       { type: "image", src: zynq_mpsoc_vivado_ps_configuration_3 },
-      { type: "image", src: zynq_mpsoc_vivado_ps_configuration_4 }
+      { type: "image", src: zynq_mpsoc_vivado_ps_configuration_4 },
     ],
     deliverables: [
       "Vivado Block Design Project",
       "PS Configuration TCL Preset",
       "Generated Bitstream",
       "Exported XSA Hardware Platform",
-      "Base FPGA Development Setup"
-    ]
+      "Base FPGA Development Setup",
+    ],
   },
   {
-    slug: "tuneshine-album-art-display",
+    slug: "tune",
     title: "Tuneshine Album Art Display",
     category: "Consumer Electronics",
     filterSlugs: ["iot-connected-devices", "pcb-hardware", "embedded-firmware"],
@@ -1198,13 +1197,10 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "versal-vitis-hardware-in-the-loop",
+    slug: "vhil",
     title: "Ethernet-Driven FPGA Hardware Validation for Versal Subsystems",
     category: "Embedded Linux & BSP / Hardware Bring-Up & Debugging",
-    filterSlugs: [
-      "embedded-linux-bsp",
-      "hardware-debugging"
-    ],
+    filterSlugs: ["embedded-linux-bsp", "hardware-debugging"],
     description:
       "Implemented a Vitis Hardware-in-the-Loop flow for Versal VSS designs, enabling Ethernet-based validation of AI Engine, HLS, and RTL subsystems on real hardware before full system integration.",
     longDescription:
@@ -1219,23 +1215,21 @@ const projects: Project[] = [
       "HLS",
       "RTL Verification",
       "VCK190",
-      "Ethernet"
+      "Ethernet",
     ],
     icon: Activity,
     highlight: "Real Hardware Verification",
-    media: [
-      { type: "image", src: versal_vitis_hardware_in_the_loop_1 }
-    ],
+    media: [{ type: "image", src: versal_vitis_hardware_in_the_loop_1 }],
     deliverables: [
       "Vitis HIL Build Flow",
       "Bootable SD Card Image",
       "Python Host Verification Scripts",
       "HIL Interface Configuration",
-      "Hardware Validation Documentation"
-    ]
+      "Hardware Validation Documentation",
+    ],
   },
   {
-    slug: "clareco-clinic-healthcare-platform",
+    slug: "ccli",
     title: "Clareco Clinic Healthcare Platform",
     category: "AI / Mobile App",
     filterSlugs: ["iot-connected-devices", "embedded-firmware"],
@@ -1263,7 +1257,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "cm5-io-board-usb-otg",
+    slug: "cm5i",
     title: "CM5 IO Board with USB 2.0 OTG",
     category: "Embedded Linux / Hardware",
     filterSlugs: ["pcb-hardware", "embedded-linux-bsp"],
@@ -1295,7 +1289,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "gsm-smart-energy-meter",
+    slug: "gsm2",
     title: "GSM-Based Smart Energy Meter",
     category: "IoT & Smart Systems",
     filterSlugs: ["embedded-firmware", "iot-connected-devices", "pcb-hardware"],
@@ -1328,7 +1322,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "android-digital-door-lock",
+    slug: "adlk",
     title: "Android-Based Digital Door Lock",
     category: "IoT & Smart Systems",
     filterSlugs: ["embedded-firmware", "iot-connected-devices"],
@@ -1356,7 +1350,7 @@ const projects: Project[] = [
     ],
   },
   {
-    slug: "ai-smart-garbage-sorter",
+    slug: "ags2",
     title: "AI-Based Smart Garbage Sorter",
     category: "IoT / AI & Automation",
     filterSlugs: ["iot-connected-devices", "embedded-firmware"],
@@ -1409,7 +1403,7 @@ function CardVideo({
     setHovering(true);
     if (videoRef.current) {
       videoRef.current.currentTime = 0;
-      videoRef.current.play().catch(() => { });
+      videoRef.current.play().catch(() => {});
     }
   }, []);
 
@@ -1431,7 +1425,9 @@ function CardVideo({
         <img
           src={posterSrc}
           alt=""
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-200 ${hovering ? "opacity-0" : "opacity-100"}`}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-200 ${
+            hovering ? "opacity-0" : "opacity-100"
+          }`}
         />
       )}
       <video
@@ -1445,7 +1441,9 @@ function CardVideo({
         <source src={item.src} type="video/mp4" />
       </video>
       <div
-        className={`absolute inset-0 flex items-center justify-center z-10 pointer-events-none transition-opacity duration-200 ${hovering ? "opacity-0" : "opacity-100"}`}
+        className={`absolute inset-0 flex items-center justify-center z-10 pointer-events-none transition-opacity duration-200 ${
+          hovering ? "opacity-0" : "opacity-100"
+        }`}
       >
         <div className="rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm border border-white/30 w-10 h-10">
           <Play className="text-white ml-0.5 w-4 h-4" />
@@ -1491,7 +1489,7 @@ function MediaSlider({
       e.stopPropagation();
       goTo(safeIndex === 0 ? media.length - 1 : safeIndex - 1);
     },
-    [safeIndex, media.length, goTo],
+    [safeIndex, media.length, goTo]
   );
 
   const goNext = useCallback(
@@ -1499,7 +1497,7 @@ function MediaSlider({
       e.stopPropagation();
       goTo(safeIndex === media.length - 1 ? 0 : safeIndex + 1);
     },
-    [safeIndex, media.length, goTo],
+    [safeIndex, media.length, goTo]
   );
 
   const togglePlay = useCallback(
@@ -1513,7 +1511,7 @@ function MediaSlider({
       }
       setIsPlaying(!isPlaying);
     },
-    [isPlaying],
+    [isPlaying]
   );
 
   const toggleMute = useCallback(
@@ -1523,7 +1521,7 @@ function MediaSlider({
       videoRef.current.muted = !videoRef.current.muted;
       setIsMuted(!isMuted);
     },
-    [isMuted],
+    [isMuted]
   );
 
   return (
@@ -1593,7 +1591,9 @@ function MediaSlider({
             <img
               src={item.src}
               alt=""
-              className={`w-full ${isModal ? "object-contain" : "h-full object-cover"}`}
+              className={`w-full ${
+                isModal ? "object-contain" : "h-full object-cover"
+              }`}
             />
           )}
         </div>
@@ -1602,14 +1602,18 @@ function MediaSlider({
       {hasMultiple && (
         <>
           <button
-            className={`absolute left-2 top-1/2 -translate-y-1/2 z-20 rounded-full bg-background/60 backdrop-blur-sm border border-border/50 flex items-center justify-center text-foreground transition-all hover:bg-background/90 ${isModal ? "w-9 h-9" : "w-7 h-7"}`}
+            className={`absolute left-2 top-1/2 -translate-y-1/2 z-20 rounded-full bg-background/60 backdrop-blur-sm border border-border/50 flex items-center justify-center text-foreground transition-all hover:bg-background/90 ${
+              isModal ? "w-9 h-9" : "w-7 h-7"
+            }`}
             onClick={goPrev}
             data-testid="button-media-prev"
           >
             <ChevronLeft className={isModal ? "w-5 h-5" : "w-4 h-4"} />
           </button>
           <button
-            className={`absolute right-2 top-1/2 -translate-y-1/2 z-20 rounded-full bg-background/60 backdrop-blur-sm border border-border/50 flex items-center justify-center text-foreground transition-all hover:bg-background/90 ${isModal ? "w-9 h-9" : "w-7 h-7"}`}
+            className={`absolute right-2 top-1/2 -translate-y-1/2 z-20 rounded-full bg-background/60 backdrop-blur-sm border border-border/50 flex items-center justify-center text-foreground transition-all hover:bg-background/90 ${
+              isModal ? "w-9 h-9" : "w-7 h-7"
+            }`}
             onClick={goNext}
             data-testid="button-media-next"
           >
@@ -1620,10 +1624,11 @@ function MediaSlider({
             {media.map((item, i) => (
               <button
                 key={i}
-                className={`rounded-full transition-all ${i === safeIndex
-                  ? "w-5 h-1.5 bg-primary"
-                  : "w-1.5 h-1.5 bg-foreground/40 hover:bg-foreground/70"
-                  }`}
+                className={`rounded-full transition-all ${
+                  i === safeIndex
+                    ? "w-5 h-1.5 bg-primary"
+                    : "w-1.5 h-1.5 bg-foreground/40 hover:bg-foreground/70"
+                }`}
                 onClick={(e) => goTo(i, e)}
                 data-testid={`button-media-dot-${i}`}
               />
@@ -1816,25 +1821,28 @@ export function Portfolio({
   const parseRecommendedSlugs = (ids?: string): Set<string> => {
     if (!ids) return new Set();
     const parts = ids.split("~");
-    // Legacy format: all segments are plain numbers joined by dashes (e.g. "0-3-7")
     const isLegacy =
       (parts.length === 1 && ids.includes("-")) ||
       parts.every((p) => /^\d+$/.test(p));
+
     if (isLegacy) {
       const slugs = ids
         .split("-")
         .map(Number)
         .filter((n) => !isNaN(n) && n >= 0 && n < projects.length)
         .map((n) => projects[n].slug);
+
       if (slugs.length > 0) return new Set(slugs);
     }
+
     const validSlugs = parts.filter((s) => projects.some((p) => p.slug === s));
     return new Set(validSlugs);
   };
 
   const [recommended, setRecommended] = useState<Set<string>>(() =>
-    parseRecommendedSlugs(initialRecommendedIds),
+    parseRecommendedSlugs(initialRecommendedIds)
   );
+
   const [activeCategory, setActiveCategory] = useState(() => {
     if (initialRecommendedIds) {
       const decoded = parseRecommendedSlugs(initialRecommendedIds);
@@ -1842,10 +1850,12 @@ export function Portfolio({
     }
     return initialCategory || "all";
   });
+
   const [visibleCount, setVisibleCount] = useState(6);
   const [searchQuery, setSearchQuery] = useState("");
   const closingRef = useRef(false);
   const [copiedLink, setCopiedLink] = useState(false);
+
   const [selectedIndex, setSelectedIndex] = useState<number | null>(() => {
     if (initialSlug) {
       const idx = projects.findIndex((p) => p.slug === initialSlug);
@@ -1893,11 +1903,13 @@ export function Portfolio({
     e.stopPropagation();
     setRecommended((prev) => {
       const next = new Set(prev);
+
       if (next.has(slug)) {
         next.delete(slug);
       } else {
         next.add(slug);
       }
+
       if (activeCategory === "recommended") {
         if (next.size > 0) {
           setLocation(`/recommended/${Array.from(next).join("~")}`);
@@ -1906,6 +1918,7 @@ export function Portfolio({
           setLocation("/");
         }
       }
+
       return next;
     });
   };
@@ -1933,22 +1946,22 @@ export function Portfolio({
           .map((slug) => projects.find((p) => p.slug === slug))
           .filter((p): p is Project => p !== undefined)
       : activeCategory === "all"
-        ? projects
-        : projects.filter((p) => p.filterSlugs.includes(activeCategory));
+      ? projects
+      : projects.filter((p) => p.filterSlugs.includes(activeCategory));
 
   const filteredProjects = searchQuery.trim()
     ? categoryFiltered.filter((p) => {
-      const q = searchQuery.toLowerCase();
-      return (
-        p.title.toLowerCase().includes(q) ||
-        p.category.toLowerCase().includes(q) ||
-        p.description.toLowerCase().includes(q) ||
-        p.longDescription.toLowerCase().includes(q) ||
-        p.highlight.toLowerCase().includes(q) ||
-        p.tags.some((t) => t.toLowerCase().includes(q)) ||
-        p.deliverables.some((d) => d.toLowerCase().includes(q))
-      );
-    })
+        const q = searchQuery.toLowerCase();
+        return (
+          p.title.toLowerCase().includes(q) ||
+          p.category.toLowerCase().includes(q) ||
+          p.description.toLowerCase().includes(q) ||
+          p.longDescription.toLowerCase().includes(q) ||
+          p.highlight.toLowerCase().includes(q) ||
+          p.tags.some((t) => t.toLowerCase().includes(q)) ||
+          p.deliverables.some((d) => d.toLowerCase().includes(q))
+        );
+      })
     : categoryFiltered;
 
   const categoryBaseUrl =
@@ -1957,12 +1970,13 @@ export function Portfolio({
         ? `/recommended/${Array.from(recommended).join("~")}`
         : "/"
       : activeCategory === "all"
-        ? "/"
-        : `/category/${activeCategory}`;
+      ? "/"
+      : `/category/${activeCategory}`;
 
   const handleCategoryChange = (slug: string) => {
     setActiveCategory(slug);
     setVisibleCount(6);
+
     if (slug === "recommended") {
       if (recommended.size > 0) {
         setLocation(`/recommended/${Array.from(recommended).join("~")}`);
@@ -1995,14 +2009,17 @@ export function Portfolio({
   const handlePrev = () => {
     if (selectedIndex !== null) {
       const currentInFiltered = filteredProjects.findIndex(
-        (p) => p === projects[selectedIndex],
+        (p) => p === projects[selectedIndex]
       );
+
       const newFilteredIndex =
         currentInFiltered <= 0
           ? filteredProjects.length - 1
           : currentInFiltered - 1;
+
       const newProject = filteredProjects[newFilteredIndex];
       const newGlobalIndex = projects.indexOf(newProject);
+
       setSelectedIndex(newGlobalIndex);
       setLocation(`/project/${newProject.slug}`);
     }
@@ -2011,14 +2028,17 @@ export function Portfolio({
   const handleNext = () => {
     if (selectedIndex !== null) {
       const currentInFiltered = filteredProjects.findIndex(
-        (p) => p === projects[selectedIndex],
+        (p) => p === projects[selectedIndex]
       );
+
       const newFilteredIndex =
         currentInFiltered >= filteredProjects.length - 1
           ? 0
           : currentInFiltered + 1;
+
       const newProject = filteredProjects[newFilteredIndex];
       const newGlobalIndex = projects.indexOf(newProject);
+
       setSelectedIndex(newGlobalIndex);
       setLocation(`/project/${newProject.slug}`);
     }
@@ -2028,7 +2048,7 @@ export function Portfolio({
     activeCategory === "recommended"
       ? "Suggested"
       : filterCategories.find((c) => c.slug === activeCategory)?.name ||
-      "All Projects";
+        "All Projects";
 
   return (
     <section id="portfolio" className="py-24 relative">
@@ -2058,27 +2078,31 @@ export function Portfolio({
                 key={cat.slug}
                 data-testid={`filter-${cat.slug}`}
                 onClick={() => handleCategoryChange(cat.slug)}
-                className={`px-4 py-2 rounded-lg text-sm font-mono transition-all border ${activeCategory === cat.slug
-                  ? "bg-primary/15 text-primary border-primary/40"
-                  : "bg-card/60 text-muted-foreground border-border/40 hover:border-primary/30 hover:text-foreground"
-                  }`}
+                className={`px-4 py-2 rounded-lg text-sm font-mono transition-all border ${
+                  activeCategory === cat.slug
+                    ? "bg-primary/15 text-primary border-primary/40"
+                    : "bg-card/60 text-muted-foreground border-border/40 hover:border-primary/30 hover:text-foreground"
+                }`}
               >
                 {cat.name}
               </button>
             ))}
+
             {recommended.size > 0 && (
               <>
                 <button
                   data-testid="filter-recommended"
                   onClick={() => handleCategoryChange("recommended")}
-                  className={`px-4 py-2 rounded-lg text-sm font-mono transition-all border flex items-center gap-1.5 ${activeCategory === "recommended"
-                    ? "bg-amber-500/15 text-amber-400 border-amber-500/40"
-                    : "bg-card/60 text-muted-foreground border-border/40 hover:border-amber-500/30 hover:text-foreground"
-                    }`}
+                  className={`px-4 py-2 rounded-lg text-sm font-mono transition-all border flex items-center gap-1.5 ${
+                    activeCategory === "recommended"
+                      ? "bg-amber-500/15 text-amber-400 border-amber-500/40"
+                      : "bg-card/60 text-muted-foreground border-border/40 hover:border-amber-500/30 hover:text-foreground"
+                  }`}
                 >
                   <ThumbsUp className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                   Suggested ({recommended.size})
                 </button>
+
                 <button
                   data-testid="button-copy-recommended-link"
                   onClick={copyRecommendedLink}
@@ -2108,6 +2132,7 @@ export function Portfolio({
               placeholder="Search projects by title, skills, technology..."
               className="w-full md:w-80 pl-10 pr-9 py-2 rounded-lg text-sm font-mono bg-card/60 border border-border/40 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/50 transition-colors"
             />
+
             {searchQuery && (
               <button
                 data-testid="button-clear-search"
@@ -2123,8 +2148,8 @@ export function Portfolio({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.slice(0, visibleCount).map((project, idx) => {
             const Icon = project.icon;
-            const globalIndex = projects.indexOf(project);
             const isRecommended = recommended.has(project.slug);
+
             return (
               <div
                 key={project.slug}
@@ -2133,10 +2158,7 @@ export function Portfolio({
                 onClick={() => openProject(idx)}
               >
                 <div className="relative h-44 overflow-hidden rounded-t-xl">
-                  <MediaSlider
-                    media={project.media}
-                    className="w-full h-full"
-                  />
+                  <MediaSlider media={project.media} className="w-full h-full" />
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent pointer-events-none" />
 
                   <div className="absolute top-3 right-3 flex items-center gap-2 z-10">
@@ -2176,6 +2198,7 @@ export function Portfolio({
                         {tag}
                       </Badge>
                     ))}
+
                     {project.tags.length > 4 && (
                       <Badge
                         variant="secondary"
@@ -2191,16 +2214,20 @@ export function Portfolio({
                       <span>View Details</span>
                       <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
                     </div>
+
                     <button
                       data-testid={`button-recommend-${idx}`}
                       onClick={(e) => toggleRecommended(project.slug, e)}
-                      className={`w-8 h-8 rounded-lg flex items-center justify-center border transition-all ${isRecommended
-                        ? "bg-amber-500/15 border-amber-500/50 text-amber-400"
-                        : "bg-muted/30 border-border/50 text-muted-foreground hover:border-amber-500/40 hover:text-amber-400"
-                        }`}
+                      className={`w-8 h-8 rounded-lg flex items-center justify-center border transition-all ${
+                        isRecommended
+                          ? "bg-amber-500/15 border-amber-500/50 text-amber-400"
+                          : "bg-muted/30 border-border/50 text-muted-foreground hover:border-amber-500/40 hover:text-amber-400"
+                      }`}
                     >
                       <ThumbsUp
-                        className={`w-3.5 h-3.5 ${isRecommended ? "fill-amber-400" : ""}`}
+                        className={`w-3.5 h-3.5 ${
+                          isRecommended ? "fill-amber-400" : ""
+                        }`}
                       />
                     </button>
                   </div>
@@ -2232,8 +2259,8 @@ export function Portfolio({
               {searchQuery.trim()
                 ? `No projects match "${searchQuery}". Try a different search term.`
                 : activeCategory === "recommended"
-                  ? "No suggested projects yet. Click the thumbs-up icon on any project card to add it."
-                  : "No projects found in this category."}
+                ? "No suggested projects yet. Click the thumbs-up icon on any project card to add it."
+                : "No projects found in this category."}
             </p>
           </div>
         )}
