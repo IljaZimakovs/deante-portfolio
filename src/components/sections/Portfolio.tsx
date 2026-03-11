@@ -266,7 +266,7 @@ const projects: Project[] = [
   },
   {
     slug: "netduino-smart-ai-camera",
-    title: "Netduino Smart AI Camera",
+    title: "Edge Vision Camera with Cloud Object Detection",
     category: "IoT & Connected Devices / Embedded Firmware",
     filterSlugs: [
       "embedded-firmware",
