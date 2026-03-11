@@ -1813,22 +1813,35 @@ export function Portfolio({
 } = {}) {
   const [, setLocation] = useLocation();
 
-  const parseRecommendedIds = (ids?: string): Set<number> => {
+  const parseRecommendedSlugs = (ids?: string): Set<string> => {
     if (!ids) return new Set();
-    return new Set(
-      ids
+    const parts = ids.split("~");
+    // Legacy format: all segments are plain numbers joined by dashes (e.g. "0-3-7")
+    const isLegacy =
+      (parts.length === 1 && ids.includes("-")) ||
+      parts.every((p) => /^\d+$/.test(p));
+    if (isLegacy) {
+      const slugs = ids
         .split("-")
         .map(Number)
-        .filter((n) => !isNaN(n) && n >= 0 && n < projects.length),
-    );
+        .filter((n) => !isNaN(n) && n >= 0 && n < projects.length)
+        .map((n) => projects[n].slug);
+      if (slugs.length > 0) return new Set(slugs);
+    }
+    const validSlugs = parts.filter((s) => projects.some((p) => p.slug === s));
+    return new Set(validSlugs);
   };
 
-  const [recommended, setRecommended] = useState<Set<number>>(() =>
-    parseRecommendedIds(initialRecommendedIds),
+  const [recommended, setRecommended] = useState<Set<string>>(() =>
+    parseRecommendedSlugs(initialRecommendedIds),
   );
-  const [activeCategory, setActiveCategory] = useState(
-    initialRecommendedIds ? "recommended" : initialCategory || "all",
-  );
+  const [activeCategory, setActiveCategory] = useState(() => {
+    if (initialRecommendedIds) {
+      const decoded = parseRecommendedSlugs(initialRecommendedIds);
+      return decoded.size > 0 ? "recommended" : "all";
+    }
+    return initialCategory || "all";
+  });
   const [visibleCount, setVisibleCount] = useState(6);
   const [searchQuery, setSearchQuery] = useState("");
   const closingRef = useRef(false);
@@ -1843,8 +1856,11 @@ export function Portfolio({
 
   useEffect(() => {
     if (initialRecommendedIds && !closingRef.current) {
-      setRecommended(parseRecommendedIds(initialRecommendedIds));
-      setActiveCategory("recommended");
+      const decoded = parseRecommendedSlugs(initialRecommendedIds);
+      if (decoded.size > 0) {
+        setRecommended(decoded);
+        setActiveCategory("recommended");
+      }
       setTimeout(() => {
         document
           .getElementById("portfolio")
@@ -1873,21 +1889,18 @@ export function Portfolio({
     }
   }, [initialCategory]);
 
-  const toggleRecommended = (globalIndex: number, e: React.MouseEvent) => {
+  const toggleRecommended = (slug: string, e: React.MouseEvent) => {
     e.stopPropagation();
     setRecommended((prev) => {
       const next = new Set(prev);
-      if (next.has(globalIndex)) {
-        next.delete(globalIndex);
+      if (next.has(slug)) {
+        next.delete(slug);
       } else {
-        next.add(globalIndex);
+        next.add(slug);
       }
       if (activeCategory === "recommended") {
         if (next.size > 0) {
-          const ids = Array.from(next)
-            .sort((a, b) => a - b)
-            .join("-");
-          setLocation(`/recommended/${ids}`);
+          setLocation(`/recommended/${Array.from(next).join("~")}`);
         } else {
           setActiveCategory("all");
           setLocation("/");
@@ -1899,9 +1912,7 @@ export function Portfolio({
 
   const getRecommendedUrl = () => {
     if (recommended.size === 0) return "";
-    const ids = Array.from(recommended)
-      .sort((a, b) => a - b)
-      .join("-");
+    const ids = Array.from(recommended).join("~");
     const base = typeof window !== "undefined" ? window.location.origin : "";
     return `${base}/recommended/${ids}`;
   };
@@ -1918,7 +1929,9 @@ export function Portfolio({
 
   const categoryFiltered =
     activeCategory === "recommended"
-      ? projects.filter((_, i) => recommended.has(i))
+      ? Array.from(recommended)
+          .map((slug) => projects.find((p) => p.slug === slug))
+          .filter((p): p is Project => p !== undefined)
       : activeCategory === "all"
         ? projects
         : projects.filter((p) => p.filterSlugs.includes(activeCategory));
@@ -1941,9 +1954,7 @@ export function Portfolio({
   const categoryBaseUrl =
     activeCategory === "recommended"
       ? recommended.size > 0
-        ? `/recommended/${Array.from(recommended)
-          .sort((a, b) => a - b)
-          .join("-")}`
+        ? `/recommended/${Array.from(recommended).join("~")}`
         : "/"
       : activeCategory === "all"
         ? "/"
@@ -1954,10 +1965,7 @@ export function Portfolio({
     setVisibleCount(6);
     if (slug === "recommended") {
       if (recommended.size > 0) {
-        const ids = Array.from(recommended)
-          .sort((a, b) => a - b)
-          .join("-");
-        setLocation(`/recommended/${ids}`);
+        setLocation(`/recommended/${Array.from(recommended).join("~")}`);
       } else {
         setLocation("/");
       }
@@ -2116,7 +2124,7 @@ export function Portfolio({
           {filteredProjects.slice(0, visibleCount).map((project, idx) => {
             const Icon = project.icon;
             const globalIndex = projects.indexOf(project);
-            const isRecommended = recommended.has(globalIndex);
+            const isRecommended = recommended.has(project.slug);
             return (
               <div
                 key={project.slug}
@@ -2185,7 +2193,7 @@ export function Portfolio({
                     </div>
                     <button
                       data-testid={`button-recommend-${idx}`}
-                      onClick={(e) => toggleRecommended(globalIndex, e)}
+                      onClick={(e) => toggleRecommended(project.slug, e)}
                       className={`w-8 h-8 rounded-lg flex items-center justify-center border transition-all ${isRecommended
                         ? "bg-amber-500/15 border-amber-500/50 text-amber-400"
                         : "bg-muted/30 border-border/50 text-muted-foreground hover:border-amber-500/40 hover:text-amber-400"
